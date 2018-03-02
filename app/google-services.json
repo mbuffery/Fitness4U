@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "909182764758",
-    "firebase_url": "https://fitness4u-6c96f.firebaseio.com",
-    "project_id": "fitness4u-6c96f",
-    "storage_bucket": "fitness4u-6c96f.appspot.com"
+    "project_number": "534017548101",
+    "firebase_url": "https://fitness4u-16e7d.firebaseio.com",
+    "project_id": "fitness4u-16e7d",
+    "storage_bucket": "fitness4u-16e7d.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:909182764758:android:141ba3eab9364e5c",
+        "mobilesdk_app_id": "1:534017548101:android:141ba3eab9364e5c",
         "android_client_info": {
           "package_name": "com.example.miles.fitness4u"
         }
       },
       "oauth_client": [
         {
-          "client_id": "909182764758-2j7f7pppe9udb45v3tn105rvn55hs97t.apps.googleusercontent.com",
+          "client_id": "534017548101-9pjv1nfsbg973a313konckcpsja68hp8.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.miles.fitness4u",
@@ -23,13 +23,13 @@
           }
         },
         {
-          "client_id": "909182764758-s0jml3otlkl53brms8dope1s6n2kpv51.apps.googleusercontent.com",
+          "client_id": "534017548101-psn6g67vass33ki151i1thel7c36rn9b.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyB3uqgrNpY-N_MWIyovfyxJBZVLR9obR6M"
+          "current_key": "AIzaSyDBTxgYZdNiuoLpSly5qe1FBONz6J1l2sg"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "909182764758-s0jml3otlkl53brms8dope1s6n2kpv51.apps.googleusercontent.com",
+              "client_id": "534017548101-psn6g67vass33ki151i1thel7c36rn9b.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
