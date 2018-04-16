@@ -11,7 +11,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.example.miles.fitness4u.FitnessFragment;
+import com.example.miles.fitness4u.NavDrawerActivity;
 import com.example.miles.fitness4u.MainActivity;
 import com.example.miles.fitness4u.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -98,7 +98,7 @@ public class UserLoginActivity extends AppCompatActivity {
                                         Toast.makeText(UserLoginActivity.this, getString(R.string.auth_failed), Toast.LENGTH_LONG).show();
                                     }
                                 } else {
-                                    Intent intent = new Intent(UserLoginActivity.this, FitnessFragment.class);
+                                    Intent intent = new Intent(UserLoginActivity.this, NavDrawerActivity.class);
                                     startActivity(intent);
                                     finish();
                                 }

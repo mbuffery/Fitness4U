@@ -11,11 +11,11 @@ import android.view.ViewGroup;
  * Created by miles on 4/16/2018.
  */
 
-public class FitnessFragment extends Fragment {
+public class BodybuildingFragment extends Fragment {
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_fitness, container, false);
+        return inflater.inflate(R.layout.fragment_bodybuilding, container, false);
     }
 }
