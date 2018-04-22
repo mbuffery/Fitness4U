@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         email = findViewById(R.id.useremail);
 
-        //get current user
+        //Will get the current firebase user
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         setDataToView(user);
 
@@ -54,38 +54,29 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
+        //On create, Set each variable to the right ID.
         btnChangePassword = findViewById(R.id.change_password_button);
-
         btnRemoveUser = findViewById(R.id.remove_user_button);
-
         changePassword = findViewById(R.id.changePass);
-
         remove = findViewById(R.id.remove);
         signOut = findViewById(R.id.sign_out);
-
         backBtn = findViewById(R.id.back_btn);
-
         oldEmail = findViewById(R.id.old_email);
-
         password = findViewById(R.id.password);
         newPassword = findViewById(R.id.newPassword);
 
+        //On create, sets the visibility to gone so they cant be seen.
         oldEmail.setVisibility(View.GONE);
-
         password.setVisibility(View.GONE);
         newPassword.setVisibility(View.GONE);
-
         changePassword.setVisibility(View.GONE);
-
         remove.setVisibility(View.GONE);
-
         progressBar = findViewById(R.id.progressBar);
-
         if (progressBar != null) {
             progressBar.setVisibility(View.GONE);
         }
 
-
+        //If the user wants to change their password, on click will set the different variable to either visible or hidden
         btnChangePassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -104,6 +95,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 progressBar.setVisibility(View.VISIBLE);
+                //Sets the new password if the user has met all the requirements, e.g. 6 or more characters
                 if (user != null && !newPassword.getText().toString().trim().equals("")) {
                     if (newPassword.getText().toString().trim().length() < 6) {
                         newPassword.setError("Password too short, enter minimum 6 characters");
@@ -130,14 +122,14 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
+        //Simple back button
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, NavDrawerActivity.class));
             }
         });
-
+        //This will remove the user on click
         btnRemoveUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -161,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
+        //On click, Sign the user out
         signOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

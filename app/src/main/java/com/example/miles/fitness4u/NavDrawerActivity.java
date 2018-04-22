@@ -19,15 +19,17 @@ public class NavDrawerActivity extends AppCompatActivity implements NavigationVi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nav_drawer);
 
+        //Sets the toolbar to be the toolbar that i created
         android.support.v7.widget.Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         drawer = findViewById(R.id.drawer_layout);
 
         NavigationView navigationView = findViewById(R.id.nav_view);
-
+        //Gives the navigation view a itemSelectedListener
         navigationView.setNavigationItemSelectedListener(this);
 
+        //Allows for the new toolbar to be able to toggle from being show to being hidden
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
 
@@ -41,6 +43,7 @@ public class NavDrawerActivity extends AppCompatActivity implements NavigationVi
         }
     }
 
+    //Case Statement for each of the items in the nav drawer once one of them is pressed.
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId())
