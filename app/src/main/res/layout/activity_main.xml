@@ -19,6 +19,14 @@ tools:context="com.example.miles.fitness4u.MainActivity">
     android:layout_centerHorizontal="true"
     android:layout_marginBottom="17dp" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:id="@+id/back_btn"/>
+
 <EditText
     android:id="@+id/password"
     android:layout_width="400dp"

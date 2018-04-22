@@ -22,7 +22,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class MainActivity extends AppCompatActivity {
 
     private Button btnChangePassword, btnRemoveUser,
-            changePassword, remove, signOut;
+            changePassword, remove, signOut, backBtn;
     private TextView email;
 
     private EditText oldEmail, password, newPassword;
@@ -62,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
 
         remove = findViewById(R.id.remove);
         signOut = findViewById(R.id.sign_out);
+
+        backBtn = findViewById(R.id.back_btn);
 
         oldEmail = findViewById(R.id.old_email);
 
@@ -129,6 +131,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, NavDrawerActivity.class));
+            }
+        });
 
         btnRemoveUser.setOnClickListener(new View.OnClickListener() {
             @Override
