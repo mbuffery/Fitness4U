@@ -4,15 +4,19 @@
     android:layout_height="match_parent">
 
     <RelativeLayout
+        android:id="@+id/relay1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/grad">
+        android:background="@drawable/grad"
+        android:paddingBottom="20dp">
         
         <RelativeLayout
+            android:id="@+id/profileImg"
             android:layout_width="wrap_content"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
             android:layout_height="wrap_content"
-            android:background="@color/circleBorder">
+            android:background="@drawable/circle_border">
             
             <ImageView
                 android:layout_width="120dp"
@@ -21,95 +25,274 @@
                 android:adjustViewBounds="true"
                 android:scaleType="centerInside"
                 android:background="@drawable/circle"
-                android:layout_margin="5dp"
-                />
+                android:layout_margin="7dp"
+                android:padding="3dp" />
         </RelativeLayout>
-    </RelativeLayout>
-    <!--
+        
         <TextView
+            android:id="@+id/userName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:text="Registration"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:id="@+id/textView" />
+            android:layout_below="@+id/profileImg"
+            android:layout_centerHorizontal="true"
+            android:text="Miles Buffery"
+            android:fontFamily="sans-serif-light"
+            android:layout_marginTop="15sp"
+            android:textSize="32sp"
+            android:textColor="@color/white"/>
 
-        <EditText
-            android:id="@+id/nameReg"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/textView"
-            android:hint="Name" />
-
-        <EditText
-            android:id="@+id/ageReg"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/nameReg"
-            android:hint="Age" />
-
-        <EditText
-            android:id="@+id/sexReg"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/ageReg"
-            android:hint="Sex" />
-
-        <EditText
-            android:id="@+id/heightReg"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/sexReg"
-            android:hint="Height" />
-
-        <EditText
-            android:id="@+id/weightReg"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/heightReg"
-            android:hint="Weight" />
-
-        <EditText
-            android:id="@+id/emailReg"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/weightReg"
-            android:hint="Email" />
-
-        <EditText
-            android:id="@+id/passwordReg"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/emailReg"
-            android:hint="Password" />
-
-        <Button
+        <TextView
+            android:id="@+id/userAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/passwordReg"
-            android:hint="Register"
-            android:id="@+id/regButton"/>
-            -->
+            android:layout_below="@+id/userName"
+            android:layout_centerHorizontal="true"
+            android:text="Plmouth, Devon, GB"
+            android:fontFamily="sans-serif"
+            android:textAllCaps="true"
+            android:textSize="16sp"
+            android:textColor="@color/address"/>
+        
+    </RelativeLayout>
 
+    <LinearLayout
+        android:id="@+id/linlay1"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/relay1"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/followersBg"
+            android:layout_weight="1"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:gravity="center">
+            
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+                
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="453k"
+                    android:textSize="25dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="sans-serif-light"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Followers"
+                    android:textAllCaps="true"
+                    android:textSize="13dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="sans-serif-light"/>
+            </LinearLayout>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@color/followingBg"
+            android:layout_weight="1"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="21"
+                    android:textSize="25dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="sans-serif-light"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Age"
+                    android:textAllCaps="true"
+                    android:textSize="13dp"
+                    android:textColor="@color/white"
+                    android:fontFamily="sans-serif-light"/>
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/linlay1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:orientation="vertical"
+            android:layout_centerInParent="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email"
+                    android:textColor="@color/headings"
+                    android:textSize="13sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="miles.buffery@hotmail.co.uk"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif-light"/>
+
+                <view
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/grey"/>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email"
+                    android:textColor="@color/headings"
+                    android:textSize="13sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="miles.buffery@hotmail.co.uk"
+                    android:textSize="18sp"
+                    android:textColor="@color/black"
+                    android:fontFamily="sans-serif-light"/>
+
+                <view
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/grey"/>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
 
 
     </RelativeLayout>
+
+    <!--
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:text="Registration"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:id="@+id/textView" />
+
+            <EditText
+                android:id="@+id/nameReg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textView"
+                android:hint="Name" />
+
+            <EditText
+                android:id="@+id/ageReg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/nameReg"
+                android:hint="Age" />
+
+            <EditText
+                android:id="@+id/sexReg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/ageReg"
+                android:hint="Sex" />
+
+            <EditText
+                android:id="@+id/heightReg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/sexReg"
+                android:hint="Height" />
+
+            <EditText
+                android:id="@+id/weightReg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/heightReg"
+                android:hint="Weight" />
+
+            <EditText
+                android:id="@+id/emailReg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/weightReg"
+                android:hint="Email" />
+
+            <EditText
+                android:id="@+id/passwordReg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/emailReg"
+                android:hint="Password" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/passwordReg"
+                android:hint="Register"
+                android:id="@+id/regButton"/>
+                -->
