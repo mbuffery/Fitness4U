@@ -55,19 +55,17 @@ public class ProfileFragment extends Fragment {
         WeightReg = (EditText) getView().findViewById(R.id.weightReg);
         HeightReg = (EditText) getView().findViewById(R.id.heightReg);
         EmailReg = (EditText) getView().findViewById(R.id.emailReg);
-        PasswordReg = (EditText) getView().findViewById(R.id.passwordReg);
+        PasswordReg = (EditText) getView().findViewById(R.id.passwordReg);*/
 
         //Button to register the user details
-        RegButton = (Button) getView().findViewById(R.id.regButton);
+        //RegButton = (Button) getView().findViewById(R.id.regButton);
 
         //
-        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        //final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         //Adds listener to the button*/
 
         //When button is pressed, it saves all the data onto the database, e.g. Sex
-        RegButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+
                // if (v.equals(RegButton))
               //  {
                     /*String user_id = auth.getCurrentUser().getUid();
@@ -98,8 +96,8 @@ public class ProfileFragment extends Fragment {
 
                 //}
 
-            }
-        });
+            
+
 
 
     }
