@@ -44,7 +44,7 @@ public class ProfileFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        //Gets the firebase Authenticator
+        /*//Gets the firebase Authenticator
         auth = FirebaseAuth.getInstance();
 
 
@@ -62,7 +62,7 @@ public class ProfileFragment extends Fragment {
 
         //
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        //Adds listener to the button
+        //Adds listener to the button*/
 
         //When button is pressed, it saves all the data onto the database, e.g. Sex
         RegButton.setOnClickListener(new View.OnClickListener() {
@@ -70,9 +70,10 @@ public class ProfileFragment extends Fragment {
             public void onClick(View v) {
                 if (v.equals(RegButton))
                 {
-                    String user_id = auth.getCurrentUser().getUid();
+                    /*String user_id = auth.getCurrentUser().getUid();
                     DatabaseReference curren_userdb = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
 
+                    //Sets each variable to a specific string
                     String name = NameReg.getText().toString();
                     String age = AgeReg.getText().toString();
                     String sex = SexReg.getText().toString();
@@ -81,6 +82,7 @@ public class ProfileFragment extends Fragment {
                     String email = EmailReg.getText().toString();
                     String password = PasswordReg.getText().toString();
 
+                    //Creates new map to store each data post.
                     Map newPost = new HashMap();
                     newPost.put("Name", name);
                     newPost.put("Age", age);
@@ -90,7 +92,8 @@ public class ProfileFragment extends Fragment {
                     newPost.put("Email", email);
                     newPost.put("Password", password);
 
-                    curren_userdb.setValue(newPost);
+                    //sets the value of the current user to newpost
+                    curren_userdb.setValue(newPost);*/
 
 
                 }
