@@ -32,4 +32,5 @@
 
     <string name="navigation_drawer_open">Open Navigation drawer</string>
     <string name="navigation_drawer_close">Close Navigation drawer</string>
+    <string name="twitterUsername">\@milesbuffery</string>
 </resources>

@@ -68,8 +68,8 @@ public class ProfileFragment extends Fragment {
         RegButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (v.equals(RegButton))
-                {
+               // if (v.equals(RegButton))
+              //  {
                     /*String user_id = auth.getCurrentUser().getUid();
                     DatabaseReference curren_userdb = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
 
@@ -96,11 +96,10 @@ public class ProfileFragment extends Fragment {
                     curren_userdb.setValue(newPost);*/
 
 
-                }
+                //}
 
             }
         });
-
 
 
     }
