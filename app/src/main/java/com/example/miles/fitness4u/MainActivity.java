@@ -54,6 +54,14 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
+        if (user == null)
+        {
+            //If no signed in, launch the Sign In activity
+            startActivity(new Intent(this, UserLoginActivity.class));
+            finish();
+            return;
+        }
+
         //On create, Set each variable to the right ID.
         btnChangePassword = findViewById(R.id.change_password_button);
         btnRemoveUser = findViewById(R.id.remove_user_button);

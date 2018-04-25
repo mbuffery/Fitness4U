@@ -34,6 +34,7 @@ public class ProfileFragment extends Fragment {
     private FirebaseAuth auth;
 
 
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -44,30 +45,28 @@ public class ProfileFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        /*//Gets the firebase Authenticator
+        //Gets the firebase Authenticator
         auth = FirebaseAuth.getInstance();
 
+        //Grabs the current user and sets them to user
+        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-        //Sets each edit text to a variable
-        NameReg = (EditText) getView().findViewById(R.id.nameReg);
-        AgeReg = (EditText) getView().findViewById(R.id.ageReg);
-        SexReg = (EditText) getView().findViewById(R.id.sexReg);
-        WeightReg = (EditText) getView().findViewById(R.id.weightReg);
-        HeightReg = (EditText) getView().findViewById(R.id.heightReg);
-        EmailReg = (EditText) getView().findViewById(R.id.emailReg);
-        PasswordReg = (EditText) getView().findViewById(R.id.passwordReg);*/
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
 
-        //Button to register the user details
-        //RegButton = (Button) getView().findViewById(R.id.regButton);
 
-        //
-        //final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        //Adds listener to the button*/
 
-        //When button is pressed, it saves all the data onto the database, e.g. Sex
 
-               // if (v.equals(RegButton))
-              //  {
+
+
+
+    }
+}
+//Adds listener to the button*/
+
+//When button is pressed, it saves all the data onto the database, e.g. Sex
+
+// if (v.equals(RegButton))
+//  {
                     /*String user_id = auth.getCurrentUser().getUid();
                     DatabaseReference curren_userdb = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
 
@@ -94,11 +93,15 @@ public class ProfileFragment extends Fragment {
                     curren_userdb.setValue(newPost);*/
 
 
-                //}
+//}
+/* //Sets each edit text to a variable
+        NameReg = (EditText) getView().findViewById(R.id.nameReg);
+        AgeReg = (EditText) getView().findViewById(R.id.ageReg);
+        SexReg = (EditText) getView().findViewById(R.id.sexReg);
+        WeightReg = (EditText) getView().findViewById(R.id.weightReg);
+        HeightReg = (EditText) getView().findViewById(R.id.heightReg);
+        EmailReg = (EditText) getView().findViewById(R.id.emailReg);
+        PasswordReg = (EditText) getView().findViewById(R.id.passwordReg);*/
 
-
-
-
-
-    }
-}
+//Button to register the user details
+//RegButton = (Button) getView().findViewById(R.id.regButton);
