@@ -54,8 +54,7 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
-        if (user == null)
-        {
+        if (user == null) {
             //If no signed in, launch the Sign In activity
             startActivity(new Intent(this, UserLoginActivity.class));
             finish();

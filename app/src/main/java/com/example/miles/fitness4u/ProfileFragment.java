@@ -10,11 +10,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -30,8 +34,11 @@ public class ProfileFragment extends Fragment {
             , WeightReg, HeightReg, EmailReg, PasswordReg;
 
     private Button RegButton;
-    private DatabaseReference as;
+    private DatabaseReference database;
     private FirebaseAuth auth;
+    private FirebaseUser user;
+
+
 
 
 
@@ -45,14 +52,54 @@ public class ProfileFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        //Gets the firebase Authenticator
+        //Creates instance to allow Read/Write for the data
+        database = FirebaseDatabase.getInstance().getReference();
+
+
+        //Gets firebase Authenticator
         auth = FirebaseAuth.getInstance();
 
-        //Grabs the current user and sets them to user
-        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        //Gets the current User
+        user = FirebaseAuth.getInstance().getCurrentUser();
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
 
+
+
+        //Sets references to each item in the activity
+        final TextView heightView =  getView().findViewById(R.id.profHeight);
+        final TextView ageView =  getView().findViewById(R.id.profAge);
+        final TextView weightView =  getView().findViewById(R.id.profWeight);
+
+        //Gets the instance of the firebase database and sets it to the user.
+        final FirebaseDatabase user = FirebaseDatabase.getInstance();
+        DatabaseReference userRef = user.getReference("Users");
+
+        userRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+
+                String user_id = auth.getUid();
+
+                String ageText = (String) dataSnapshot.child(user_id).child("Age");
+                //String weightText = dataSnapshot.getValue(String.class);
+                //String heightText = dataSnapshot.getValue(String.class);
+
+                ageView.setText(ageText);
+                //weightView.setText(weightText);
+                //heightView.setText(heightText);
+
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+                ageView.setText("Error Found");
+                //weightView.setText("Error Found");
+                //heightView.setText("Error Found");
+
+            }
+        });
 
 
 

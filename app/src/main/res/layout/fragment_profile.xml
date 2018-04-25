@@ -90,7 +90,8 @@
                     android:fontFamily="sans-serif-light"
                     android:text="453k"
                     android:textColor="@color/white"
-                    android:textSize="25dp" />
+                    android:textSize="25dp"
+                    android:id="@+id/profHeight"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -127,7 +128,8 @@
                     android:fontFamily="sans-serif-light"
                     android:text="0"
                     android:textColor="@color/white"
-                    android:textSize="25dp" />
+                    android:textSize="25dp"
+                    android:id="@+id/profAge"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -164,7 +166,8 @@
                     android:fontFamily="sans-serif-light"
                     android:text="0"
                     android:textColor="@color/white"
-                    android:textSize="25dp" />
+                    android:textSize="25dp"
+                    android:id="@+id/profWeight"/>
 
                 <TextView
                     android:layout_width="wrap_content"

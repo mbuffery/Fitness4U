@@ -1,5 +1,6 @@
 package com.example.miles.fitness4u;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -61,8 +62,7 @@ public class NavDrawerActivity extends AppCompatActivity implements NavigationVi
                         new FitnessFragment()).commit();
                 break;
             case R.id.nav_settings:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new FitnessFragment()).commit();
+                startActivity(new Intent(NavDrawerActivity.this, MainActivity.class));
                 break;
             case R.id.nav_share:
                 Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
