@@ -39,9 +39,6 @@ public class ProfileFragment extends Fragment {
     private FirebaseUser user;
 
 
-
-
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -54,7 +51,6 @@ public class ProfileFragment extends Fragment {
 
         //Creates instance to allow Read/Write for the data
         database = FirebaseDatabase.getInstance().getReference();
-
 
         //Gets firebase Authenticator
         auth = FirebaseAuth.getInstance();
@@ -70,23 +66,25 @@ public class ProfileFragment extends Fragment {
         final TextView ageView =  getView().findViewById(R.id.profAge);
         final TextView weightView =  getView().findViewById(R.id.profWeight);
 
-        //Gets the instance of the firebase database and sets it to the user.
-        final FirebaseDatabase user = FirebaseDatabase.getInstance();
-        DatabaseReference userRef = user.getReference("Users");
+        //Gets the instance of the firebase database and gets the users data
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference userRef = database.getReference("Users");
 
         userRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+                //Gets and sets the user ID to a string
+                String user_id = user.getUid();
 
-                String user_id = auth.getUid();
+                //Gets the specific data from the Database
+                String ageText = (String) dataSnapshot.child(user_id).child("Age").getValue();
+                String weightText = (String) dataSnapshot.child(user_id).child("Weight").getValue();
+                String heightText = (String) dataSnapshot.child(user_id).child("Height").getValue();
 
-                String ageText = (String) dataSnapshot.child(user_id).child("Age");
-                //String weightText = dataSnapshot.getValue(String.class);
-                //String heightText = dataSnapshot.getValue(String.class);
-
+                //Displays the selected data to the Textviews in tbe activity
                 ageView.setText(ageText);
-                //weightView.setText(weightText);
-                //heightView.setText(heightText);
+                weightView.setText(weightText);
+                heightView.setText(heightText);
 
 
             }
@@ -95,8 +93,8 @@ public class ProfileFragment extends Fragment {
             public void onCancelled(DatabaseError databaseError) {
 
                 ageView.setText("Error Found");
-                //weightView.setText("Error Found");
-                //heightView.setText("Error Found");
+                weightView.setText("Error Found");
+                heightView.setText("Error Found");
 
             }
         });
