@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         //get firebase auth instance
         auth = FirebaseAuth.getInstance();
         email = findViewById(R.id.useremail);
@@ -63,21 +64,21 @@ public class MainActivity extends AppCompatActivity {
 
         //On create, Set each variable to the right ID.
         btnChangePassword = findViewById(R.id.change_password_button);
-        btnRemoveUser = findViewById(R.id.remove_user_button);
+        //btnRemoveUser = findViewById(R.id.remove_user_button);
         changePassword = findViewById(R.id.changePass);
-        remove = findViewById(R.id.remove);
+        //remove = findViewById(R.id.remove);
         signOut = findViewById(R.id.sign_out);
         backBtn = findViewById(R.id.back_btn);
-        oldEmail = findViewById(R.id.old_email);
+        //oldEmail = findViewById(R.id.old_email);
         password = findViewById(R.id.password);
         newPassword = findViewById(R.id.newPassword);
 
         //On create, sets the visibility to gone so they cant be seen.
-        oldEmail.setVisibility(View.GONE);
+        //oldEmail.setVisibility(View.GONE);
         password.setVisibility(View.GONE);
         newPassword.setVisibility(View.GONE);
         changePassword.setVisibility(View.GONE);
-        remove.setVisibility(View.GONE);
+        //remove.setVisibility(View.GONE);
         progressBar = findViewById(R.id.progressBar);
         if (progressBar != null) {
             progressBar.setVisibility(View.GONE);
@@ -87,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
         btnChangePassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                oldEmail.setVisibility(View.GONE);
+                //oldEmail.setVisibility(View.GONE);
 
                 password.setVisibility(View.GONE);
                 newPassword.setVisibility(View.VISIBLE);
@@ -136,8 +137,10 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, NavDrawerActivity.class));
             }
         });
+
+
         //This will remove the user on click
-        btnRemoveUser.setOnClickListener(new View.OnClickListener() {
+        /*btnRemoveUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 progressBar.setVisibility(View.VISIBLE);
@@ -160,6 +163,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+        */
         //On click, Sign the user out
         signOut.setOnClickListener(new View.OnClickListener() {
             @Override

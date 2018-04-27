@@ -30,8 +30,7 @@ import java.util.Map;
 public class ProfileFragment extends Fragment {
 
 
-    private EditText NameReg, AgeReg, SexReg
-            , WeightReg, HeightReg, EmailReg, PasswordReg;
+    private EditText NameReg, AgeReg, SexReg, WeightReg, HeightReg, EmailReg, PasswordReg;
 
     private Button RegButton;
     private DatabaseReference database;
@@ -49,6 +48,9 @@ public class ProfileFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+
+        //Button to register the user details
+        RegButton = getView().findViewById(R.id.regButton);
         //Creates instance to allow Read/Write for the data
         database = FirebaseDatabase.getInstance().getReference();
 
@@ -58,13 +60,16 @@ public class ProfileFragment extends Fragment {
         //Gets the current User
         user = FirebaseAuth.getInstance().getCurrentUser();
 
-
-
-
         //Sets references to each item in the activity
-        final TextView heightView =  getView().findViewById(R.id.profHeight);
-        final TextView ageView =  getView().findViewById(R.id.profAge);
-        final TextView weightView =  getView().findViewById(R.id.profWeight);
+        final TextView heightView = getView().findViewById(R.id.profHeight);
+        final TextView ageView = getView().findViewById(R.id.profAge);
+        final TextView weightView = getView().findViewById(R.id.profWeight);
+
+        /*NameReg = getView().findViewById(R.id.nameReg);
+        AgeReg = getView().findViewById(R.id.ageReg);
+        SexReg = getView().findViewById(R.id.sexReg);
+        WeightReg = getView().findViewById(R.id.weightReg);
+        HeightReg = getView().findViewById(R.id.heightReg);*/
 
         //Gets the instance of the firebase database and gets the users data
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -73,6 +78,7 @@ public class ProfileFragment extends Fragment {
         userRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
+
                 //Gets and sets the user ID to a string
                 String user_id = user.getUid();
 
@@ -99,20 +105,11 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-
-
-
-
-
-    }
-}
-//Adds listener to the button*/
-
-//When button is pressed, it saves all the data onto the database, e.g. Sex
-
-// if (v.equals(RegButton))
-//  {
-                    /*String user_id = auth.getCurrentUser().getUid();
+        /*RegButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (v.equals(RegButton)) {
+                    String user_id = auth.getCurrentUser().getUid();
                     DatabaseReference curren_userdb = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
 
                     //Sets each variable to a specific string
@@ -135,18 +132,21 @@ public class ProfileFragment extends Fragment {
                     newPost.put("Password", password);
 
                     //sets the value of the current user to newpost
-                    curren_userdb.setValue(newPost);*/
+                    curren_userdb.setValue(newPost);
+                }
+            }
 
 
-//}
+        });*/
+    }
+}
+//Adds listener to the button*/
+
+//When button is pressed, it saves all the data onto the database, e.g. Sex
+
+
 /* //Sets each edit text to a variable
-        NameReg = (EditText) getView().findViewById(R.id.nameReg);
-        AgeReg = (EditText) getView().findViewById(R.id.ageReg);
-        SexReg = (EditText) getView().findViewById(R.id.sexReg);
-        WeightReg = (EditText) getView().findViewById(R.id.weightReg);
-        HeightReg = (EditText) getView().findViewById(R.id.heightReg);
+        v
         EmailReg = (EditText) getView().findViewById(R.id.emailReg);
         PasswordReg = (EditText) getView().findViewById(R.id.passwordReg);*/
 
-//Button to register the user details
-//RegButton = (Button) getView().findViewById(R.id.regButton);
