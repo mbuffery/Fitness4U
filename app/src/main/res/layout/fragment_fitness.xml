@@ -2,13 +2,81 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_orange_light">
+    android:background="@drawable/grad">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fitness Fragement"
-        android:textSize="30sp"
-        android:layout_centerInParent="true"/>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:text="Abs"
+                    android:id="@+id/Abs"
+                    android:background="@drawable/grad"/>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:id="@+id/Back"
+                    android:text="Back"
+                    android:layout_below="@+id/Abs"/>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:id="@+id/Bicep"
+                    android:text="Bicep"
+                    android:layout_below="@+id/Back"/>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:id="@+id/Calf"
+                    android:text="Calf"
+                    android:layout_below="@+id/Bicep"/>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:id="@+id/Chest"
+                    android:text="Chest"
+                    android:layout_below="@+id/Calf"/>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:id="@+id/Forearm"
+                    android:text="Forearm"
+                    android:layout_below="@+id/Chest"/>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:id="@+id/Legs"
+                    android:text="Legs"
+                    android:layout_below="@+id/Forearm"/>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:id="@+id/Shoulders"
+                    android:text="Shoulders"
+                    android:layout_below="@+id/Legs"/>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:id="@+id/Triceps"
+                    android:text="Triceps"
+                    android:layout_below="@+id/Shoulders"/>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
 
 </RelativeLayout>
