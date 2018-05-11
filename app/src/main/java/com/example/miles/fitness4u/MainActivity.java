@@ -18,16 +18,22 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button btnChangePassword, btnRemoveUser,
-            changePassword, remove, signOut, backBtn;
+            changePassword, remove, signOut, backBtn, RegButton;
     private TextView email;
-
+    private EditText NameReg, AgeReg, SexReg, WeightReg, HeightReg, EmailReg, PasswordReg;
     private EditText oldEmail, password, newPassword;
     private ProgressBar progressBar;
     private FirebaseAuth auth;
+    private DatabaseReference database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +44,25 @@ public class MainActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         email = findViewById(R.id.useremail);
 
+        //Button to register the user details
+        RegButton = findViewById(R.id.regButton);
+
+
+        NameReg = findViewById(R.id.nameReg);
+        AgeReg = findViewById(R.id.ageReg);
+        SexReg = findViewById(R.id.sexReg);
+        WeightReg = findViewById(R.id.weightReg);
+        HeightReg = findViewById(R.id.heightReg);
+
         //Gets the current firebase user
         final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         setDataToView(user);
+
+        //Creates instance to allow Read/Write for the data
+        database = FirebaseDatabase.getInstance().getReference();
+
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference userRef = database.getReference("Users");
 
         authListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -99,6 +121,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+
         changePassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -137,6 +161,41 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, NavDrawerActivity.class));
             }
         });
+
+        /*RegButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (v.equals(RegButton)) {
+
+                    String user_id = auth.getCurrentUser().getUid();
+                    DatabaseReference curren_userdb = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
+
+                    //Sets each variable to a specific string
+                    String name = NameReg.getText().toString();
+                    String age = AgeReg.getText().toString();
+                    String sex = SexReg.getText().toString();
+                    String weight = WeightReg.getText().toString();
+                    String height = HeightReg.getText().toString();
+                    String email = EmailReg.getText().toString();
+                    String password = PasswordReg.getText().toString();
+
+                    //Creates new map to store each data post.
+                    Map newPost = new HashMap();
+                    newPost.put("Name", name);
+                    newPost.put("Age", age);
+                    newPost.put("Sex", sex);
+                    newPost.put("Weight", weight);
+                    newPost.put("Height", height);
+                    newPost.put("Email", email);
+                    newPost.put("Password", password);
+
+                    //sets the value of the current user to newpost
+                    curren_userdb.setValue(newPost);
+                }
+            }
+
+
+        });*/
 
 
         //This will remove the user on click

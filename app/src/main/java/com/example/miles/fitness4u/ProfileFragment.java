@@ -29,10 +29,6 @@ import java.util.Map;
 
 public class ProfileFragment extends Fragment {
 
-
-    private EditText NameReg, AgeReg, SexReg, WeightReg, HeightReg, EmailReg, PasswordReg;
-
-    private Button RegButton;
     private DatabaseReference database;
     private FirebaseAuth auth;
     private FirebaseUser user;
@@ -49,8 +45,7 @@ public class ProfileFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
 
-        //Button to register the user details
-        RegButton = getView().findViewById(R.id.regButton);
+
         //Creates instance to allow Read/Write for the data
         database = FirebaseDatabase.getInstance().getReference();
 
