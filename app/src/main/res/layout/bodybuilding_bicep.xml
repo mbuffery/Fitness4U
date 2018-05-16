@@ -19,38 +19,38 @@
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:text="Curls"
-                    android:id="@+id/Chin-Ups" />
+                    android:text="Dumbbell Curls"
+                    android:id="@+id/DumbbellCurls" />
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:id="@+id/Deadlifts"
+                    android:id="@+id/BarbellCurls"
                     android:text="Barbell Curls"
-                    android:layout_below="@+id/Chin-Ups"/>
+                    android:layout_below="@+id/DumbbellCurls"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:id="@+id/LatPullDown"
+                    android:id="@+id/HammerCurls"
                     android:text="Hammer Curls"
-                    android:layout_below="@+id/Deadlifts"/>
+                    android:layout_below="@+id/BarbellCurls"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:id="@+id/DumbbellShrugs"
+                    android:id="@+id/CableBicep"
                     android:text="Cable Bicep Curl"
-                    android:layout_below="@+id/LatPullDown"/>
+                    android:layout_below="@+id/HammerCurls"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:id="@+id/T-Bar"
+                    android:id="@+id/SeatedCurl"
                     android:text="Seated Dumbbell Curl"
-                    android:layout_below="@+id/DumbbellShrugs"/>
+                    android:layout_below="@+id/CableBicep"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:id="@+id/OneArmRow"
+                    android:id="@+id/ReverseCurl"
                     android:text="Reverse Curl"
-                    android:layout_below="@+id/T-Bar"/>
+                    android:layout_below="@+id/SeatedCurl"/>
 
             </RelativeLayout>
 

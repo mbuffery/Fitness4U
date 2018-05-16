@@ -19,56 +19,39 @@
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:text="Crunches"
-                    android:id="@+id/Abs" />
+                    android:text="Bench Press"
+                    android:id="@+id/BenchPress" />
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:id="@+id/Back"
-                    android:text="Sit-Ups"
-                    android:layout_below="@+id/Abs"/>
+                    android:id="@+id/InclinePress"
+                    android:text="Incline Press"
+                    android:layout_below="@+id/BenchPress"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:id="@+id/Bicep"
-                    android:text="Leg Raises"
-                    android:layout_below="@+id/Back"/>
+                    android:id="@+id/DumbbellPress"
+                    android:text="Dumbbell Press"
+                    android:layout_below="@+id/InclinePress"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:id="@+id/Calf"
-                    android:text="Dumbbell Side Bends"
-                    android:layout_below="@+id/Bicep"/>
+                    android:id="@+id/DeclinePress"
+                    android:text="Decline Press"
+                    android:layout_below="@+id/DumbbellPress"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:id="@+id/Chest"
-                    android:text="Incline Bench Situps"
-                    android:layout_below="@+id/Calf"/>
+                    android:id="@+id/SeatedFly"
+                    android:text="Seated Pec Fly"
+                    android:layout_below="@+id/DeclinePress"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:id="@+id/Forearm"
-                    android:text="Hanging Leg Raises"
-                    android:layout_below="@+id/Chest"/>
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:id="@+id/Legs"
-                    android:text="Rotating T Extension"
-                    android:layout_below="@+id/Forearm"/>
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:id="@+id/Shoulders"
-                    android:text="Seated Jack Knife"
-                    android:layout_below="@+id/Legs"/>
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:id="@+id/Triceps"
-                    android:text="Bodyweight Crunche"
-                    android:layout_below="@+id/Shoulders"/>
+                    android:id="@+id/CableFly"
+                    android:text="Cable Crossover Fly"
+                    android:layout_below="@+id/SeatedFly"/>
+
 
             </RelativeLayout>
 
