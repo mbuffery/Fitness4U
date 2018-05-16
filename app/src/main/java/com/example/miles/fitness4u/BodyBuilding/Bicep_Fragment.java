@@ -21,7 +21,7 @@ public class Bicep_Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        return inflater.inflate(R.layout.bodybuilding_abs, container, false);
+        return inflater.inflate(R.layout.bodybuilding_bicep, container, false);
     }
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {

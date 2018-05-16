@@ -21,7 +21,7 @@ public class Legs_Fragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        return inflater.inflate(R.layout.bodybuilding_abs, container, false);
+        return inflater.inflate(R.layout.bodybuilding_legs, container, false);
     }
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -29,12 +29,12 @@ public class Legs_Fragment extends Fragment {
 
         //Recieves the button from the layout
 
-        num1 = getView().findViewById(R.id.DumbbellCurls);
-        num2 = getView().findViewById(R.id.BarbellCurls);
-        num3 = getView().findViewById(R.id.HammerCurls);
-        num4 = getView().findViewById(R.id.CableBicep);
-        num5 = getView().findViewById(R.id.SeatedCurl);
-        num6 = getView().findViewById(R.id.ReverseCurl);
+        num1 = getView().findViewById(R.id.Squats);
+        num2 = getView().findViewById(R.id.DumbbellLunges);
+        num3 = getView().findViewById(R.id.AngledLegPress);
+        num4 = getView().findViewById(R.id.LegExtensions);
+        num5 = getView().findViewById(R.id.BarbellSquatOverhead);
+        num6 = getView().findViewById(R.id.DumbbellSquats);
 
 
 
@@ -43,7 +43,7 @@ public class Legs_Fragment extends Fragment {
             public void onClick(View view) {
 
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new DumbbellCurlsFragment()).commit();
+                        new SquatsFragment()).commit();
             }
 
         });
@@ -52,7 +52,7 @@ public class Legs_Fragment extends Fragment {
             public void onClick(View view) {
 
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new BarbellCurlsFragment()).commit();
+                        new DumbbellLungesFragment()).commit();
             }
 
         });
@@ -61,7 +61,7 @@ public class Legs_Fragment extends Fragment {
             public void onClick(View view) {
 
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new HammerCurlsFragment()).commit();
+                        new AngledLegPressFragment()).commit();
 
             }
 
@@ -71,7 +71,7 @@ public class Legs_Fragment extends Fragment {
             public void onClick(View view) {
 
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new CableBicepFragment()).commit();
+                        new LegExtensionsFragment()).commit();
 
             }
 
@@ -81,7 +81,7 @@ public class Legs_Fragment extends Fragment {
             public void onClick(View view) {
 
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new SeatedCurlFragment()).commit();
+                        new BarbellSquatOverheadFragment()).commit();
 
             }
 
@@ -91,7 +91,7 @@ public class Legs_Fragment extends Fragment {
             public void onClick(View view) {
 
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new ReverseCurlFragment()).commit();
+                        new DumbbellSquatsFragment()).commit();
 
             }
 
