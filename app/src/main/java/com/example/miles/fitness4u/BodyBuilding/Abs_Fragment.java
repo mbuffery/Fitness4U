@@ -16,8 +16,7 @@ import com.example.miles.fitness4u.R;
 
 public class Abs_Fragment extends Fragment {
 
-    private Button abs, shoulders,chest,back,legs,bicep,tricep;
-
+    private Button num1,num2,num3,num4,num5,num6;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -30,83 +29,74 @@ public class Abs_Fragment extends Fragment {
 
         //Recieves the button from the layout
 
-        abs = getView().findViewById(R.id.Abs);
-        shoulders = getView().findViewById(R.id.Shoulders);
-        chest = getView().findViewById(R.id.Chest);
-        back = getView().findViewById(R.id.Back);
-        legs = getView().findViewById(R.id.Legs);
-        bicep = getView().findViewById(R.id.Bicep);
-        tricep = getView().findViewById(R.id.Tricep);
+        num1 = getView().findViewById(R.id.Crunches);
+        num2 = getView().findViewById(R.id.SitUps);
+        num3 = getView().findViewById(R.id.LegRaises);
+        num4 = getView().findViewById(R.id.DumbbellSideBends);
+        num5 = getView().findViewById(R.id.InclineBenchSitups);
+        num6 = getView().findViewById(R.id.HangingLegRaises);
 
 
-        abs.setOnClickListener(new View.OnClickListener() {
+
+        num1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new Abs_Fragment()).commit();
+                        new CrunchesFragment()).commit();
             }
 
         });
-        shoulders.setOnClickListener(new View.OnClickListener() {
+        num2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new Shoulders_Fragment()).commit();
+                        new SitUpsFragment()).commit();
             }
 
         });
-        chest.setOnClickListener(new View.OnClickListener() {
+        num3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new Chest_Fragment()).commit();
+                        new LegRaisesFragment()).commit();
 
             }
 
         });
-        back.setOnClickListener(new View.OnClickListener() {
+        num4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new Back_Fragment()).commit();
+                        new DumbbellSideBend()).commit();
 
             }
 
         });
-        legs.setOnClickListener(new View.OnClickListener() {
+        num5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new Legs_Fragment()).commit();
+                        new InclineBenchSitupsFragment()).commit();
 
             }
 
         });
-        bicep.setOnClickListener(new View.OnClickListener() {
+        num6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new Bicep_Fragment()).commit();
+                        new HangingLegRaisesFragment()).commit();
 
             }
 
         });
-        tricep.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-                getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new Triceps_Fragment()).commit();
-
-            }
-
-        });
 
 
     }
