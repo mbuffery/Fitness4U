@@ -26,31 +26,31 @@
                     android:layout_height="100dp"
                     android:id="@+id/DumbbellLunges"
                     android:text="Dumbbell Lunges"
-                    android:layout_below="@+id/Abs"/>
+                    android:layout_below="@+id/Squats"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/AngledLegPress"
                     android:text="Leg Angled Leg Press"
-                    android:layout_below="@+id/Back"/>
+                    android:layout_below="@+id/DumbbellLunges"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/LegExtensions"
                     android:text="Leg Extensions"
-                    android:layout_below="@+id/Bicep"/>
+                    android:layout_below="@+id/AngledLegPress"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/BarbellSquatOverhead"
                     android:text="BarbellSquatOverhead"
-                    android:layout_below="@+id/Calf"/>
+                    android:layout_below="@+id/LegExtensions"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/DumbbellSquats"
                     android:text="Dumbbell Squats"
-                    android:layout_below="@+id/Chest"/>
+                    android:layout_below="@+id/BarbellSquatOverhead"/>
 
 
             </RelativeLayout>
