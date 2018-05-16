@@ -6,12 +6,14 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 /**
  * Created by miles on 4/16/2018.
  */
 
 public class BodybuildingFragment extends Fragment {
+
 
     @Nullable
     @Override
