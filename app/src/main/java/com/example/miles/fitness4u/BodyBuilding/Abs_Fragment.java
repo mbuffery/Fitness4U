@@ -8,6 +8,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.miles.fitness4u.Bodybuilding_abs.CrunchesFragment;
+import com.example.miles.fitness4u.Bodybuilding_abs.DumbbellSideBendsFragment;
+import com.example.miles.fitness4u.Bodybuilding_abs.HangingLegRaisesFragment;
+import com.example.miles.fitness4u.Bodybuilding_abs.InclineBenchSitupsFragment;
+import com.example.miles.fitness4u.Bodybuilding_abs.LegRaisesFragment;
+import com.example.miles.fitness4u.Bodybuilding_abs.SitUpsFragment;
 import com.example.miles.fitness4u.R;
 
 /**
@@ -71,7 +77,7 @@ public class Abs_Fragment extends Fragment {
             public void onClick(View view) {
 
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new DumbbellSideBend()).commit();
+                        new DumbbellSideBendsFragment()).commit();
 
             }
 
