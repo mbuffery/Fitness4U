@@ -20,13 +20,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:text="Chin-Ups"
-                    android:id="@+id/Chin-Ups" />
+                    android:id="@+id/ChinUps" />
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/Deadlifts"
                     android:text="Deadlifts"
-                    android:layout_below="@+id/Chin-Ups"/>
+                    android:layout_below="@+id/ChinUps"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
@@ -42,7 +42,7 @@
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:id="@+id/T-Bar"
+                    android:id="@+id/TBar"
                     android:text="T-Bar Bent Over Row"
                     android:layout_below="@+id/DumbbellShrugs"/>
                 <Button
@@ -50,7 +50,7 @@
                     android:layout_height="100dp"
                     android:id="@+id/OneArmRow"
                     android:text="One-Arm Dumbbell Rows"
-                    android:layout_below="@+id/T-Bar"/>
+                    android:layout_below="@+id/TBar"/>
 
 
             </RelativeLayout>

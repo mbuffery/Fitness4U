@@ -15,8 +15,6 @@ import com.example.miles.fitness4u.BodyBuilding.Chest_Fragment;
 import com.example.miles.fitness4u.BodyBuilding.Legs_Fragment;
 import com.example.miles.fitness4u.BodyBuilding.Shoulders_Fragment;
 import com.example.miles.fitness4u.BodyBuilding.Triceps_Fragment;
-import com.example.miles.fitness4u.ProfileFragment;
-import com.example.miles.fitness4u.R;
 
 /**
  * Created by miles on 4/16/2018.
