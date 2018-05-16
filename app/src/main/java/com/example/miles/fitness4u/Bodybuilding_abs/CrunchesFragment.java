@@ -6,7 +6,10 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import com.example.miles.fitness4u.R;
 
@@ -16,7 +19,7 @@ import com.example.miles.fitness4u.R;
 
 public class CrunchesFragment extends Fragment {
 
-    private Button num1,num2,num3,num4,num5,num6;
+    ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, R.layout.fragment_bodybody_selection, items);
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -28,6 +31,7 @@ public class CrunchesFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
 
+        ListView listView = ()
 
 
 
