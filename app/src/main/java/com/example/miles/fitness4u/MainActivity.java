@@ -158,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, Dashboard_Main.class));
+                startActivity(new Intent(MainActivity.this, NavDrawerActivity.class));
             }
         });
 
