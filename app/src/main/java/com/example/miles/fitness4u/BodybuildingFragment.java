@@ -1,4 +1,4 @@
-package com.example.miles.fitness4u.BodyBuilding;
+package com.example.miles.fitness4u;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,6 +8,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.miles.fitness4u.BodyBuilding.Abs_Fragment;
+import com.example.miles.fitness4u.BodyBuilding.Back_Fragment;
+import com.example.miles.fitness4u.BodyBuilding.Bicep_Fragment;
+import com.example.miles.fitness4u.BodyBuilding.Chest_Fragment;
+import com.example.miles.fitness4u.BodyBuilding.Legs_Fragment;
+import com.example.miles.fitness4u.BodyBuilding.Shoulders_Fragment;
+import com.example.miles.fitness4u.BodyBuilding.Triceps_Fragment;
 import com.example.miles.fitness4u.ProfileFragment;
 import com.example.miles.fitness4u.R;
 
@@ -55,12 +62,17 @@ public class BodybuildingFragment extends Fragment{
             @Override
             public void onClick(View view) {
 
+                getFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new Shoulders_Fragment()).commit();
             }
 
         });
         chest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                getFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new Chest_Fragment()).commit();
 
             }
 
@@ -69,12 +81,18 @@ public class BodybuildingFragment extends Fragment{
             @Override
             public void onClick(View view) {
 
+                getFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new Back_Fragment()).commit();
+
             }
 
         });
         legs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                getFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new Legs_Fragment()).commit();
 
             }
 
@@ -83,12 +101,18 @@ public class BodybuildingFragment extends Fragment{
             @Override
             public void onClick(View view) {
 
+                getFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new Bicep_Fragment()).commit();
+
             }
 
         });
         tricep.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                getFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new Triceps_Fragment()).commit();
 
             }
 

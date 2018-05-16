@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/grad">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:text="Chin-Ups"
+                    android:id="@+id/Chin-Ups" />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:id="@+id/Deadlifts"
+                    android:text="Deadlifts"
+                    android:layout_below="@+id/Chin-Ups"/>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:id="@+id/LatPullDown"
+                    android:text="Lat Pull-Downs"
+                    android:layout_below="@+id/Deadlifts"/>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:id="@+id/DumbbellShrugs"
+                    android:text="Dumbbell Shrugs"
+                    android:layout_below="@+id/LatPullDown"/>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:id="@+id/T-Bar"
+                    android:text="T-Bar Bent Over Row"
+                    android:layout_below="@+id/DumbbellShrugs"/>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:id="@+id/OneArmRow"
+                    android:text="One-Arm Dumbbell Rows"
+                    android:layout_below="@+id/T-Bar"/>
+
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
