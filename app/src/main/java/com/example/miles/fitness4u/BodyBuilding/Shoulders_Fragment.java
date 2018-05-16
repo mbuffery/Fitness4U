@@ -29,12 +29,12 @@ public class Shoulders_Fragment extends Fragment {
 
         //Recieves the button from the layout
 
-        num1 = getView().findViewById(R.id.DumbbellCurls);
-        num2 = getView().findViewById(R.id.BarbellCurls);
-        num3 = getView().findViewById(R.id.HammerCurls);
-        num4 = getView().findViewById(R.id.CableBicep);
-        num5 = getView().findViewById(R.id.SeatedCurl);
-        num6 = getView().findViewById(R.id.ReverseCurl);
+        num1 = getView().findViewById(R.id.BackPress);
+        num2 = getView().findViewById(R.id.SeatedDumbbellPress);
+        num3 = getView().findViewById(R.id.LowLateralRaises);
+        num4 = getView().findViewById(R.id.UprightRow);
+        num5 = getView().findViewById(R.id.BarbellLateralRaises);
+        num6 = getView().findViewById(R.id.ArnoldPress);
 
 
 
@@ -43,7 +43,7 @@ public class Shoulders_Fragment extends Fragment {
             public void onClick(View view) {
 
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new DumbbellCurlsFragment()).commit();
+                        new BackPressFragment()).commit();
             }
 
         });
@@ -52,7 +52,7 @@ public class Shoulders_Fragment extends Fragment {
             public void onClick(View view) {
 
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new BarbellCurlsFragment()).commit();
+                        new SeatedDumbbellPressFragment()).commit();
             }
 
         });
@@ -61,7 +61,7 @@ public class Shoulders_Fragment extends Fragment {
             public void onClick(View view) {
 
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new HammerCurlsFragment()).commit();
+                        new LowLateralRaisesFragment()).commit();
 
             }
 
@@ -71,7 +71,7 @@ public class Shoulders_Fragment extends Fragment {
             public void onClick(View view) {
 
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new CableBicepFragment()).commit();
+                        new UprightRowFragment()).commit();
 
             }
 
@@ -81,7 +81,7 @@ public class Shoulders_Fragment extends Fragment {
             public void onClick(View view) {
 
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new SeatedCurlFragment()).commit();
+                        new BarbellLateralRaisesFragment()).commit();
 
             }
 
@@ -91,7 +91,7 @@ public class Shoulders_Fragment extends Fragment {
             public void onClick(View view) {
 
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new ReverseCurlFragment()).commit();
+                        new ArnoldPressFragment()).commit();
 
             }
 
