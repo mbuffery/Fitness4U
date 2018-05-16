@@ -20,7 +20,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:text="Chin-Ups"
-                    android:id="@+id/ChinUps" />
+                    android:id="@+id/ChinUps"
+                    />
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"

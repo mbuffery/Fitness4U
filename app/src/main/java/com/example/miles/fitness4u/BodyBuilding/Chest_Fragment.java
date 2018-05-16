@@ -8,6 +8,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.miles.fitness4u.Bodybuilding_chest.BenchPressFragment;
+import com.example.miles.fitness4u.Bodybuilding_chest.CableFlyFragment;
+import com.example.miles.fitness4u.Bodybuilding_chest.DeclinePressFragment;
+import com.example.miles.fitness4u.Bodybuilding_chest.DumbbellPressFragment;
+import com.example.miles.fitness4u.Bodybuilding_chest.InclinePressFragment;
+import com.example.miles.fitness4u.Bodybuilding_chest.SeatedFlyFragment;
 import com.example.miles.fitness4u.R;
 
 /**

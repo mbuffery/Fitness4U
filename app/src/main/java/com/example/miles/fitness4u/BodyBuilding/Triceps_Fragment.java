@@ -15,7 +15,7 @@ import com.example.miles.fitness4u.R;
  */
 
 public class Triceps_Fragment extends Fragment {
-
+/*
     private Button num1,num2,num3,num4,num5,num6;
     @Nullable
     @Override
@@ -99,5 +99,5 @@ public class Triceps_Fragment extends Fragment {
 
 
 
-    }
+    }*/
 }

@@ -8,6 +8,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.miles.fitness4u.Bodybuilding_bicep.BarbellCurlsFragment;
+import com.example.miles.fitness4u.Bodybuilding_bicep.CableBicepFragment;
+import com.example.miles.fitness4u.Bodybuilding_bicep.DumbbellCurlsFragment;
+import com.example.miles.fitness4u.Bodybuilding_bicep.HammerCurlsFragment;
+import com.example.miles.fitness4u.Bodybuilding_bicep.ReverseCurlFragment;
+import com.example.miles.fitness4u.Bodybuilding_bicep.SeatedCurlFragment;
 import com.example.miles.fitness4u.R;
 
 /**
