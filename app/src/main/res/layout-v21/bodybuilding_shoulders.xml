@@ -19,56 +19,39 @@
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:text="Crunches"
-                    android:id="@+id/Abs" />
+                    android:text="Back Press"
+                    android:id="@+id/BackPress" />
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:id="@+id/Back"
-                    android:text="Sit-Ups"
-                    android:layout_below="@+id/Abs"/>
+                    android:id="@+id/SeatedDumbbellPress"
+                    android:text="Seated Dumbbell Press"
+                    android:layout_below="@+id/BackPress"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:id="@+id/Bicep"
-                    android:text="Leg Raises"
-                    android:layout_below="@+id/Back"/>
+                    android:id="@+id/LowLateralRaises"
+                    android:text="=Low Lateral Raises"
+                    android:layout_below="@+id/SeatedDumbbellPress"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:id="@+id/Calf"
-                    android:text="Dumbbell Side Bends"
-                    android:layout_below="@+id/Bicep"/>
+                    android:id="@+id/UprightRow"
+                    android:text="Upright Rows"
+                    android:layout_below="@+id/LowLateralRaises"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:id="@+id/Chest"
-                    android:text="Incline Bench Situps"
-                    android:layout_below="@+id/Calf"/>
+                    android:id="@+id/BarbellLateralRaises"
+                    android:text="Barbell Lateral Raises"
+                    android:layout_below="@+id/UprightRow"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:id="@+id/Forearm"
-                    android:text="Hanging Leg Raises"
-                    android:layout_below="@+id/Chest"/>
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:id="@+id/Legs"
-                    android:text="Rotating T Extension"
-                    android:layout_below="@+id/Forearm"/>
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:id="@+id/Shoulders"
-                    android:text="Seated Jack Knife"
-                    android:layout_below="@+id/Legs"/>
-                <Button
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:id="@+id/Triceps"
-                    android:text="Bodyweight Crunche"
-                    android:layout_below="@+id/Shoulders"/>
+                    android:id="@+id/ArnoldPress"
+                    android:text="Arnold Press"
+                    android:layout_below="@+id/BarbellLateralRaises"/>
+
 
             </RelativeLayout>
 
