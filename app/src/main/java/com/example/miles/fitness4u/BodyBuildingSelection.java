@@ -13,11 +13,11 @@ public class BodyBuildingSelection {
     public int imageId;
 
 
-    public BodyBuildingSelection(String title, String mainText, String subHeader, String mainText2, int imageId)
+    public BodyBuildingSelection(String title,String subHeader, String mainText,String mainText2, int imageId)
     {
         this.title = title;
-        this.mainText = mainText;
         this.subHeader = subHeader;
+        this.mainText = mainText;
         this.mainText2 = mainText2;
         this.imageId = imageId;
     }

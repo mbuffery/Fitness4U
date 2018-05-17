@@ -19,6 +19,7 @@ import java.util.ArrayList;
 public class DataAdapter extends ArrayAdapter<BodyBuildingSelection> {
     Context context;
     int resourceId;
+
     //Set array list to null
     ArrayList<BodyBuildingSelection> selection = null;
 
@@ -44,13 +45,18 @@ public class DataAdapter extends ArrayAdapter<BodyBuildingSelection> {
 
         //Gives each Textview a variable
         TextView TitleTV = (TextView) convertView.findViewById(R.id.Title);
-        TextView mainTextTV = (TextView) convertView.findViewById(R.id.mainInformation);
+        TextView mainTextTV = (TextView) convertView.findViewById(R.id.information2);
         ImageView imageView = (ImageView) convertView.findViewById(R.id.image1);
+        TextView mainTextTV2 = (TextView) convertView.findViewById(R.id.information3);
+        TextView subHeadTV = (TextView) convertView.findViewById(R.id.subHeader);
+
 
         //Sets text and image to the selected screen
         TitleTV.setText(selected.title);
         mainTextTV.setText(selected.mainText);
         imageView.setImageResource(selected.imageId);
+        mainTextTV2.setText(selected.mainText2);
+        subHeadTV.setText(selected.subHeader);
 
         //Return
         return convertView;

@@ -41,19 +41,43 @@
             android:layout_alignParentTop="true"
             android:ems="10"
             android:inputType="textPersonName"
-            android:lines="4"
             android:text="Sub Header Text"
             android:textAlignment="textStart"
             android:textColor="@color/black" />
 
-        <TextView
-            android:id="@+id/information2"
-            android:layout_width="400dp"
-            android:layout_height="100dp"
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/subHeader"
-            android:layout_marginTop="12dp"
+            android:layout_below="@+id/subHeader">
+
+            <TextView
+                android:id="@+id/information2"
+                android:layout_height="100dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="12dp"
+                android:ellipsize="end"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:lines="4"
+                android:text="Information Text"
+                android:textAlignment="textStart"
+                android:textColor="@color/black" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/information3"
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
             android:ems="10"
             android:inputType="textPersonName"
             android:lines="4"
@@ -61,19 +85,8 @@
             android:textAlignment="textStart"
             android:textColor="@color/black" />
 
-        <TextView
-            android:id="@+id/information3"
-            android:layout_width="400dp"
-            android:layout_height="100dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/information2"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:lines="4"
-            android:text="Information Text"
-            android:textAlignment="textStart"
-            android:textColor="@color/black" />
+
+    </RelativeLayout>
 
     </RelativeLayout>
 
