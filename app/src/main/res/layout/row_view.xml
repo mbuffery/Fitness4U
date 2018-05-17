@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/Title"
@@ -13,8 +14,8 @@
         android:text="Title"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="30sp"/>
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/image1"
@@ -25,12 +26,13 @@
         android:layout_marginTop="7dp" />
 
     <RelativeLayout
-        android:layout_width="350dp"
-        android:layout_height="250dp"
-        android:layout_alignLeft="@+id/image1"
-        android:layout_alignStart="@+id/image1"
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
         android:layout_below="@+id/image1"
-        android:layout_marginTop="22dp">
+        android:layout_marginTop="30dp">
 
         <TextView
             android:id="@+id/subHeader"
@@ -40,13 +42,13 @@
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:ems="10"
-            android:inputType="textPersonName"
             android:text="Sub Header Text"
             android:textAlignment="textStart"
             android:textColor="@color/black" />
 
+
         <RelativeLayout
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
@@ -54,7 +56,66 @@
 
             <TextView
                 android:id="@+id/information2"
-                android:layout_height="100dp"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:ellipsize="end"
+                android:text="Information Text"
+                android:ems="10"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:layout_marginTop="12dp"/>
+
+            <TextView
+                android:id="@+id/information3"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:ellipsize="end"
+                android:ems="10"
+                android:lines="4"
+                android:text="Information Text"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:layout_below="@+id/information2"
+                android:layout_marginTop="12dp"/>
+
+            <TextView
+                android:id="@+id/information4"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:ellipsize="end"
+                android:ems="10"
+                android:lines="4"
+                android:text="Information Text"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:layout_below="@+id/information3"
+                android:layout_marginTop="12dp"/>
+
+            <TextView
+                android:id="@+id/information5"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="12dp"
+                android:ellipsize="end"
+                android:ems="10"
+                android:lines="4"
+                android:text="Information Text"
+                android:textColor="@color/black"
+                android:layout_below="@+id/information4"/>
+
+            <TextView
+                android:id="@+id/information6"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_marginTop="12dp"
@@ -64,32 +125,13 @@
                 android:lines="4"
                 android:text="Information Text"
                 android:textAlignment="textStart"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                android:layout_below="@+id/information5"/>
+
+
         </RelativeLayout>
 
-        <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
-
-        <TextView
-            android:id="@+id/information3"
-            android:layout_width="fill_parent"
-            android:layout_height="100dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:lines="4"
-            android:text="Information Text"
-            android:textAlignment="textStart"
-            android:textColor="@color/black" />
-
-
     </RelativeLayout>
-
-    </RelativeLayout>
-
 
 
 </RelativeLayout>

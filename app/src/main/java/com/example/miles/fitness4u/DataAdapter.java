@@ -25,7 +25,6 @@ public class DataAdapter extends ArrayAdapter<BodyBuildingSelection> {
 
     public DataAdapter(@NonNull Context context, int resourceId, ArrayList<BodyBuildingSelection> selection) {
         super(context, resourceId, selection);
-        //A model with all the layout components
         this.context = context;
         this.resourceId = resourceId;
         this.selection = selection;
@@ -46,17 +45,23 @@ public class DataAdapter extends ArrayAdapter<BodyBuildingSelection> {
         //Gives each Textview a variable
         TextView TitleTV = (TextView) convertView.findViewById(R.id.Title);
         TextView mainTextTV = (TextView) convertView.findViewById(R.id.information2);
-        ImageView imageView = (ImageView) convertView.findViewById(R.id.image1);
         TextView mainTextTV2 = (TextView) convertView.findViewById(R.id.information3);
+        TextView mainTextTV3 = (TextView) convertView.findViewById(R.id.information4);
+        TextView mainTextTV4 = (TextView) convertView.findViewById(R.id.information5);
+        TextView mainTextTV5 = (TextView) convertView.findViewById(R.id.information6);
         TextView subHeadTV = (TextView) convertView.findViewById(R.id.subHeader);
+        ImageView imageView = (ImageView) convertView.findViewById(R.id.image1);
 
 
         //Sets text and image to the selected screen
         TitleTV.setText(selected.title);
-        mainTextTV.setText(selected.mainText);
-        imageView.setImageResource(selected.imageId);
-        mainTextTV2.setText(selected.mainText2);
         subHeadTV.setText(selected.subHeader);
+        mainTextTV.setText(selected.mainText);
+        mainTextTV2.setText(selected.mainText2);
+        mainTextTV3.setText(selected.mainText3);
+        mainTextTV4.setText(selected.mainText4);
+        mainTextTV5.setText(selected.mainText5);
+        imageView.setImageResource(selected.imageId);
 
         //Return
         return convertView;
