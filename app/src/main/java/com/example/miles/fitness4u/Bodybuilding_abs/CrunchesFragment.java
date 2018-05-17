@@ -30,16 +30,18 @@ public class CrunchesFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+        //Sets the listview of the xml to listview
         ListView listView = (ListView)getView().findViewById(R.id.listView);
 
+        //New array for BodyBuildingSelection
         ArrayList<BodyBuildingSelection> selected = new ArrayList<BodyBuildingSelection>();
-
-        BodyBuildingSelection crunches = new BodyBuildingSelection("crunches", "This is a test to see if everything is working." +
-                "Add this line as well or maybe not, we will find out" +
-                "and see if this works as well", R.drawable.crunches);
+        //Crunches will display 2 textview and one image
+        BodyBuildingSelection crunches = new BodyBuildingSelection("Crunches", "This is a test to see if everything is working.", R.drawable.crunches);
+        //adds crunches to the array
         selected.add(crunches);
-
+        //Creates new adapter and takes all the selected data.
         DataAdapter adapter = new DataAdapter(getContext(), R.layout.row_view, selected);
+        //Add the selected data to the adapter;
         listView.setAdapter(adapter);
 
 

@@ -19,10 +19,12 @@ import java.util.ArrayList;
 public class DataAdapter extends ArrayAdapter<BodyBuildingSelection> {
     Context context;
     int resourceId;
+    //Set array list to null
     ArrayList<BodyBuildingSelection> selection = null;
 
     public DataAdapter(@NonNull Context context, int resourceId, ArrayList<BodyBuildingSelection> selection) {
         super(context, resourceId, selection);
+        //A model with all the layout components
         this.context = context;
         this.resourceId = resourceId;
         this.selection = selection;
@@ -32,19 +34,25 @@ public class DataAdapter extends ArrayAdapter<BodyBuildingSelection> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         BodyBuildingSelection selected = selection.get(position);
+
+        //If there is nothing there, display the row view
         if (convertView == null)
         {
+            //Maybe you can create an if statement that is the convertView equals what it should be then display the data
             convertView = LayoutInflater.from(context).inflate(R.layout.row_view, parent, false);
         }
 
+        //Gives each Textview a variable
         TextView TitleTV = (TextView) convertView.findViewById(R.id.Title);
         TextView mainTextTV = (TextView) convertView.findViewById(R.id.mainInformation);
         ImageView imageView = (ImageView) convertView.findViewById(R.id.image1);
 
+        //Sets text and image to the selected screen
         TitleTV.setText(selected.title);
         mainTextTV.setText(selected.mainText);
         imageView.setImageResource(selected.imageId);
 
+        //Return
         return convertView;
     }
 }
