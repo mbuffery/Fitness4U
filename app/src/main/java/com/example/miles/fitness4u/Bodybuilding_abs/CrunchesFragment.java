@@ -36,7 +36,7 @@ public class CrunchesFragment extends Fragment {
         //New array for BodyBuildingSelection
         ArrayList<BodyBuildingSelection> selected = new ArrayList<BodyBuildingSelection>();
         //Crunches will display 2 textview and one image
-        BodyBuildingSelection crunches = new BodyBuildingSelection("Crunches", "This is a test to see if everything is working.", R.drawable.crunches, );
+        BodyBuildingSelection crunches = new BodyBuildingSelection("Crunches", "This is a test to see if everything is working.", R.drawable.crunches);
         //adds crunches to the array
         selected.add(crunches);
         //Creates new adapter and takes all the selected data.
