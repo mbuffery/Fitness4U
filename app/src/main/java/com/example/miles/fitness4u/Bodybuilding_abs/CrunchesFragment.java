@@ -1,24 +1,16 @@
 package com.example.miles.fitness4u.Bodybuilding_abs;
 
-import android.content.Context;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import com.example.miles.fitness4u.BodyBuildingSelection;
+import com.example.miles.fitness4u.DataAdapter;
 import com.example.miles.fitness4u.R;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -41,6 +33,14 @@ public class CrunchesFragment extends Fragment {
         ListView listView = (ListView)getView().findViewById(R.id.listView);
 
         ArrayList<BodyBuildingSelection> selected = new ArrayList<BodyBuildingSelection>();
+
+        BodyBuildingSelection crunches = new BodyBuildingSelection("crunches", "This is a test to see if everything is working." +
+                "Add this line as well or maybe not, we will find out" +
+                "and see if this works as well", R.drawable.crunches);
+        selected.add(crunches);
+
+        DataAdapter adapter = new DataAdapter(getContext(), R.layout.row_view, selected);
+        listView.setAdapter(adapter);
 
 
 
