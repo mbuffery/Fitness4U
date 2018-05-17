@@ -10,6 +10,7 @@ public class BodyBuildingSelection {
     public String mainText;
     public int imageId;
 
+
     public BodyBuildingSelection(String title, String mainText, int imageId)
     {
         this.title = title;

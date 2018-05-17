@@ -26,7 +26,9 @@
                     android:id="@+id/Abs"
                     android:background="@drawable/grad"
                     android:layout_marginBottom="5dp"
-                    android:layout_marginTop="5dp"/>
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
@@ -34,7 +36,9 @@
                     android:text="Back"
                     android:background="@drawable/grad"
                     android:layout_marginBottom="5dp"
-                    android:layout_marginTop="5dp"/>
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
@@ -43,6 +47,8 @@
                     android:background="@drawable/grad"
                     android:layout_marginBottom="5dp"
                     android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"
                     />
                 <Button
                     android:layout_width="match_parent"
@@ -52,6 +58,8 @@
                     android:background="@drawable/grad"
                     android:layout_marginBottom="5dp"
                     android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"
                     />
                 <Button
                     android:layout_width="match_parent"
@@ -61,6 +69,8 @@
                     android:background="@drawable/grad"
                     android:layout_marginBottom="5dp"
                     android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"
                     />
                 <Button
                     android:layout_width="match_parent"
@@ -70,6 +80,8 @@
                     android:background="@drawable/grad"
                     android:layout_marginBottom="5dp"
                     android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"
                     />
                 <Button
                     android:id="@+id/Shoulders"
@@ -78,7 +90,9 @@
                     android:text="Shoulders"
                     android:background="@drawable/grad"
                     android:layout_marginBottom="5dp"
-                    android:layout_marginTop="5dp"/>
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
 
                 </LinearLayout>
 

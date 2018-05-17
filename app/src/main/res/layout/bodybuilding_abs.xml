@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/grad">
+    android:background="@color/white">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -20,37 +20,67 @@
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:text="Crunches"
-                    android:id="@+id/Crunches" />
+                    android:id="@+id/Crunches"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/SitUps"
                     android:text="Sit-Ups"
-                    android:layout_below="@+id/Crunches"/>
+                    android:layout_below="@+id/Crunches"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/LegRaises"
                     android:text="Leg Raises"
-                    android:layout_below="@+id/SitUps"/>
+                    android:layout_below="@+id/SitUps"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/DumbbellSideBends"
                     android:text="Dumbbell Side Bends"
-                    android:layout_below="@+id/LegRaises"/>
+                    android:layout_below="@+id/LegRaises"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/InclineBenchSitups"
                     android:text="Incline Bench Situps"
-                    android:layout_below="@+id/DumbbellSideBends"/>
+                    android:layout_below="@+id/DumbbellSideBends"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/HangingLegRaises"
                     android:text="Hanging Leg Raises"
-                    android:layout_below="@+id/InclineBenchSitups"/>
+                    android:layout_below="@+id/InclineBenchSitups"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
 
 
             </RelativeLayout>
