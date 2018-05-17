@@ -19,7 +19,7 @@ import com.example.miles.fitness4u.R;
 
 public class CrunchesFragment extends Fragment {
 
-    ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, R.layout.fragment_bodybody_selection, items);
+    ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -31,7 +31,6 @@ public class CrunchesFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
 
-        ListView listView = ()
 
 
 
