@@ -52,12 +52,13 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/subHeader">
+            android:layout_below="@+id/subHeader"
+            android:id="@+id/RTV">
 
             <TextView
                 android:id="@+id/information2"
                 android:layout_width="match_parent"
-                android:layout_height="25dp"
+                android:layout_height="80dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
@@ -68,70 +69,92 @@
                 android:textColor="@color/black"
                 android:layout_marginTop="12dp"/>
 
-            <TextView
-                android:id="@+id/information3"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:ellipsize="end"
-                android:ems="10"
-                android:lines="4"
-                android:text="Information Text"
-                android:textAlignment="textStart"
-                android:textColor="@color/black"
-                android:layout_below="@+id/information2"
-                android:layout_marginTop="12dp"/>
-
-            <TextView
-                android:id="@+id/information4"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:ellipsize="end"
-                android:ems="10"
-                android:lines="4"
-                android:text="Information Text"
-                android:textAlignment="textStart"
-                android:textColor="@color/black"
-                android:layout_below="@+id/information3"
-                android:layout_marginTop="12dp"/>
-
-            <TextView
-                android:id="@+id/information5"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="12dp"
-                android:ellipsize="end"
-                android:ems="10"
-                android:lines="4"
-                android:text="Information Text"
-                android:textColor="@color/black"
-                android:layout_below="@+id/information4"/>
-
-            <TextView
-                android:id="@+id/information6"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="12dp"
-                android:ellipsize="end"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:lines="4"
-                android:text="Information Text"
-                android:textAlignment="textStart"
-                android:textColor="@color/black"
-                android:layout_below="@+id/information5"/>
-
 
         </RelativeLayout>
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/RTV"></RelativeLayout>
+
     </RelativeLayout>
+
+    <TextView
+        android:id="@+id/information3"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/relativeLayout"
+        android:layout_marginTop="13dp"
+        android:ellipsize="end"
+        android:ems="10"
+        android:lines="4"
+        android:text="Information Text"
+        android:textAlignment="textStart"
+        android:textColor="@color/black" />
+
+
+    <!--<TextView
+        android:id="@+id/information5"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_above="@+id/information6"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="9dp"
+        android:ellipsize="end"
+        android:ems="10"
+        android:lines="4"
+        android:text="Information Text"
+        android:textColor="@color/black" />
+
+        <TextView
+        android:id="@+id/information6"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="12dp"
+        android:ellipsize="end"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:lines="4"
+        android:text="Information Text"
+        android:textAlignment="textStart"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/information4"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_alignBottom="@+id/information5"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="26dp"
+        android:ellipsize="end"
+        android:ems="10"
+        android:lines="4"
+        android:text="Information Text"
+        android:textAlignment="textStart"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/information3"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/relativeLayout"
+        android:ellipsize="end"
+        android:ems="10"
+        android:lines="4"
+        android:text="Information Text"
+        android:textAlignment="textStart"
+        android:textColor="@color/black" /> -->
 
 
 </RelativeLayout>
