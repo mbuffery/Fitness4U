@@ -118,10 +118,6 @@ public class MainActivity extends Fragment {
                                 newPass.setError("Password too short, enter minimum 6 characters");
                             } else
                                 {
-                                    //String email = user.getEmail();
-                                    //String oldPassword = newPass.getText().toString().trim();
-
-                                    //AuthCredential credential = EmailAuthProvider.getCredential(email, oldPassword);
 
                                 user.updatePassword(newPass.getText().toString().trim()).addOnCompleteListener(new OnCompleteListener<Void>()
                                         {
@@ -173,7 +169,7 @@ public class MainActivity extends Fragment {
 
                     //Creates new map to store each data post.
                     Map<String, String> newPost = new HashMap<>();
-                    newPost.put("Name", name);
+                    newPost.put("Name", name + "");
                     newPost.put("Age", age);
                     newPost.put("Sex", sex);
                     newPost.put("Weight", weight);
@@ -259,106 +255,3 @@ public class MainActivity extends Fragment {
     }
 }
 
-
-
-
-
-
-
-
-    /*
-//If the user wants to change their password, on click will set the different variable to either visible or hidden
-        btnChangePassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //oldEmail.setVisibility(View.GONE);
-
-                password.setVisibility(View.GONE);
-                newPassword.setVisibility(View.VISIBLE);
-
-                changePassword.setVisibility(View.VISIBLE);
-
-                remove.setVisibility(View.GONE);
-            }
-        });
-
-
-
-
-
-
-
-
-    }
-/*
-    @SuppressLint("SetTextI18n")
-    private void setDataToView(FirebaseUser user) {
-
-        email.setText("User Email: " + user.getEmail());
-
-    }*/
-
-    /*
-    */
-
-/*
-    //sign out method
-    public void signOut() {
-        auth.signOut();
-        *
-
-/*
-// this listener will be called when there is change in firebase user session
-        FirebaseAuth.AuthStateListener authListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user == null) {
-                    // user auth state is changed - user is null
-                    // launch login activity
-                    startActivity(new Intent(getActivity(), UserLoginActivity.class));
-                    getActivity().finish();
-                }
-            }
-        };*/
-
-
-/*
-    @Override
-    public void onResume() {
-        super.onResume();
-        progressBar.setVisibility(View.GONE);
-    }*/
-/*
-    */
-
-/*
-}
-*/
-
-
-//This will remove the user on click
-        /*btnRemoveUser.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                progressBar.setVisibility(View.VISIBLE);
-                if (user != null) {
-                    user.delete()
-                            .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                @Override
-                                public void onComplete(@NonNull Task<Void> task) {
-                                    if (task.isSuccessful()) {
-                                        Toast.makeText(MainActivity.this, "Your profile is deleted:( Create a account now!", Toast.LENGTH_SHORT).show();
-                                        startActivity(new Intent(MainActivity.this, UserSignupActivity.class));
-                                        finish();
-                                        progressBar.setVisibility(View.GONE);
-                                    } else {
-                                        Toast.makeText(MainActivity.this, "Failed to delete your account!", Toast.LENGTH_SHORT).show();
-                                        progressBar.setVisibility(View.GONE);
-                                    }
-                                }
-                            });
-                }
-            }
-        });
-        */
