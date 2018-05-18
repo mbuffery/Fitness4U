@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.miles.fitness4u.ProfileFragment">">
+    tools:context="com.example.miles.fitness4u.ProfileFragment">
 
     <RelativeLayout
         android:id="@+id/relay1"
@@ -45,7 +45,7 @@
             android:textSize="32sp" />
 
         <TextView
-            android:id="@+id/userAddress"
+            android:id="@+id/userEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/userName"
@@ -187,10 +187,7 @@
         android:layout_height="match_parent"
         android:layout_below="@+id/linlay1">
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scrollbars="vertical">
+
 
 
         <LinearLayout
@@ -292,41 +289,9 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Sex"
-                    android:textColor="@color/headings"
-                    android:textSize="13sp" />
-
-                <TextView
-                    android:id="@+id/profSex"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-light"
-                    android:text="@string/twitterUsername"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    tools:text="Male" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="15dp"
-                    android:background="@color/grey" />
-
-
-            </LinearLayout>
 
         </LinearLayout>
 
-        </ScrollView>
 
     </RelativeLayout>
 

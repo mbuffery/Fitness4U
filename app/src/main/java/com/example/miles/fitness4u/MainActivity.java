@@ -169,7 +169,7 @@ public class MainActivity extends Fragment {
 
                     //Creates new map to store each data post.
                     Map<String, String> newPost = new HashMap<>();
-                    newPost.put("Name", name + "");
+                    newPost.put("Name", name);
                     newPost.put("Age", age);
                     newPost.put("Sex", sex);
                     newPost.put("Weight", weight);
@@ -178,12 +178,13 @@ public class MainActivity extends Fragment {
 
                     //sets the value of the current user to newpost
                     curren_userdb.setValue(newPost);
+
+                    Toast.makeText(getActivity(), "Registration Completed", Toast.LENGTH_SHORT).show();
                 }
             }
 
 
         });
-
 
         //On click, Sign the user out
         signOut.setOnClickListener(new View.OnClickListener() {

@@ -1,5 +1,6 @@
 package com.example.miles.fitness4u;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
@@ -12,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.example.miles.fitness4u.AccountActivity.UserLoginActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -19,6 +21,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import org.w3c.dom.Text;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -57,12 +61,7 @@ public class ProfileFragment extends Fragment {
         final TextView heightView = getView().findViewById(R.id.profHeight);
         final TextView ageView = getView().findViewById(R.id.profAge);
         final TextView weightView = getView().findViewById(R.id.profWeight);
-
-        /*NameReg = getView().findViewById(R.id.nameReg);
-        AgeReg = getView().findViewById(R.id.ageReg);
-        SexReg = getView().findViewById(R.id.sexReg);
-        WeightReg = getView().findViewById(R.id.weightReg);
-        HeightReg = getView().findViewById(R.id.heightReg);*/
+        final TextView nameView = getView().findViewById(R.id.userName);
 
         //Gets the instance of the firebase database and gets the users data
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -79,12 +78,16 @@ public class ProfileFragment extends Fragment {
                 String ageText = (String) dataSnapshot.child(user_id).child("Age").getValue();
                 String weightText = (String) dataSnapshot.child(user_id).child("Weight").getValue();
                 String heightText = (String) dataSnapshot.child(user_id).child("Height").getValue();
+                String nameText = (String) dataSnapshot.child(user_id).child("Name").getValue();
 
-                //Displays the selected data to the Textviews in tbe activity
+                //Displays the selected data to the Textviews in the activity
                 ageView.setText(ageText);
                 weightView.setText(weightText);
                 heightView.setText(heightText);
+                nameView.setText(nameText);
 
+                startActivity(new Intent(getActivity(), NavDrawerActivity.class));
+                getActivity().finish();
 
             }
 
@@ -94,52 +97,13 @@ public class ProfileFragment extends Fragment {
                 ageView.setText("Error Found");
                 weightView.setText("Error Found");
                 heightView.setText("Error Found");
+                nameView.setText("Error Found");
 
             }
         });
 
-        /*RegButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (v.equals(RegButton)) {
-                    String user_id = auth.getCurrentUser().getUid();
-                    DatabaseReference curren_userdb = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
 
-                    //Sets each variable to a specific string
-                    String name = NameReg.getText().toString();
-                    String age = AgeReg.getText().toString();
-                    String sex = SexReg.getText().toString();
-                    String weight = WeightReg.getText().toString();
-                    String height = HeightReg.getText().toString();
-                    String email = EmailReg.getText().toString();
-                    String password = PasswordReg.getText().toString();
-
-                    //Creates new map to store each data post.
-                    Map newPost = new HashMap();
-                    newPost.put("Name", name);
-                    newPost.put("Age", age);
-                    newPost.put("Sex", sex);
-                    newPost.put("Weight", weight);
-                    newPost.put("Height", height);
-                    newPost.put("Email", email);
-                    newPost.put("Password", password);
-
-                    //sets the value of the current user to newpost
-                    curren_userdb.setValue(newPost);
-                }
-            }
-
-
-        });*/
     }
 }
-//Adds listener to the button*/
 
-//When button is pressed, it saves all the data onto the database, e.g. Sex
-
-
-/* //Sets each edit text to a variable
-        v
-        EmailReg = (EditText) getView().findViewById(R.id.emailReg);
-        PasswordReg = (EditText) getView().findViewById(R.id.passwordReg);*/
 
