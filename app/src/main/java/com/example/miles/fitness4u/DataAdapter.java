@@ -46,9 +46,9 @@ public class DataAdapter extends ArrayAdapter<BodyBuildingSelection> {
         TextView TitleTV = (TextView) convertView.findViewById(R.id.Title);
         TextView mainTextTV = (TextView) convertView.findViewById(R.id.information2);
         TextView mainTextTV2 = (TextView) convertView.findViewById(R.id.information3);
-        TextView mainTextTV3 = (TextView) convertView.findViewById(R.id.information4);
-        TextView mainTextTV4 = (TextView) convertView.findViewById(R.id.information5);
-        TextView mainTextTV5 = (TextView) convertView.findViewById(R.id.information6);
+        //TextView mainTextTV3 = (TextView) convertView.findViewById(R.id.information4);
+        //TextView mainTextTV4 = (TextView) convertView.findViewById(R.id.information5);
+        //TextView mainTextTV5 = (TextView) convertView.findViewById(R.id.information6);
         TextView subHeadTV = (TextView) convertView.findViewById(R.id.subHeader);
         ImageView imageView = (ImageView) convertView.findViewById(R.id.image1);
 
@@ -58,9 +58,9 @@ public class DataAdapter extends ArrayAdapter<BodyBuildingSelection> {
         subHeadTV.setText(selected.subHeader);
         mainTextTV.setText(selected.mainText);
         mainTextTV2.setText(selected.mainText2);
-        mainTextTV3.setText(selected.mainText3);
-        mainTextTV4.setText(selected.mainText4);
-        mainTextTV5.setText(selected.mainText5);
+        //mainTextTV3.setText(selected.mainText3);
+        //mainTextTV4.setText(selected.mainText4);
+        //mainTextTV5.setText(selected.mainText5);
         imageView.setImageResource(selected.imageId);
 
         //Return

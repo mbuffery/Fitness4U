@@ -3,9 +3,13 @@ package com.example.miles.fitness4u;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
@@ -24,7 +28,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Fragment {
 
     private Button btnChangePassword, btnRemoveUser,
             changePassword, remove, signOut, backBtn, RegButton;
@@ -34,79 +38,36 @@ public class MainActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     private FirebaseAuth auth;
     private DatabaseReference database;
+    private FirebaseUser user;
+
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+        return inflater.inflate(R.layout.activity_main, container, false);
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
 
         //get firebase auth instance
         auth = FirebaseAuth.getInstance();
-        email = findViewById(R.id.useremail);
-
-        //Button to register the user details
-        RegButton = findViewById(R.id.regButton);
-
-
-        NameReg = findViewById(R.id.nameReg);
-        AgeReg = findViewById(R.id.ageReg);
-        SexReg = findViewById(R.id.sexReg);
-        WeightReg = findViewById(R.id.weightReg);
-        HeightReg = findViewById(R.id.heightReg);
-
-        //Gets the current firebase user
-        final FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        setDataToView(user);
+        email = getView().findViewById(R.id.useremail);
 
         //Creates instance to allow Read/Write for the data
         database = FirebaseDatabase.getInstance().getReference();
 
-        final FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference userRef = database.getReference("Users");
+        //Gets the current User
+        user = FirebaseAuth.getInstance().getCurrentUser();
 
-        authListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user == null) {
-                    // user auth state is changed - user is null
-                    // launch login activity
-                    startActivity(new Intent(MainActivity.this, UserLoginActivity.class));
-                    finish();
-                }
-            }
-        };
+        NameReg = getView().findViewById(R.id.nameReg);
+        AgeReg = getView().findViewById(R.id.ageReg);
+        SexReg = getView().findViewById(R.id.sexReg);
+        WeightReg = getView().findViewById(R.id.weightReg);
+        HeightReg = getView().findViewById(R.id.heightReg);
 
-        if (user == null) {
-            //If no signed in, launch the Sign In activity
-            startActivity(new Intent(this, UserLoginActivity.class));
-            finish();
-            return;
-        }
-
-        //On create, Set each variable to the right ID.
-        btnChangePassword = findViewById(R.id.change_password_button);
-        //btnRemoveUser = findViewById(R.id.remove_user_button);
-        changePassword = findViewById(R.id.changePass);
-        //remove = findViewById(R.id.remove);
-        signOut = findViewById(R.id.sign_out);
-        backBtn = findViewById(R.id.back_btn);
-        //oldEmail = findViewById(R.id.old_email);
-        password = findViewById(R.id.password);
-        newPassword = findViewById(R.id.newPassword);
-
-        //On create, sets the visibility to gone so they cant be seen.
-        //oldEmail.setVisibility(View.GONE);
-        password.setVisibility(View.GONE);
-        newPassword.setVisibility(View.GONE);
-        changePassword.setVisibility(View.GONE);
-        //remove.setVisibility(View.GONE);
-        progressBar = findViewById(R.id.progressBar);
-        if (progressBar != null) {
-            progressBar.setVisibility(View.GONE);
-        }
-
-        //If the user wants to change their password, on click will set the different variable to either visible or hidden
+//If the user wants to change their password, on click will set the different variable to either visible or hidden
         btnChangePassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -120,7 +81,6 @@ public class MainActivity extends AppCompatActivity {
                 remove.setVisibility(View.GONE);
             }
         });
-
 
 
         changePassword.setOnClickListener(new View.OnClickListener() {
@@ -138,11 +98,11 @@ public class MainActivity extends AppCompatActivity {
                                     @Override
                                     public void onComplete(@NonNull Task<Void> task) {
                                         if (task.isSuccessful()) {
-                                            Toast.makeText(MainActivity.this, "Password is updated, sign in with new password!", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(getActivity(), "Password is updated, sign in with new password!", Toast.LENGTH_SHORT).show();
                                             signOut();
                                             progressBar.setVisibility(View.GONE);
                                         } else {
-                                            Toast.makeText(MainActivity.this, "Failed to update password!", Toast.LENGTH_SHORT).show();
+                                            Toast.makeText(getActivity(), "Failed to update password!", Toast.LENGTH_SHORT).show();
                                             progressBar.setVisibility(View.GONE);
                                         }
                                     }
@@ -158,11 +118,125 @@ public class MainActivity extends AppCompatActivity {
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this, NavDrawerActivity.class));
+                startActivity(new Intent(getActivity(), NavDrawerActivity.class));
             }
         });
 
-        /*RegButton.setOnClickListener(new View.OnClickListener() {
+
+        //On click, Sign the user out
+        signOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signOut();
+            }
+        });
+
+        RegButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (v.equals(RegButton)) {
+
+                    String user_id = auth.getCurrentUser().getUid();
+                    DatabaseReference curren_userdb = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
+
+                    //Sets each variable to a specific string
+                    String name = NameReg.getText().toString();
+                    String age = AgeReg.getText().toString();
+                    String sex = SexReg.getText().toString();
+                    String weight = WeightReg.getText().toString();
+                    String height = HeightReg.getText().toString();
+
+                    //Creates new map to store each data post.
+                    Map newPost = new HashMap();
+                    newPost.put("Name", name);
+                    newPost.put("Age", age);
+                    newPost.put("Sex", sex);
+                    newPost.put("Weight", weight);
+                    newPost.put("Height", height);
+
+                    //sets the value of the current user to newpost
+                    curren_userdb.setValue(newPost);
+                }
+            }
+
+
+        });
+
+    }
+
+    @SuppressLint("SetTextI18n")
+    private void setDataToView(FirebaseUser user) {
+
+        email.setText("User Email: " + user.getEmail());
+
+    }
+
+    // this listener will be called when there is change in firebase user session
+    FirebaseAuth.AuthStateListener authListener = new FirebaseAuth.AuthStateListener() {
+        @SuppressLint("SetTextI18n")
+        @Override
+        public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+            FirebaseUser user = firebaseAuth.getCurrentUser();
+            if (user == null) {
+                // user auth state is changed - user is null
+                // launch login activity
+                startActivity(new Intent(getActivity(), UserLoginActivity.class));
+                getActivity().finish();
+            } else {
+                setDataToView(user);
+
+            }
+        }
+
+    };
+
+
+    //sign out method
+    public void signOut() {
+        auth.signOut();
+
+
+// this listener will be called when there is change in firebase user session
+        FirebaseAuth.AuthStateListener authListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user == null) {
+                    // user auth state is changed - user is null
+                    // launch login activity
+                    startActivity(new Intent(getActivity(), UserLoginActivity.class));
+                    getActivity().finish();
+                }
+            }
+        };
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        progressBar.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        auth.addAuthStateListener(authListener);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (authListener != null) {
+            auth.removeAuthStateListener(authListener);
+        }
+    }
+
+
+}
+
+
+
+/*RegButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (v.equals(RegButton)) {
@@ -198,7 +272,7 @@ public class MainActivity extends AppCompatActivity {
         });*/
 
 
-        //This will remove the user on click
+//This will remove the user on click
         /*btnRemoveUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -223,79 +297,3 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         */
-        //On click, Sign the user out
-        signOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                signOut();
-            }
-        });
-
-    }
-
-    @SuppressLint("SetTextI18n")
-    private void setDataToView(FirebaseUser user) {
-
-        email.setText("User Email: " + user.getEmail());
-
-    }
-
-    // this listener will be called when there is change in firebase user session
-    FirebaseAuth.AuthStateListener authListener = new FirebaseAuth.AuthStateListener() {
-        @SuppressLint("SetTextI18n")
-        @Override
-        public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-            FirebaseUser user = firebaseAuth.getCurrentUser();
-            if (user == null) {
-                // user auth state is changed - user is null
-                // launch login activity
-                startActivity(new Intent(MainActivity.this, UserLoginActivity.class));
-                finish();
-            } else {
-                setDataToView(user);
-
-            }
-        }
-
-    };
-
-    //sign out method
-    public void signOut() {
-        auth.signOut();
-
-
-// this listener will be called when there is change in firebase user session
-        FirebaseAuth.AuthStateListener authListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user == null) {
-                    // user auth state is changed - user is null
-                    // launch login activity
-                    startActivity(new Intent(MainActivity.this, UserLoginActivity.class));
-                    finish();
-                }
-            }
-        };
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        progressBar.setVisibility(View.GONE);
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        auth.addAuthStateListener(authListener);
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        if (authListener != null) {
-            auth.removeAuthStateListener(authListener);
-        }
-    }
-}
