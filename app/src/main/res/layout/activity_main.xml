@@ -7,6 +7,9 @@ android:layout_height="match_parent"
 tools:context="com.example.miles.fitness4u.MainActivity">
 
     <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="450dp"
         android:layout_alignParentEnd="true"
@@ -20,7 +23,8 @@ tools:context="com.example.miles.fitness4u.MainActivity">
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="21dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="8dp"
             android:gravity="center"
             android:hint="Registration"
             android:textSize="20sp"
@@ -74,7 +78,7 @@ tools:context="com.example.miles.fitness4u.MainActivity">
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_below="@+id/weightReg"
-            android:layout_marginBottom="56dp"
+
             android:hint="Sex"
             android:maxLines="1"/>
 
@@ -84,8 +88,8 @@ tools:context="com.example.miles.fitness4u.MainActivity">
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/weightReg"
-            android:layout_marginTop="60dp"
+            android:layout_below="@+id/sexReg"
+            android:layout_marginTop="9dp"
             android:hint="email"
             android:inputType="textEmailAddress"
             android:maxLines="1"/>
@@ -97,7 +101,7 @@ tools:context="com.example.miles.fitness4u.MainActivity">
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_below="@+id/emailReg"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="9dp"
             android:focusableInTouchMode="true"
             android:hint="@string/prompt_password"
             android:imeOptions="actionUnspecified"
@@ -105,58 +109,58 @@ tools:context="com.example.miles.fitness4u.MainActivity">
             android:maxLines="1" />
     </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="130dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/relativeLayout"
-        android:layout_marginEnd="48dp"
-        android:layout_marginRight="48dp">
-
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-        <Button
-            android:id="@+id/changePassword"
-            style="?android:textAppearanceSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/sign_out"
+            android:layout_height="130dp"
+            android:layout_alignParentBottom="true"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_marginEnd="44dp"
-            android:layout_marginRight="44dp"
-            android:background="@color/colorPrimary"
-            android:text="Register" />
+            android:layout_marginEnd="47dp"
+            android:layout_marginRight="47dp">
 
-        <Button
-            android:id="@+id/regButton"
-            style="?android:textAppearanceSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/sign_out"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="25dp"
-            android:layout_marginStart="25dp"
-            android:background="@color/colorPrimary"
-            android:text="Register" />
-        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/changePassword"
+                    style="?android:textAppearanceSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="44dp"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="44dp"
+                    android:background="@color/colorPrimary"
+                    android:text="Register" />
+
+                <Button
+                    android:id="@+id/regButton"
+                    style="?android:textAppearanceSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginStart="25dp"
+                    android:background="@color/colorPrimary"
+                    android:text="Change Password" />
+            </LinearLayout>
 
 
-        <Button
-            android:id="@+id/sign_out"
-            style="?android:textAppearanceSmall"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:background="@color/colorPrimary"
-            android:text="@string/btn_sign_out"
-            android:textColor="@android:color/white"
-            android:textStyle="bold" />
+            <Button
+                android:id="@+id/sign_out"
+                style="?android:textAppearanceSmall"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorPrimary"
+                android:text="@string/btn_sign_out"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
 
+        </RelativeLayout>
     </RelativeLayout>
 
 

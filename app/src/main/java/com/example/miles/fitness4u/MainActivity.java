@@ -205,22 +205,8 @@ public class MainActivity extends Fragment {
                 }
             }
         });
-        //Simple back button
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getActivity(), NavDrawerActivity.class));
-            }
-        });*/
 
-/*
-        //On click, Sign the user out
-        signOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                signOut();
-            }
-        });
+
 
 
 
