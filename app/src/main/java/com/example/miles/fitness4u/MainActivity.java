@@ -29,8 +29,8 @@ import java.util.Map;
 
 public class MainActivity extends Fragment {
 
-    private Button signOut, RegButton;
-    private EditText NameReg, AgeReg, SexReg, WeightReg, HeightReg, EmailReg, PasswordReg;
+    private Button signOut, RegButton, changePass;
+    private EditText NameReg, AgeReg, SexReg, WeightReg, HeightReg, repeatPass, newPass;
     private FirebaseAuth auth;
     private DatabaseReference database;
     private FirebaseUser user;
@@ -67,15 +67,62 @@ public class MainActivity extends Fragment {
         SexReg = getView().findViewById(R.id.sexReg);
         WeightReg = getView().findViewById(R.id.weightReg);
         HeightReg = getView().findViewById(R.id.heightReg);
-        EmailReg = getView().findViewById(R.id.emailReg);
-        PasswordReg = getView().findViewById(R.id.passwordReg);
+        changePass = getView().findViewById(R.id.changePassword);
         RegButton = getView().findViewById(R.id.regButton);
         signOut = getView().findViewById(R.id.sign_out);
+
+        repeatPass = getView().findViewById(R.id.repeatPassword);
+        newPass = getView().findViewById(R.id.password1);
+
 
         //Gets the instance of the firebase database and gets the users data
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference userRef = database.getReference("Users");
 
+        changePass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //If textview not empty
+                if (!newPass.getText().toString().isEmpty() && !repeatPass.getText().toString().isEmpty()) {
+                    //if new password and repeat password are the same
+                    if (newPass.getText().toString().trim().equals(repeatPass.getText().toString().trim())) {
+                        //Sets the new password if the user has met all the requirements, e.g. 6 or more characters
+                        if (user != null && !newPass.getText().toString().trim().equals("")) {
+
+                            if (newPass.getText().toString().trim().length() < 6) {
+                                newPass.setError("Password too short, enter minimum 6 characters");
+
+                            } else {
+                                user.updatePassword(newPass.getText().toString().trim())
+                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task) {
+                                                if (task.isSuccessful())
+                                                {
+                                                    Toast.makeText(getActivity(), "Password is updated, sign in with new password!", Toast.LENGTH_SHORT).show();
+                                                    auth.signOut();
+
+                                                } else
+                                                    {
+                                                    Toast.makeText(getActivity(), "Failed to update password!", Toast.LENGTH_SHORT).show();
+
+                                                }
+                                            }
+                                        });
+                            }
+                        } else if (newPass.getText().toString().trim().equals("")) {
+                            newPass.setError("Enter password");
+
+                        }
+                    } else {
+                        Toast.makeText(getActivity(), "The passwords are not the same", Toast.LENGTH_SHORT).show();
+                    }
+                }else
+                {
+                    Toast.makeText(getActivity(), "Password field can't be empty", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
         RegButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -107,6 +154,7 @@ public class MainActivity extends Fragment {
 
 
         });
+
 
         //On click, Sign the user out
         signOut.setOnClickListener(new View.OnClickListener() {
@@ -174,37 +222,7 @@ public class MainActivity extends Fragment {
         });
 
 
-        changePassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                progressBar.setVisibility(View.VISIBLE);
-                //Sets the new password if the user has met all the requirements, e.g. 6 or more characters
-                if (user != null && !newPassword.getText().toString().trim().equals("")) {
-                    if (newPassword.getText().toString().trim().length() < 6) {
-                        newPassword.setError("Password too short, enter minimum 6 characters");
-                        progressBar.setVisibility(View.GONE);
-                    } else {
-                        user.updatePassword(newPassword.getText().toString().trim())
-                                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<Void> task) {
-                                        if (task.isSuccessful()) {
-                                            Toast.makeText(getActivity(), "Password is updated, sign in with new password!", Toast.LENGTH_SHORT).show();
-                                            signOut();
-                                            progressBar.setVisibility(View.GONE);
-                                        } else {
-                                            Toast.makeText(getActivity(), "Failed to update password!", Toast.LENGTH_SHORT).show();
-                                            progressBar.setVisibility(View.GONE);
-                                        }
-                                    }
-                                });
-                    }
-                } else if (newPassword.getText().toString().trim().equals("")) {
-                    newPassword.setError("Enter password");
-                    progressBar.setVisibility(View.GONE);
-                }
-            }
-        });
+
 
 
 
@@ -256,9 +274,6 @@ public class MainActivity extends Fragment {
 /*
 }
 */
-
-
-
 
 
 //This will remove the user on click

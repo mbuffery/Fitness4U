@@ -9,157 +9,153 @@ tools:context="com.example.miles.fitness4u.MainActivity">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="450dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="36dp"
-        android:id="@+id/relativeLayout">
-
-        <TextView
-            android:id="@+id/useremail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="8dp"
-            android:gravity="center"
-            android:hint="Registration"
-            android:textSize="20sp"
-            android:textStyle="bold|italic" />
-
-        <EditText
-            android:id="@+id/nameReg"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/useremail"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="26dp"
-            android:hint="Name"
-            android:maxLines="1"/>
-
-        <EditText
-            android:id="@+id/ageReg"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/nameReg"
-            android:layout_marginTop="9dp"
-            android:hint="Age"
-            android:maxLines="1"/>
-
-        <EditText
-            android:id="@+id/heightReg"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/ageReg"
-            android:layout_centerHorizontal="true"
-            android:hint="Height"
-            android:maxLines="1"/>
-
-        <EditText
-            android:id="@+id/weightReg"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/heightReg"
-            android:layout_centerVertical="true"
-            android:hint="Weight"
-            android:maxLines="1"/>
-
-        <EditText
-            android:id="@+id/sexReg"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/weightReg"
-
-            android:hint="Sex"
-            android:maxLines="1"/>
-
-        <EditText
-            android:id="@+id/emailReg"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/sexReg"
-            android:layout_marginTop="9dp"
-            android:hint="email"
-            android:inputType="textEmailAddress"
-            android:maxLines="1"/>
-
-        <EditText
-            android:id="@+id/passwordReg"
-            android:layout_width="400dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_below="@+id/emailReg"
-            android:layout_marginTop="9dp"
-            android:focusableInTouchMode="true"
-            android:hint="@string/prompt_password"
-            android:imeOptions="actionUnspecified"
-            android:inputType="textPassword"
-            android:maxLines="1" />
-    </RelativeLayout>
 
         <RelativeLayout
+            android:id="@+id/relativeLayout"
             android:layout_width="wrap_content"
-            android:layout_height="130dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginEnd="47dp"
-            android:layout_marginRight="47dp">
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="14dp">
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/useremail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center">
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:hint="Registration"
+                android:textSize="20sp"
+                android:textStyle="bold|italic" />
 
-                <Button
-                    android:id="@+id/changePassword"
-                    style="?android:textAppearanceSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="44dp"
-                    android:layout_gravity="center"
-                    android:layout_marginRight="44dp"
-                    android:background="@color/colorPrimary"
-                    android:text="Register" />
+            <EditText
+                android:id="@+id/nameReg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/useremail"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15dp"
+                android:hint="Name"
+                android:maxLines="1" />
 
-                <Button
-                    android:id="@+id/regButton"
-                    style="?android:textAppearanceSmall"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="25dp"
-                    android:layout_marginStart="25dp"
-                    android:background="@color/colorPrimary"
-                    android:text="Change Password" />
-            </LinearLayout>
+            <EditText
+                android:id="@+id/ageReg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/nameReg"
+                android:layout_marginTop="9dp"
+                android:hint="Age"
+                android:maxLines="1" />
 
+            <EditText
+                android:id="@+id/heightReg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ageReg"
+                android:layout_centerHorizontal="true"
+                android:hint="Height"
+                android:maxLines="1" />
+
+            <EditText
+                android:id="@+id/weightReg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/heightReg"
+                android:layout_centerVertical="true"
+                android:hint="Weight"
+                android:maxLines="1" />
+
+            <EditText
+                android:id="@+id/sexReg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/weightReg"
+                android:hint="Sex"
+                android:maxLines="1" />
+
+            <Button
+                android:id="@+id/regButton"
+                style="?android:textAppearanceSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/sexReg"
+                android:layout_centerHorizontal="true"
+                android:background="@color/colorPrimary"
+                android:text="Register" />
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/relativeLayout2"
+            android:layout_below="@id/relativeLayout">
+
+            <EditText
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/currPassword"
+                android:layout_marginTop="9dp"
+                android:focusableInTouchMode="true"
+                android:hint="@string/prompt_password"
+                android:imeOptions="actionUnspecified"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:id="@+id/password1"/>
+
+            <EditText
+                android:id="@+id/repeatPassword"
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/password1"
+                android:layout_marginTop="9dp"
+                android:focusableInTouchMode="true"
+                android:hint="Please reenter your password"
+                android:imeOptions="actionUnspecified"
+                android:inputType="textPassword"
+                android:maxLines="1" />
+
+            <Button
+                android:id="@+id/changePassword"
+                style="?android:textAppearanceSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:text="Change Password"
+                android:layout_below="@id/repeatPassword"
+                android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
 
             <Button
                 android:id="@+id/sign_out"
                 style="?android:textAppearanceSmall"
-                android:layout_width="300dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
+                android:layout_centerInParent="true"
                 android:background="@color/colorPrimary"
                 android:text="@string/btn_sign_out"
                 android:textColor="@android:color/white"
                 android:textStyle="bold" />
-
         </RelativeLayout>
     </RelativeLayout>
 
