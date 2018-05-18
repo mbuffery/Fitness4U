@@ -117,7 +117,6 @@ public class MainActivity extends Fragment {
         });
     }
 
-
     // this listener will be called when there is change in firebase user session
     FirebaseAuth.AuthStateListener authListener = new FirebaseAuth.AuthStateListener() {
         @SuppressLint("SetTextI18n")
