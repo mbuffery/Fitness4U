@@ -44,8 +44,6 @@ public class ProfileFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-
-
         //Creates instance to allow Read/Write for the data
         database = FirebaseDatabase.getInstance().getReference();
 

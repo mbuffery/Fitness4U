@@ -27,27 +27,15 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Fragment {
 
-    private Button btnChangePassword, btnRemoveUser,
-            changePassword, remove, signOut, backBtn, RegButton;
-    private TextView email;
+    private Button  signOut, RegButton;
     private EditText NameReg, AgeReg, SexReg, WeightReg, HeightReg, EmailReg, PasswordReg;
-    private EditText oldEmail, password, newPassword;
-    private ProgressBar progressBar;
     private FirebaseAuth auth;
     private DatabaseReference database;
     private FirebaseUser user;
 
 
-
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-    }
-
-    /*
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -57,9 +45,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);*/
+        super.onActivityCreated(savedInstanceState);
 
-       /* //Creates instance to allow Read/Write for the data
+        //Creates instance to allow Read/Write for the data
         database = FirebaseDatabase.getInstance().getReference();
 
         //get firebase auth instance
@@ -68,13 +56,20 @@ public class MainActivity extends AppCompatActivity {
         //Gets the current User
         user = FirebaseAuth.getInstance().getCurrentUser();
 
+        //If there is no user, it will go back to the login page in order to sign in
+        if (auth.getCurrentUser() == null)
+        {
+            startActivity(new Intent(getActivity(), UserLoginActivity.class));
+        }
+
+        //Get reference for each view from the activity layout
         NameReg = getView().findViewById(R.id.nameReg);
         AgeReg = getView().findViewById(R.id.ageReg);
         SexReg = getView().findViewById(R.id.sexReg);
         WeightReg = getView().findViewById(R.id.weightReg);
         HeightReg = getView().findViewById(R.id.heightReg);
-        //EmailReg = getView().findViewById(R.id.useremail);
-        //PasswordReg = getView().findViewById(R.id.passwordReg);
+        EmailReg = getView().findViewById(R.id.useremail);
+        PasswordReg = getView().findViewById(R.id.passwordReg);
 
         //Gets the instance of the firebase database and gets the users data
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -94,6 +89,8 @@ public class MainActivity extends AppCompatActivity {
                     String sex = SexReg.getText().toString();
                     String weight = WeightReg.getText().toString();
                     String height = HeightReg.getText().toString();
+                    String email = EmailReg.getText().toString();
+                    String password = PasswordReg.getText().toString();
 
                     //Creates new map to store each data post.
                     Map<String, String> newPost = new HashMap<String, String>();
@@ -102,6 +99,8 @@ public class MainActivity extends AppCompatActivity {
                     newPost.put("Sex", sex);
                     newPost.put("Weight", weight);
                     newPost.put("Height", height);
+                    newPost.put("email", email);
+                    newPost.put("password", password);
 
                     //sets the value of the current user to newpost
                     curren_userdb.setValue(newPost);
@@ -110,6 +109,15 @@ public class MainActivity extends AppCompatActivity {
 
 
         });
+
+    }
+}
+
+       /*
+
+
+
+
 
     /*
 //If the user wants to change their password, on click will set the different variable to either visible or hidden
@@ -227,7 +235,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         };*/
-    }
+
 
 /*
     @Override

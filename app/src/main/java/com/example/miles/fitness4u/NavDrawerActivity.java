@@ -62,8 +62,8 @@ public class NavDrawerActivity extends AppCompatActivity implements NavigationVi
                         new FitnessFragment()).commit();
                 break;
             case R.id.nav_settings:
-                startActivity(new Intent(NavDrawerActivity.this, MainActivity.class));
-                break;
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new MainActivity()).commit();
             //case R.id.nav_calculator:
              //   getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
              //           new FitnessFragment()).commit();

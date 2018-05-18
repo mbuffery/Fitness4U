@@ -2,6 +2,7 @@ package com.example.miles.fitness4u.AccountActivity;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -34,7 +35,8 @@ public class UserLoginActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
 
         if (auth.getCurrentUser() != null) {
-            startActivity(new Intent(UserLoginActivity.this, MainActivity.class));
+
+            startActivity(new Intent(UserLoginActivity.this, NavDrawerActivity.class));
             finish();
         }
 
