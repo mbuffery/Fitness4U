@@ -68,7 +68,7 @@ public class MainActivity extends Fragment {
         SexReg = getView().findViewById(R.id.sexReg);
         WeightReg = getView().findViewById(R.id.weightReg);
         HeightReg = getView().findViewById(R.id.heightReg);
-        EmailReg = getView().findViewById(R.id.useremail);
+        EmailReg = getView().findViewById(R.id.emailReg);
         PasswordReg = getView().findViewById(R.id.passwordReg);
 
         //Gets the instance of the firebase database and gets the users data
