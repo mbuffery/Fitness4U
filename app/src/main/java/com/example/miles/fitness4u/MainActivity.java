@@ -5,8 +5,8 @@ import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +17,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.miles.fitness4u.AccountActivity.UserLoginActivity;
-import com.example.miles.fitness4u.AccountActivity.UserSignupActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -28,7 +27,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MainActivity extends Fragment {
+public class MainActivity extends AppCompatActivity {
 
     private Button btnChangePassword, btnRemoveUser,
             changePassword, remove, signOut, backBtn, RegButton;
@@ -40,6 +39,15 @@ public class MainActivity extends Fragment {
     private DatabaseReference database;
     private FirebaseUser user;
 
+
+
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+    }
+
+    /*
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -49,14 +57,13 @@ public class MainActivity extends Fragment {
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
+        super.onActivityCreated(savedInstanceState);*/
+
+       /* //Creates instance to allow Read/Write for the data
+        database = FirebaseDatabase.getInstance().getReference();
 
         //get firebase auth instance
         auth = FirebaseAuth.getInstance();
-        email = getView().findViewById(R.id.useremail);
-
-        //Creates instance to allow Read/Write for the data
-        database = FirebaseDatabase.getInstance().getReference();
 
         //Gets the current User
         user = FirebaseAuth.getInstance().getCurrentUser();
@@ -66,7 +73,45 @@ public class MainActivity extends Fragment {
         SexReg = getView().findViewById(R.id.sexReg);
         WeightReg = getView().findViewById(R.id.weightReg);
         HeightReg = getView().findViewById(R.id.heightReg);
+        //EmailReg = getView().findViewById(R.id.useremail);
+        //PasswordReg = getView().findViewById(R.id.passwordReg);
 
+        //Gets the instance of the firebase database and gets the users data
+        final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference userRef = database.getReference("Users");
+
+        RegButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (v.equals(RegButton)) {
+
+                    String user_id = auth.getCurrentUser().getUid();
+                    DatabaseReference curren_userdb = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
+
+                    //Sets each variable to a specific string
+                    String name = NameReg.getText().toString();
+                    String age = AgeReg.getText().toString();
+                    String sex = SexReg.getText().toString();
+                    String weight = WeightReg.getText().toString();
+                    String height = HeightReg.getText().toString();
+
+                    //Creates new map to store each data post.
+                    Map<String, String> newPost = new HashMap<String, String>();
+                    newPost.put("Name", name);
+                    newPost.put("Age", age);
+                    newPost.put("Sex", sex);
+                    newPost.put("Weight", weight);
+                    newPost.put("Height", height);
+
+                    //sets the value of the current user to newpost
+                    curren_userdb.setValue(newPost);
+                }
+            }
+
+
+        });
+
+    /*
 //If the user wants to change their password, on click will set the different variable to either visible or hidden
         btnChangePassword.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -120,9 +165,9 @@ public class MainActivity extends Fragment {
             public void onClick(View view) {
                 startActivity(new Intent(getActivity(), NavDrawerActivity.class));
             }
-        });
+        });*/
 
-
+/*
         //On click, Sign the user out
         signOut.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -131,46 +176,18 @@ public class MainActivity extends Fragment {
             }
         });
 
-        RegButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (v.equals(RegButton)) {
 
-                    String user_id = auth.getCurrentUser().getUid();
-                    DatabaseReference curren_userdb = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
-
-                    //Sets each variable to a specific string
-                    String name = NameReg.getText().toString();
-                    String age = AgeReg.getText().toString();
-                    String sex = SexReg.getText().toString();
-                    String weight = WeightReg.getText().toString();
-                    String height = HeightReg.getText().toString();
-
-                    //Creates new map to store each data post.
-                    Map newPost = new HashMap();
-                    newPost.put("Name", name);
-                    newPost.put("Age", age);
-                    newPost.put("Sex", sex);
-                    newPost.put("Weight", weight);
-                    newPost.put("Height", height);
-
-                    //sets the value of the current user to newpost
-                    curren_userdb.setValue(newPost);
-                }
-            }
-
-
-        });
 
     }
-
+/*
     @SuppressLint("SetTextI18n")
     private void setDataToView(FirebaseUser user) {
 
         email.setText("User Email: " + user.getEmail());
 
-    }
+    }*/
 
+    /*
     // this listener will be called when there is change in firebase user session
     FirebaseAuth.AuthStateListener authListener = new FirebaseAuth.AuthStateListener() {
         @SuppressLint("SetTextI18n")
@@ -188,14 +205,15 @@ public class MainActivity extends Fragment {
             }
         }
 
-    };
+    };*/
 
-
+/*
     //sign out method
     public void signOut() {
         auth.signOut();
+        */
 
-
+/*
 // this listener will be called when there is change in firebase user session
         FirebaseAuth.AuthStateListener authListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -208,15 +226,16 @@ public class MainActivity extends Fragment {
                     getActivity().finish();
                 }
             }
-        };
+        };*/
     }
 
+/*
     @Override
     public void onResume() {
         super.onResume();
         progressBar.setVisibility(View.GONE);
-    }
-
+    }*/
+/*
     @Override
     public void onStart() {
         super.onStart();
@@ -229,11 +248,11 @@ public class MainActivity extends Fragment {
         if (authListener != null) {
             auth.removeAuthStateListener(authListener);
         }
-    }
+    }*/
 
-
+/*
 }
-
+*/
 
 
 /*RegButton.setOnClickListener(new View.OnClickListener() {

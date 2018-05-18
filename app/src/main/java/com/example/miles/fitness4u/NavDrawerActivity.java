@@ -64,6 +64,9 @@ public class NavDrawerActivity extends AppCompatActivity implements NavigationVi
             case R.id.nav_settings:
                 startActivity(new Intent(NavDrawerActivity.this, MainActivity.class));
                 break;
+            //case R.id.nav_calculator:
+             //   getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+             //           new FitnessFragment()).commit();
             case R.id.nav_share:
                 Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
                 break;

@@ -9,35 +9,10 @@ tools:context="com.example.miles.fitness4u.MainActivity">
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/relativeLayout2">
-   <!-- <EditText
-        android:id="@+id/old_email"
-        android:layout_width="368dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ageReg"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp"
-        android:hint="@string/hint_email"
-        android:inputType="textEmailAddress"
-        android:maxLines="1"
-        tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="82dp" /> -->
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Back"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:id="@+id/back_btn"/>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/sexReg"
-        android:layout_alignLeft="@+id/password"
-        android:layout_alignStart="@+id/password">
+        android:layout_above="@+id/passwordReg"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="36dp">
 
         <TextView
             android:id="@+id/useremail"
