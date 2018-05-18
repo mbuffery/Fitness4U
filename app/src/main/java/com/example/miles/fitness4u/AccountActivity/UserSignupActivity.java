@@ -12,6 +12,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.miles.fitness4u.MainActivity;
+import com.example.miles.fitness4u.NavDrawerActivity;
 import com.example.miles.fitness4u.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -91,7 +92,7 @@ public class UserSignupActivity extends AppCompatActivity {
                                     Toast.makeText(UserSignupActivity.this, "Authentication failed." + task.getException(),
                                             Toast.LENGTH_SHORT).show();
                                 } else {
-                                    startActivity(new Intent(UserSignupActivity.this, MainActivity.class));
+                                    startActivity(new Intent(UserSignupActivity.this, NavDrawerActivity.class));
                                     finish();
                                 }
                             }

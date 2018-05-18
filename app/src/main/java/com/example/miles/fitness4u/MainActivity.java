@@ -19,6 +19,9 @@ import android.widget.Toast;
 import com.example.miles.fitness4u.AccountActivity.UserLoginActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.EmailAuthCredential;
+import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -31,6 +34,7 @@ public class MainActivity extends Fragment {
 
     private Button signOut, RegButton, changePass;
     private EditText NameReg, AgeReg, SexReg, WeightReg, HeightReg, repeatPass, newPass;
+    private TextView email;
     private FirebaseAuth auth;
     private DatabaseReference database;
     private FirebaseUser user;
@@ -47,6 +51,8 @@ public class MainActivity extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
+        email = getView().findViewById((R.id.useremail));
+
         //Creates instance to allow Read/Write for the data
         database = FirebaseDatabase.getInstance().getReference();
 
@@ -55,6 +61,22 @@ public class MainActivity extends Fragment {
 
         //Gets the current User
         user = FirebaseAuth.getInstance().getCurrentUser();
+        setDataToView(user);
+
+        authListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user == null) {
+                    // user auth state is changed - user is null
+                    // launch login activity
+                    startActivity(new Intent(getActivity(), UserLoginActivity.class));
+                    getActivity().finish();
+                }
+            }
+        };
+
+
 
         //If there is no user, it will go back to the login page in order to sign in
         if (auth.getCurrentUser() == null) {
@@ -70,9 +92,9 @@ public class MainActivity extends Fragment {
         changePass = getView().findViewById(R.id.changePassword);
         RegButton = getView().findViewById(R.id.regButton);
         signOut = getView().findViewById(R.id.sign_out);
-
         repeatPass = getView().findViewById(R.id.repeatPassword);
         newPass = getView().findViewById(R.id.password1);
+
 
 
         //Gets the instance of the firebase database and gets the users data
@@ -83,25 +105,33 @@ public class MainActivity extends Fragment {
             @Override
             public void onClick(View v) {
                 //If textview not empty
-                if (!newPass.getText().toString().isEmpty() && !repeatPass.getText().toString().isEmpty()) {
+                if (!newPass.getText().toString().isEmpty() && !newPass.getText().toString().isEmpty()) {
+
                     //if new password and repeat password are the same
-                    if (newPass.getText().toString().trim().equals(repeatPass.getText().toString().trim())) {
-                        //Sets the new password if the user has met all the requirements, e.g. 6 or more characters
+                   if (newPass.getText().toString().trim().equals(newPass.getText().toString().trim())) {
+
+                        // if user is not null and equals 6 characters
                         if (user != null && !newPass.getText().toString().trim().equals("")) {
-
-                            if (newPass.getText().toString().trim().length() < 6) {
+                            //if password is less than 6 characters
+                            if (newPass.getText().toString().trim().length() < 6)
+                            {
                                 newPass.setError("Password too short, enter minimum 6 characters");
+                            } else
+                                {
+                                    //String email = user.getEmail();
+                                    //String oldPassword = newPass.getText().toString().trim();
 
-                            } else {
-                                user.updatePassword(newPass.getText().toString().trim())
-                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    //AuthCredential credential = EmailAuthProvider.getCredential(email, oldPassword);
+
+                                user.updatePassword(newPass.getText().toString().trim()).addOnCompleteListener(new OnCompleteListener<Void>()
+                                        {
                                             @Override
-                                            public void onComplete(@NonNull Task<Void> task) {
+                                            public void onComplete(@NonNull Task<Void> task)
+                                            {
                                                 if (task.isSuccessful())
                                                 {
                                                     Toast.makeText(getActivity(), "Password is updated, sign in with new password!", Toast.LENGTH_SHORT).show();
                                                     auth.signOut();
-
                                                 } else
                                                     {
                                                     Toast.makeText(getActivity(), "Failed to update password!", Toast.LENGTH_SHORT).show();
@@ -110,11 +140,13 @@ public class MainActivity extends Fragment {
                                             }
                                         });
                             }
-                        } else if (newPass.getText().toString().trim().equals("")) {
+                        } else if (newPass.getText().toString().trim().equals(""))
+                        {
                             newPass.setError("Enter password");
 
                         }
-                    } else {
+                    } else
+                        {
                         Toast.makeText(getActivity(), "The passwords are not the same", Toast.LENGTH_SHORT).show();
                     }
                 }else
@@ -123,6 +155,7 @@ public class MainActivity extends Fragment {
                 }
             }
         });
+
         RegButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -139,7 +172,7 @@ public class MainActivity extends Fragment {
                     String height = HeightReg.getText().toString();
 
                     //Creates new map to store each data post.
-                    Map<String, String> newPost = new HashMap<String, String>();
+                    Map<String, String> newPost = new HashMap<>();
                     newPost.put("Name", name);
                     newPost.put("Age", age);
                     newPost.put("Sex", sex);
@@ -165,6 +198,13 @@ public class MainActivity extends Fragment {
         });
     }
 
+    @SuppressLint("SetTextI18n")
+    private void setDataToView(FirebaseUser user) {
+
+        email.setText("User Email: " + user.getEmail());
+
+    }
+
     // this listener will be called when there is change in firebase user session
     FirebaseAuth.AuthStateListener authListener = new FirebaseAuth.AuthStateListener() {
         @SuppressLint("SetTextI18n")
@@ -176,12 +216,33 @@ public class MainActivity extends Fragment {
                 // launch login activity
                 startActivity(new Intent(getActivity(), UserLoginActivity.class));
                 getActivity().finish();
+            } else {
+                setDataToView(user);
+
             }
-
-
         }
 
     };
+
+    //sign out method
+    public void signOut() {
+        auth.signOut();
+
+
+// this listener will be called when there is change in firebase user session
+        FirebaseAuth.AuthStateListener authListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+                if (user == null) {
+                    // user auth state is changed - user is null
+                    // launch login activity
+                    startActivity(new Intent(getActivity(), UserLoginActivity.class));
+                    getActivity().finish();
+                }
+            }
+        };
+    }
 
     @Override
     public void onStart() {
