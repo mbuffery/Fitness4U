@@ -29,7 +29,7 @@ import java.util.Map;
 
 public class MainActivity extends Fragment {
 
-    private Button  signOut, RegButton;
+    private Button signOut, RegButton;
     private EditText NameReg, AgeReg, SexReg, WeightReg, HeightReg, EmailReg, PasswordReg;
     private FirebaseAuth auth;
     private DatabaseReference database;
@@ -57,8 +57,7 @@ public class MainActivity extends Fragment {
         user = FirebaseAuth.getInstance().getCurrentUser();
 
         //If there is no user, it will go back to the login page in order to sign in
-        if (auth.getCurrentUser() == null)
-        {
+        if (auth.getCurrentUser() == null) {
             startActivity(new Intent(getActivity(), UserLoginActivity.class));
         }
 
@@ -70,6 +69,8 @@ public class MainActivity extends Fragment {
         HeightReg = getView().findViewById(R.id.heightReg);
         EmailReg = getView().findViewById(R.id.emailReg);
         PasswordReg = getView().findViewById(R.id.passwordReg);
+        RegButton = getView().findViewById(R.id.regButton);
+        signOut = getView().findViewById(R.id.sign_out);
 
         //Gets the instance of the firebase database and gets the users data
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -89,8 +90,6 @@ public class MainActivity extends Fragment {
                     String sex = SexReg.getText().toString();
                     String weight = WeightReg.getText().toString();
                     String height = HeightReg.getText().toString();
-                    String email = EmailReg.getText().toString();
-                    String password = PasswordReg.getText().toString();
 
                     //Creates new map to store each data post.
                     Map<String, String> newPost = new HashMap<String, String>();
@@ -99,8 +98,7 @@ public class MainActivity extends Fragment {
                     newPost.put("Sex", sex);
                     newPost.put("Weight", weight);
                     newPost.put("Height", height);
-                    newPost.put("email", email);
-                    newPost.put("password", password);
+
 
                     //sets the value of the current user to newpost
                     curren_userdb.setValue(newPost);
@@ -110,10 +108,51 @@ public class MainActivity extends Fragment {
 
         });
 
+        //On click, Sign the user out
+        signOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                auth.signOut();
+            }
+        });
+    }
+
+
+    // this listener will be called when there is change in firebase user session
+    FirebaseAuth.AuthStateListener authListener = new FirebaseAuth.AuthStateListener() {
+        @SuppressLint("SetTextI18n")
+        @Override
+        public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+            FirebaseUser user = firebaseAuth.getCurrentUser();
+            if (user == null) {
+                // user auth state is changed - user is null
+                // launch login activity
+                startActivity(new Intent(getActivity(), UserLoginActivity.class));
+                getActivity().finish();
+            }
+
+
+        }
+
+    };
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        auth.addAuthStateListener(authListener);
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (authListener != null) {
+            auth.removeAuthStateListener(authListener);
+        }
     }
 }
 
-       /*
+
+
 
 
 
@@ -196,30 +235,13 @@ public class MainActivity extends Fragment {
     }*/
 
     /*
-    // this listener will be called when there is change in firebase user session
-    FirebaseAuth.AuthStateListener authListener = new FirebaseAuth.AuthStateListener() {
-        @SuppressLint("SetTextI18n")
-        @Override
-        public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-            FirebaseUser user = firebaseAuth.getCurrentUser();
-            if (user == null) {
-                // user auth state is changed - user is null
-                // launch login activity
-                startActivity(new Intent(getActivity(), UserLoginActivity.class));
-                getActivity().finish();
-            } else {
-                setDataToView(user);
-
-            }
-        }
-
-    };*/
+    */
 
 /*
     //sign out method
     public void signOut() {
         auth.signOut();
-        */
+        *
 
 /*
 // this listener will be called when there is change in firebase user session
@@ -244,59 +266,14 @@ public class MainActivity extends Fragment {
         progressBar.setVisibility(View.GONE);
     }*/
 /*
-    @Override
-    public void onStart() {
-        super.onStart();
-        auth.addAuthStateListener(authListener);
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        if (authListener != null) {
-            auth.removeAuthStateListener(authListener);
-        }
-    }*/
+    */
 
 /*
 }
 */
 
 
-/*RegButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (v.equals(RegButton)) {
 
-                    String user_id = auth.getCurrentUser().getUid();
-                    DatabaseReference curren_userdb = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
-
-                    //Sets each variable to a specific string
-                    String name = NameReg.getText().toString();
-                    String age = AgeReg.getText().toString();
-                    String sex = SexReg.getText().toString();
-                    String weight = WeightReg.getText().toString();
-                    String height = HeightReg.getText().toString();
-                    String email = EmailReg.getText().toString();
-                    String password = PasswordReg.getText().toString();
-
-                    //Creates new map to store each data post.
-                    Map newPost = new HashMap();
-                    newPost.put("Name", name);
-                    newPost.put("Age", age);
-                    newPost.put("Sex", sex);
-                    newPost.put("Weight", weight);
-                    newPost.put("Height", height);
-                    newPost.put("Email", email);
-                    newPost.put("Password", password);
-
-                    //sets the value of the current user to newpost
-                    curren_userdb.setValue(newPost);
-                }
-            }
-
-
-        });*/
 
 
 //This will remove the user on click
