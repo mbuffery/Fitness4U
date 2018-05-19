@@ -38,11 +38,12 @@ public class InclineBenchSitupsFragment extends Fragment {
         ArrayList<BodyBuildingSelection> selected = new ArrayList<>();
 
         //Crunches will display 3 textview and one image
-        BodyBuildingSelection crunches = new BodyBuildingSelection("Crunches", "Muscle: Rectus Abdominis", "Step 1: Lie on a Bench with legs extended straight",
-                "Keeping your arms parallel to the floor", R.drawable.crunches);
+        BodyBuildingSelection InclineBenchSitups = new BodyBuildingSelection("Incline Bench Situps", "Muscle: Rectus Abdominis", "Step 1: Lie backwards on a decline " +
+                "bench. Have hands behind head with knees bent.",
+                "Step 2: Lift your upper body while your lower back lays on the bench, Hold the position for a few seconds. Return to starting position.", R.drawable.crunches);
 
         //adds crunches to the array
-        selected.add(crunches);
+        selected.add(InclineBenchSitups);
 
         //Creates new adapter and takes all the selected data.
         DataAdapter adapter = new DataAdapter(getContext(), R.layout.row_view, selected);

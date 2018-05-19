@@ -38,11 +38,11 @@ public class SitUpsFragment extends Fragment {
         ArrayList<BodyBuildingSelection> selected = new ArrayList<>();
 
         //Crunches will display 3 textview and one image
-        BodyBuildingSelection crunches = new BodyBuildingSelection("Crunches", "Muscle: Rectus Abdominis", "Step 1: Lie on a Bench with legs extended straight",
-                "Keeping your arms parallel to the floor", R.drawable.crunches);
+        BodyBuildingSelection SitUps = new BodyBuildingSelection("Situps", "Muscle: Rectus Abdominis", "Step 1: Lie on back your back, have your knees bent and place hands on the side of your head.",
+                "Step 2: Keeping your hands on your head, lift yourself towards your knees in an up and down motion; repeat as many times as needed", R.drawable.crunches);
 
         //adds crunches to the array
-        selected.add(crunches);
+        selected.add(SitUps);
 
         //Creates new adapter and takes all the selected data.
         DataAdapter adapter = new DataAdapter(getContext(), R.layout.row_view, selected);

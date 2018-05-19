@@ -38,11 +38,12 @@ public class HangingLegRaisesFragment extends Fragment {
         ArrayList<BodyBuildingSelection> selected = new ArrayList<>();
 
         //Crunches will display 3 textview and one image
-        BodyBuildingSelection crunches = new BodyBuildingSelection("Crunches", "Muscle: Rectus Abdominis", "Step 1: Lie on a Bench with legs extended straight",
-                "Keeping your arms parallel to the floor", R.drawable.crunches);
+        BodyBuildingSelection HangingLegRaises = new BodyBuildingSelection("Hanging Leg Raises", "Muscle: Rectus Abdominis", "Step 1: While hanging from a chip up bar " +
+                "with a wide or medium grip,hang with your knees slightly bent",
+                "Step 2: Raise you legs until you have made a 90 degree angle. Exhale as you do this. Slowly go back to starting position as you slowly breathe in", R.drawable.crunches);
 
         //adds crunches to the array
-        selected.add(crunches);
+        selected.add(HangingLegRaises);
 
         //Creates new adapter and takes all the selected data.
         DataAdapter adapter = new DataAdapter(getContext(), R.layout.row_view, selected);

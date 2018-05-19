@@ -38,11 +38,12 @@ public class DumbbellSideBendsFragment extends Fragment {
         ArrayList<BodyBuildingSelection> selected = new ArrayList<>();
 
         //Crunches will display 3 textview and one image
-        BodyBuildingSelection crunches = new BodyBuildingSelection("Crunches", "Muscle: Rectus Abdominis", "Step 1: Lie on a Bench with legs extended straight",
-                "Keeping your arms parallel to the floor", R.drawable.crunches);
+        BodyBuildingSelection dumbbellSideBends = new BodyBuildingSelection("Dumbbell Side Bends", "Muscle: Oblique", "Step 1: Stand up straight with your feet shoulder width apart." +
+                "Hold a dumbbell in each hand",
+                "Step 2: Lean downwards in one direction with minimal movement in your lower body, then return to start position", R.drawable.crunches);
 
         //adds crunches to the array
-        selected.add(crunches);
+        selected.add(dumbbellSideBends);
 
         //Creates new adapter and takes all the selected data.
         DataAdapter adapter = new DataAdapter(getContext(), R.layout.row_view, selected);
