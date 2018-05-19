@@ -50,6 +50,13 @@ public class FitnessFragment extends Fragment implements SensorEventListener{
     @Override
     public void onSensorChanged(SensorEvent event) {
 
+        if (running)
+        {
+            tvSteps.setText(String.valueOf(event.values[0]));
+        }
+
+
+/*
         Sensor sensor = event.sensor;
         float[] values = event.values;
         int value = -1;
@@ -60,7 +67,7 @@ public class FitnessFragment extends Fragment implements SensorEventListener{
 
         if (sensor.getType() == Sensor.TYPE_STEP_DETECTOR) {
             steps++;
-        }
+        }*/
     }
 
     @Override
@@ -89,7 +96,8 @@ public class FitnessFragment extends Fragment implements SensorEventListener{
     @Override
     public void onPause() {
         super.onPause();
-        sManager.unregisterListener(this, stepSensor);
+        running = false;
+        //sManager.unregisterListener(this);
     }
 
     //function to determine the distance run in kilometers using average step length for men and number of steps
