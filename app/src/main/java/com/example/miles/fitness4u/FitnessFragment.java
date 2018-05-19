@@ -49,7 +49,7 @@ public class FitnessFragment extends Fragment implements SensorEventListener, St
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        
+
         tvSteps = getView().findViewById(R.id.tvSteps);
         startCounter = getView().findViewById(R.id.startCounter);
         endCounter = getView().findViewById(R.id.stopCounter);
