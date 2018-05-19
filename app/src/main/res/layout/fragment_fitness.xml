@@ -63,16 +63,17 @@
             android:background="@color/colorPrimary"
             android:text="Start Counter"/>
 
-        <Button
-            android:id="@+id/stopCounter"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/startCounter"
-            android:background="@color/colorPrimary"
-            android:text="End Counter"
-            />
     </RelativeLayout>
 
+    <Button
+        android:id="@+id/stopCounter"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/stepCounter"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="138dp"
+        android:background="@color/colorPrimary"
+        android:text="End Counter" />
 
 
 </RelativeLayout>
