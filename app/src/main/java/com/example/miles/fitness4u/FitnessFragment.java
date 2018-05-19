@@ -58,6 +58,7 @@ public class FitnessFragment extends Fragment implements SensorEventListener{
                 if (v.equals(startCounter)) {
 
                     startCounter();
+
                 }
             }
         });
@@ -68,6 +69,8 @@ public class FitnessFragment extends Fragment implements SensorEventListener{
                 if (v.equals(startCounter)) {
 
                     stopCounter();
+
+                    tvSteps.setText("");
                 }
             }
         });

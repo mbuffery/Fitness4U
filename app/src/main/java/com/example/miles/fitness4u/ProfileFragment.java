@@ -56,7 +56,7 @@ public class ProfileFragment extends Fragment {
 
         //Gets the current User
         user = FirebaseAuth.getInstance().getCurrentUser();
-
+/*
         //Sets references to each item in the activity
         final TextView heightView = getView().findViewById(R.id.profHeight);
         final TextView ageView = getView().findViewById(R.id.profAge);
@@ -100,7 +100,7 @@ public class ProfileFragment extends Fragment {
                 nameView.setText("Error Found");
 
             }
-        });
+        });*/
 
 
     }

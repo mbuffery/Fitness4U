@@ -31,6 +31,7 @@ public class UserLoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_login);
+
         //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();
 
@@ -40,6 +41,8 @@ public class UserLoginActivity extends AppCompatActivity {
             finish();
         }
 
+        auth = FirebaseAuth.getInstance();
+
         setContentView(R.layout.activity_user_login);
         inputEmail = findViewById(R.id.email);
         inputPassword = findViewById(R.id.password);
@@ -48,8 +51,6 @@ public class UserLoginActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btn_login);
         btnReset = findViewById(R.id.btn_reset_password);
 
-        //Get Firebase auth instance
-        auth = FirebaseAuth.getInstance();
 
         btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,4 +110,15 @@ public class UserLoginActivity extends AppCompatActivity {
             }
         });
     }
+/*
+    @Override
+    protected void onStart()
+    {
+        super.onStart();
+
+        if (auth.getCurrentUser() != null)
+        {
+            startActivity(new Intent(UserLoginActivity.this, NavDrawerActivity.class));
+        }
+    }*/
 }
