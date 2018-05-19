@@ -86,7 +86,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:focusableInTouchMode="true"
-            android:hint="Please type in your preferred fitness (e.g Cardio fitness or Bodybuilding"
+            android:hint="preferred fitness (e.g Cardio fitness or Bodybuilding)"
             android:imeActionId="@+id/login"
             android:imeOptions="actionUnspecified"
             android:inputType="text"

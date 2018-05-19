@@ -198,7 +198,7 @@ public class MainActivity extends Fragment {
     @SuppressLint("SetTextI18n")
     private void setDataToView(FirebaseUser user) {
 
-        email.setText("User Email: " + user.getEmail());
+        email.setText("Email: " + user.getEmail());
 
     }
 

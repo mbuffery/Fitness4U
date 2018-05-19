@@ -1,5 +1,6 @@
 package com.example.miles.fitness4u;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
@@ -36,7 +37,7 @@ public class ProfileFragment extends Fragment {
     private DatabaseReference database;
     private FirebaseAuth auth;
     private FirebaseUser user;
-    private TextView heightView, ageView, weightView, nameView;
+    private TextView heightView, ageView, weightView, nameView, prefView, goalView, email;
 
     //final FirebaseDatabase database = FirebaseDatabase.getInstance();
 
@@ -74,9 +75,12 @@ public class ProfileFragment extends Fragment {
         ageView = getView().findViewById(R.id.profAge);
         weightView = getView().findViewById(R.id.profWeight);
         nameView = getView().findViewById(R.id.userName);
+        prefView = getView().findViewById(R.id.PrefView);
+        goalView = getView().findViewById(R.id.GoalView);
+        email = getView().findViewById((R.id.useremail));
 
         user = FirebaseAuth.getInstance().getCurrentUser();
-
+        setDataToView(user);
 
         userRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -90,15 +94,18 @@ public class ProfileFragment extends Fragment {
                 String weightText = (String) dataSnapshot.child(user_id).child("weight").getValue();
                 String heightText = (String) dataSnapshot.child(user_id).child("height").getValue();
                 String nameText = (String) dataSnapshot.child(user_id).child("name").getValue();
+                String goalText = (String) dataSnapshot.child(user_id).child("goal").getValue();
+                String prefText = (String) dataSnapshot.child(user_id).child("preferred").getValue();
 
                 //Displays the selected data to the Textviews in the activity
                 ageView.setText(ageText);
                 weightView.setText(weightText);
                 heightView.setText(heightText);
                 nameView.setText(nameText);
+                prefView.setText(prefText);
+                goalView.setText(goalText);
 
-                //startActivity(new Intent(getActivity(), NavDrawerActivity.class));
-                //getActivity().finish();
+
 
             }
 
@@ -109,20 +116,20 @@ public class ProfileFragment extends Fragment {
                 weightView.setText("Error Found");
                 heightView.setText("Error Found");
                 nameView.setText("Error Found");
+                goalView.setText("Error Found");
+                prefView.setText("Error Found");
 
             }
         });
     }
-/*
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
 
+    @SuppressLint("SetTextI18n")
+    private void setDataToView(FirebaseUser user) {
 
+        email.setText("Email: " + user.getEmail());
 
+    }
 
-
-    }*/
 }
 
 

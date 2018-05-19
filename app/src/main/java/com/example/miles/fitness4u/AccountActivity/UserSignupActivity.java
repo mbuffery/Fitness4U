@@ -77,6 +77,7 @@ public class UserSignupActivity extends AppCompatActivity {
                 final String height = inputHeight.getText().toString().trim();
                 final String age = inputAge.getText().toString().trim();
                 final String goal = inputGoal.getText().toString().trim();
+                final String prefitness = inputPref.getText().toString().trim();
 
                 if (TextUtils.isEmpty(email)) {
                     Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
@@ -101,6 +102,14 @@ public class UserSignupActivity extends AppCompatActivity {
                 }
                 if (TextUtils.isEmpty(age)) {
                     Toast.makeText(getApplicationContext(), "Enter Age Please!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (TextUtils.isEmpty(goal)) {
+                    Toast.makeText(getApplicationContext(), "Enter Goal please", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (TextUtils.isEmpty(prefitness)) {
+                    Toast.makeText(getApplicationContext(), "Enter Preferred fitness", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -131,6 +140,8 @@ public class UserSignupActivity extends AppCompatActivity {
                                     mDatabase.child("Users").child(task.getResult().getUser().getUid()).child("weight").setValue(weight);
                                     mDatabase.child("Users").child(task.getResult().getUser().getUid()).child("height").setValue(height);
                                     mDatabase.child("Users").child(task.getResult().getUser().getUid()).child("age").setValue(age);
+                                    mDatabase.child("Users").child(task.getResult().getUser().getUid()).child("preferred").setValue(prefitness);
+                                    mDatabase.child("Users").child(task.getResult().getUser().getUid()).child("goal").setValue(goal);
                                     finish();
                                 }
                             }
