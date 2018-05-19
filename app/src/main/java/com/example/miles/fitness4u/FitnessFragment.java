@@ -12,6 +12,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,8 +25,10 @@ public class FitnessFragment extends Fragment implements SensorEventListener{
 
     private long steps = 0;
     TextView tvSteps;
+    Sensor countSensor;
     SensorManager sManager;
     boolean running = false;
+    Button startCounter, endCounter;
 
 
 
@@ -40,11 +43,34 @@ public class FitnessFragment extends Fragment implements SensorEventListener{
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        tvSteps = (TextView) getView().findViewById(R.id.tvSteps);
+        tvSteps = getView().findViewById(R.id.tvSteps);
+        startCounter = getView().findViewById(R.id.startCounter);
+        endCounter = getView().findViewById(R.id.stopCounter);
 
         //Initialised SensorManager and Sensor
         sManager = (SensorManager) getActivity().getSystemService(Context.SENSOR_SERVICE);
 
+
+
+        startCounter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (v.equals(startCounter)) {
+
+                    startCounter();
+                }
+            }
+        });
+
+        endCounter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (v.equals(startCounter)) {
+
+                    stopCounter();
+                }
+            }
+        });
     }
 
     @Override
@@ -55,6 +81,9 @@ public class FitnessFragment extends Fragment implements SensorEventListener{
             tvSteps.setText(String.valueOf(event.values[0]));
         }
 
+
+        //TODO: Restart step counter everytime you press go or stop.
+        //TODO: After getting the amount of steps, calculate into distance travelled
 
 /*
         Sensor sensor = event.sensor;
@@ -75,10 +104,10 @@ public class FitnessFragment extends Fragment implements SensorEventListener{
 
     }
 
-    @Override
-    public void onResume()
+
+
+    public void startCounter()
     {
-        super.onResume();
         running = true;
         Sensor countSensor = sManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
 
@@ -93,9 +122,8 @@ public class FitnessFragment extends Fragment implements SensorEventListener{
         //sManager.registerListener(this, stepSensor, SensorManager.SENSOR_DELAY_FASTEST);
     }
 
-    @Override
-    public void onPause() {
-        super.onPause();
+
+    public void stopCounter() {
         running = false;
         //sManager.unregisterListener(this);
     }
