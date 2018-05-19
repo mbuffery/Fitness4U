@@ -38,11 +38,12 @@ public class DeadliftsFragment extends Fragment {
         ArrayList<BodyBuildingSelection> selected = new ArrayList<>();
 
         //Crunches will display 3 textview and one image
-        BodyBuildingSelection SitUps = new BodyBuildingSelection("Situps", "Muscle: Rectus Abdominis", "Step 1: Lie on back your back, have your knees bent and place hands on the side of your head.",
-                "Step 2: Keeping your hands on your head, lift yourself towards your knees in an up and down motion; repeat as many times as needed", R.drawable.crunches);
+        BodyBuildingSelection Deadlifts = new BodyBuildingSelection("Deadlifts", "Muscle: Latissimus Dorsi", "Step 1: Have feet shoulder length apart while grip is just outside your legs." +
+                "Have a overhand grip with your shoulders being down and back. Try keep contact with the bar using your legs. ",
+                "Step 2: As you are moving, make sure your knees and hips move as one to get a successful lift", R.drawable.crunches);
 
         //adds crunches to the array
-        selected.add(SitUps);
+        selected.add(Deadlifts);
 
         //Creates new adapter and takes all the selected data.
         DataAdapter adapter = new DataAdapter(getContext(), R.layout.row_view, selected);
