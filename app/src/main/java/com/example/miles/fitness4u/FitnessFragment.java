@@ -1,6 +1,7 @@
 package com.example.miles.fitness4u;
 
 import android.app.Activity;
+import android.app.ListActivity;
 import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -28,14 +29,12 @@ public class FitnessFragment extends Fragment implements SensorEventListener, St
 
     //private long steps = 0;
     TextView tvSteps;
-    //Sensor countSensor;
-    //SensorManager sManager;
-    //boolean running = false;
+    private Sensor countSensor;
+    private StepDetector stepDetector;
+    SensorManager sManager;
     Button startCounter, endCounter;
-    private StepDetector simpleStepDetector;
-    private SensorManager sensorManager;
-    private Sensor accel;
-    private static final String TEXT_NUM_STEPS = "Number of Steps: ";
+
+    private static final String numberOfSteps = "Number of Steps: ";
     private int numSteps;
 
 
@@ -55,21 +54,17 @@ public class FitnessFragment extends Fragment implements SensorEventListener, St
         endCounter = getView().findViewById(R.id.stopCounter);
 
         //Initialised SensorManager and Sensor
-        //sManager = (SensorManager) getActivity().getSystemService(Context.SENSOR_SERVICE);
-
-
-
+        sManager = (SensorManager) getActivity().getSystemService(Context.SENSOR_SERVICE);
+        countSensor = sManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        stepDetector = new StepDetector();
+        stepDetector.registerListener(this);
 
         startCounter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //if (v.equals(startCounter)) {
 
-                   // startCounter();
-
-               // }
                 numSteps = 0;
-                sensorManager.registerListener(FitnessFragment.this, accel, SensorManager.SENSOR_DELAY_FASTEST);
+                sManager.registerListener(FitnessFragment.this, countSensor, SensorManager.SENSOR_DELAY_FASTEST);
                 Toast.makeText(getActivity(), "Start Walking", Toast.LENGTH_SHORT).show();
             }
         });
@@ -77,91 +72,36 @@ public class FitnessFragment extends Fragment implements SensorEventListener, St
         endCounter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //if (v.equals(startCounter)) {
 
-                   // stopCounter();
-
-                    //tvSteps.setText("");
-               // }
-                sensorManager.unregisterListener(FitnessFragment.this);
+                sManager.unregisterListener(FitnessFragment.this);
                 Toast.makeText(getActivity(), "Stop Walking", Toast.LENGTH_SHORT).show();
+                numSteps = 0;
             }
         });
     }
 
-   // @Override
-   // public void onSensorChanged(SensorEvent event) {
-/*
-        if (running)
-        {
-            tvSteps.setText(String.valueOf(event.values[0]));
-        }
-
-
-        //TODO: Restart step counter everytime you press go or stop.
-        //TODO: After getting the amount of steps, calculate into distance travelled
-
-
-        Sensor sensor = event.sensor;
-        float[] values = event.values;
-        int value = -1;
-
-        if (values.length > 0) {
-            value = (int) values[0];
-        }
-
-        if (sensor.getType() == Sensor.TYPE_STEP_DETECTOR) {
-            steps++;
-        }*/
-    //}
 
     @Override
     public void onAccuracyChanged(Sensor sensor, int i) {
-
-
-    }
-
-    public void startCounter()
-    {/*
-        running = true;
-        Sensor countSensor = sManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
-
-        if(running = true) {
-
-            if (countSensor != null) {
-                sManager.registerListener(this, countSensor, SensorManager.SENSOR_DELAY_UI);
-            } else {
-                Toast.makeText(getActivity(), "Sensor not found", Toast.LENGTH_SHORT).show();
-            }
-        }else {
-            Toast.makeText(getActivity(), "You are not running", Toast.LENGTH_SHORT).show();
-        }
-
-        //sManager.registerListener(this, stepSensor, SensorManager.SENSOR_DELAY_FASTEST);
-        */
     }
 
 
-    public void stopCounter() {
-
-        //running = false;
-        //sManager.unregisterListener(this);
-    }
-
-    //function to determine the distance run in kilometers using average step length for men and number of steps
-    public float getDistanceRun(long steps){
-        float distance = (float)(steps*78)/(float)100000;
-        return distance;
-    }
 
     @Override
     public void onSensorChanged(SensorEvent event) {
+        if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER)
+        {
+            stepDetector.updateAccel(event.timestamp, event.values[0], event.values[1], event.values[2]);
+        }
 
     }
 
     @Override
     public void step(long timeNs) {
 
+        numSteps++;
+        tvSteps.setText(numberOfSteps + numSteps);
     }
-   
+
+
 }

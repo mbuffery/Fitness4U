@@ -28,6 +28,9 @@ public class UserSignupActivity extends AppCompatActivity {
     private ProgressBar progressBar;
     private FirebaseAuth auth;
     private DatabaseReference mDatabase;
+    private static final String weightKG = "KG";
+    private static final String heightM = "M";
+
 
 
     @Override
@@ -137,8 +140,8 @@ public class UserSignupActivity extends AppCompatActivity {
 
                                     mDatabase.child("Users").child(task.getResult().getUser().getUid()).child("name").setValue(name);
 
-                                    mDatabase.child("Users").child(task.getResult().getUser().getUid()).child("weight").setValue(weight);
-                                    mDatabase.child("Users").child(task.getResult().getUser().getUid()).child("height").setValue(height);
+                                    mDatabase.child("Users").child(task.getResult().getUser().getUid()).child("weight").setValue(weight + weightKG);
+                                    mDatabase.child("Users").child(task.getResult().getUser().getUid()).child("height").setValue(height + heightM);
                                     mDatabase.child("Users").child(task.getResult().getUser().getUid()).child("age").setValue(age);
                                     mDatabase.child("Users").child(task.getResult().getUser().getUid()).child("preferred").setValue(prefitness);
                                     mDatabase.child("Users").child(task.getResult().getUser().getUid()).child("goal").setValue(goal);

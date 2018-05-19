@@ -35,19 +35,19 @@ public class StepDetector {
     public void registerListener(StepListener listener) {
         this.listener = listener;
     }
-
-    public void updateAccel(long lastTimeStepped, float x, float y, float z) {
-        float[] currentAccel = new float[3];
-        currentAccel[0] = x;
-        currentAccel[1] = y;
-        currentAccel[2] = z;
+    //Will accept the updates from the accelerometer
+    public void updateAccel(long timeNs, float x, float y, float z) {
+        float[] currentAccelerMeter = new float[3];
+        currentAccelerMeter[0] = x;
+        currentAccelerMeter[1] = y;
+        currentAccelerMeter[2] = z;
 
         //Updates where the global Z vector is (at this point, it is just a guess of where it might be)
         //Further calculations are needed to pinpoint a more reliable answer
         accelRingCounter++;
-        xAccelRing[accelRingCounter % accelRingSize] = currentAccel[0];
-        yAccelRing[accelRingCounter % accelRingSize] = currentAccel[1];
-        zAccelRing[accelRingCounter % accelRingSize] = currentAccel[2];
+        xAccelRing[accelRingCounter % accelRingSize] = currentAccelerMeter[0];
+        yAccelRing[accelRingCounter % accelRingSize] = currentAccelerMeter[1];
+        zAccelRing[accelRingCounter % accelRingSize] = currentAccelerMeter[2];
 
         //Globalz has X, Y and Z
         float[] globalZ = new float[3];
@@ -67,11 +67,31 @@ public class StepDetector {
         globalZ[1] = globalZ[1] / normaliseFactor;
         globalZ[2] = globalZ[2] / normaliseFactor;
 
-        
+        //Understand and figure out the component of the current acceleration
+        //aiming at the direction of globalZ and then subtracts the gravity's contribution
+        float currentZ = SensorFilter.dotProduct(globalZ, currentAccelerMeter) - normaliseFactor;
 
+        //velRingCounter = velRingCounter + 1
+        velRingCounter++;
 
+        velRing[velRingCounter % velocityRingSize] = currentZ;
+
+        float velocityEst = SensorFilter.sumTotal(velRing);
+
+        if (velocityEst > startStepSens && oldVelocityEstimate <= startStepSens
+                && (timeNs - lastTimeStepped > stepDelay)) {
+            listener.step(timeNs);
+            lastTimeStepped = timeNs;
+        }
+        oldVelocityEstimate = velocityEst;
     }
 
 
 
+
+
+
+
+
 }
+

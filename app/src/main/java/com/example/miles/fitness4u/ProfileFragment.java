@@ -38,6 +38,8 @@ public class ProfileFragment extends Fragment {
     private FirebaseAuth auth;
     private FirebaseUser user;
     private TextView heightView, ageView, weightView, nameView, prefView, goalView, email;
+    private static final String heightM = "M";
+    private static final String weight = "KG";
 
     //final FirebaseDatabase database = FirebaseDatabase.getInstance();
 
@@ -99,8 +101,8 @@ public class ProfileFragment extends Fragment {
 
                 //Displays the selected data to the Textviews in the activity
                 ageView.setText(ageText);
-                weightView.setText(weightText);
-                heightView.setText(heightText);
+                weightView.setText(weightText + weight);
+                heightView.setText(heightText + heightM);
                 nameView.setText(nameText);
                 prefView.setText(prefText);
                 goalView.setText(goalText);
