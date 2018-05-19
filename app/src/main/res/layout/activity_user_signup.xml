@@ -59,15 +59,16 @@
             android:inputType="number"
             android:maxLines="1"
             android:textColor="@android:color/white" />
+
         <EditText
             android:id="@+id/height"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:focusableInTouchMode="true"
-            android:hint="Height (e.g 5,11)"
+            android:hint="Height (In Meters)"
             android:imeActionId="@+id/login"
             android:imeOptions="actionUnspecified"
-            android:inputType="numberDecimal"
+            android:inputType="number"
             android:maxLines="1"
             android:textColor="@android:color/white" />
         <EditText
@@ -100,7 +101,7 @@
             android:hint="Please enter your age"
             android:imeActionId="@+id/login"
             android:imeOptions="actionUnspecified"
-            android:maxLines="1"
+            android:maxLines="2"
             android:textColor="@android:color/white" />
 
 
