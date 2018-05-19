@@ -36,36 +36,47 @@ public class ProfileFragment extends Fragment {
     private DatabaseReference database;
     private FirebaseAuth auth;
     private FirebaseUser user;
+    private TextView heightView, ageView, weightView, nameView;
 
+    //final FirebaseDatabase database = FirebaseDatabase.getInstance();
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
         return inflater.inflate(R.layout.fragment_profile, container, false);
+
+
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+    public void onActivityCreated(@Nullable Bundle savedInstanceState)
+    {
         super.onActivityCreated(savedInstanceState);
 
-        //Creates instance to allow Read/Write for the data
-        database = FirebaseDatabase.getInstance().getReference();
-
-        //Gets firebase Authenticator
         auth = FirebaseAuth.getInstance();
 
-        //Gets the current User
-        user = FirebaseAuth.getInstance().getCurrentUser();
-/*
-        //Sets references to each item in the activity
-        final TextView heightView = getView().findViewById(R.id.profHeight);
-        final TextView ageView = getView().findViewById(R.id.profAge);
-        final TextView weightView = getView().findViewById(R.id.profWeight);
-        final TextView nameView = getView().findViewById(R.id.userName);
-
         //Gets the instance of the firebase database and gets the users data
-        final FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference userRef = database.getReference("Users");
+        database = FirebaseDatabase.getInstance().getReference();
+
+        if (auth.getCurrentUser() == null)
+        {
+            startActivity(new Intent(getActivity(), UserLoginActivity.class));
+        }
+
+        final FirebaseDatabase fDatabase = FirebaseDatabase.getInstance();
+        DatabaseReference userRef = fDatabase.getReference("Users");
+
+        user = FirebaseAuth.getInstance().getCurrentUser();
+
+        //Gets references to each item in the activity
+        heightView = getView().findViewById(R.id.profHeight);
+        ageView = getView().findViewById(R.id.profAge);
+        weightView = getView().findViewById(R.id.profWeight);
+        nameView = getView().findViewById(R.id.userName);
+
+        user = FirebaseAuth.getInstance().getCurrentUser();
+
 
         userRef.addValueEventListener(new ValueEventListener() {
             @Override
@@ -75,10 +86,10 @@ public class ProfileFragment extends Fragment {
                 String user_id = user.getUid();
 
                 //Gets the specific data from the Database
-                String ageText = (String) dataSnapshot.child(user_id).child("Age").getValue();
-                String weightText = (String) dataSnapshot.child(user_id).child("Weight").getValue();
-                String heightText = (String) dataSnapshot.child(user_id).child("Height").getValue();
-                String nameText = (String) dataSnapshot.child(user_id).child("Name").getValue();
+                String ageText = (String) dataSnapshot.child(user_id).child("age").getValue();
+                String weightText = (String) dataSnapshot.child(user_id).child("weight").getValue();
+                String heightText = (String) dataSnapshot.child(user_id).child("height").getValue();
+                String nameText = (String) dataSnapshot.child(user_id).child("name").getValue();
 
                 //Displays the selected data to the Textviews in the activity
                 ageView.setText(ageText);
@@ -86,8 +97,8 @@ public class ProfileFragment extends Fragment {
                 heightView.setText(heightText);
                 nameView.setText(nameText);
 
-                startActivity(new Intent(getActivity(), NavDrawerActivity.class));
-                getActivity().finish();
+                //startActivity(new Intent(getActivity(), NavDrawerActivity.class));
+                //getActivity().finish();
 
             }
 
@@ -100,10 +111,19 @@ public class ProfileFragment extends Fragment {
                 nameView.setText("Error Found");
 
             }
-        });*/
-
-
+        });
     }
+/*
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+
+
+
+
+    }*/
 }
+
 
 

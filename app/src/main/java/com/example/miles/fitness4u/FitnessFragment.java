@@ -70,7 +70,7 @@ public class FitnessFragment extends Fragment implements SensorEventListener{
 
                     stopCounter();
 
-                    tvSteps.setText("");
+                    //tvSteps.setText("");
                 }
             }
         });
@@ -105,21 +105,23 @@ public class FitnessFragment extends Fragment implements SensorEventListener{
     @Override
     public void onAccuracyChanged(Sensor sensor, int i) {
 
+
     }
-
-
 
     public void startCounter()
     {
         running = true;
         Sensor countSensor = sManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
 
-        if (countSensor != null)
-        {
-            sManager.registerListener(this, countSensor, SensorManager.SENSOR_DELAY_UI);
-        } else
-        {
-            Toast.makeText(getActivity(), "Sensor not found", Toast.LENGTH_SHORT).show();
+        if(running = true) {
+
+            if (countSensor != null) {
+                sManager.registerListener(this, countSensor, SensorManager.SENSOR_DELAY_UI);
+            } else {
+                Toast.makeText(getActivity(), "Sensor not found", Toast.LENGTH_SHORT).show();
+            }
+        }else {
+            Toast.makeText(getActivity(), "You are not running", Toast.LENGTH_SHORT).show();
         }
 
         //sManager.registerListener(this, stepSensor, SensorManager.SENSOR_DELAY_FASTEST);
@@ -127,6 +129,7 @@ public class FitnessFragment extends Fragment implements SensorEventListener{
 
 
     public void stopCounter() {
+
         running = false;
         //sManager.unregisterListener(this);
     }

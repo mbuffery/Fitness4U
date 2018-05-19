@@ -18,13 +18,16 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class UserSignupActivity extends AppCompatActivity {
 
-    private EditText inputEmail, inputPassword;
+    private EditText inputEmail, inputPassword, inputName, inputWeight, inputHeight, inputAge;
     private Button btnSignIn, btnSignUp, btnResetPassword;
     private ProgressBar progressBar;
     private FirebaseAuth auth;
+    private DatabaseReference mDatabase;
 
 
     @Override
@@ -33,6 +36,7 @@ public class UserSignupActivity extends AppCompatActivity {
         setContentView(R.layout.activity_user_signup);
         //Get Firebase auth instance
         auth = FirebaseAuth.getInstance();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
         btnSignIn = findViewById(R.id.sign_in_button);
         btnSignUp = findViewById(R.id.sign_up_button);
@@ -41,10 +45,15 @@ public class UserSignupActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
         btnResetPassword = findViewById(R.id.btn_reset_password);
 
+        inputName = findViewById(R.id.name);
+        inputWeight = findViewById(R.id.weight);
+        inputHeight = findViewById(R.id.height);
+        inputAge = findViewById(R.id.age);
+
         btnResetPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(UserSignupActivity.this, NavDrawerActivity.class));
+                startActivity(new Intent(UserSignupActivity.this, UserResetPasswordActivity.class));
             }
         });
 
@@ -61,6 +70,10 @@ public class UserSignupActivity extends AppCompatActivity {
 
                 String email = inputEmail.getText().toString().trim();
                 String password = inputPassword.getText().toString().trim();
+                final String name = inputName.getText().toString().trim();
+                final String weight = inputWeight.getText().toString().trim();
+                final String height = inputHeight.getText().toString().trim();
+                final String age = inputAge.getText().toString().trim();
 
                 if (TextUtils.isEmpty(email)) {
                     Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
@@ -69,6 +82,22 @@ public class UserSignupActivity extends AppCompatActivity {
 
                 if (TextUtils.isEmpty(password)) {
                     Toast.makeText(getApplicationContext(), "Enter password!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (TextUtils.isEmpty(name)) {
+                    Toast.makeText(getApplicationContext(), "Enter Name Please!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (TextUtils.isEmpty(weight)) {
+                    Toast.makeText(getApplicationContext(), "Enter Weight Please!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (TextUtils.isEmpty(height)) {
+                    Toast.makeText(getApplicationContext(), "Enter Height Please!", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (TextUtils.isEmpty(age)) {
+                    Toast.makeText(getApplicationContext(), "Enter Age Please!", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
@@ -92,7 +121,13 @@ public class UserSignupActivity extends AppCompatActivity {
                                     Toast.makeText(UserSignupActivity.this, "Authentication failed." + task.getException(),
                                             Toast.LENGTH_SHORT).show();
                                 } else {
-                                    startActivity(new Intent(UserSignupActivity.this, UserLoginActivity.class));
+                                    startActivity(new Intent(UserSignupActivity.this, NavDrawerActivity.class));
+
+                                    mDatabase.child("Users").child(task.getResult().getUser().getUid()).child("name").setValue(name);
+
+                                    mDatabase.child("Users").child(task.getResult().getUser().getUid()).child("weight").setValue(weight);
+                                    mDatabase.child("Users").child(task.getResult().getUser().getUid()).child("height").setValue(height);
+                                    mDatabase.child("Users").child(task.getResult().getUser().getUid()).child("age").setValue(age);
                                     finish();
                                 }
                             }
