@@ -3,7 +3,11 @@
     package="com.example.miles.fitness4u">
 
 
+    <!--Creates a permisson for the app to use the internet-->
     <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <!-- Feature only available if the device is within current update-->
+    <uses-feature android:name="android.hardware.Sensor.stepcounter"/>
+    <uses-feature android:name="android.hardware.Sensor.stepdetector"/>
 
     <application
         android:allowBackup="true"
