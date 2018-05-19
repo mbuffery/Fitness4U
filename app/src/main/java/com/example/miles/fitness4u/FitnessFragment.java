@@ -14,7 +14,7 @@ import android.view.ViewGroup;
  * Created by miles on 4/16/2018.
  */
 
-public class FitnessFragment extends Fragment implements SensorEventListener{
+public class FitnessFragment extends Fragment {
 
     @Nullable
     @Override
@@ -26,7 +26,7 @@ public class FitnessFragment extends Fragment implements SensorEventListener{
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        SensorManager sManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        //SensorManager sManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
     }
 
 }

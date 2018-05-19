@@ -34,15 +34,18 @@ public class CrunchesFragment extends Fragment {
         ListView listView = (ListView)getView().findViewById(R.id.listView);
 
         //New array for BodyBuildingSelection
-        ArrayList<BodyBuildingSelection> selected = new ArrayList<BodyBuildingSelection>();
-        //Crunches will display 2 textview and one image
-        BodyBuildingSelection crunches = new BodyBuildingSelection("Crunches", "Muscle: Rectus Abdominis", "Step 1: Lie on a Bench with legs extended straight" +
-                "/n How about this, will this work please fucking work tyou slut bag whore",
+        ArrayList<BodyBuildingSelection> selected = new ArrayList<>();
+
+        //Crunches will display 3 textview and one image
+        BodyBuildingSelection crunches = new BodyBuildingSelection("Crunches", "Muscle: Rectus Abdominis", "Step 1: Lie on a Bench with legs extended straight",
                 "Keeping your arms parallel to the floor", R.drawable.crunches);
+
         //adds crunches to the array
         selected.add(crunches);
+
         //Creates new adapter and takes all the selected data.
         DataAdapter adapter = new DataAdapter(getContext(), R.layout.row_view, selected);
+
         //Add the selected data to the adapter;
         listView.setAdapter(adapter);
 

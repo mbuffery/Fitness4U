@@ -21,8 +21,6 @@
         </activity>
         <activity android:name=".NavDrawerActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-
-
         <activity android:name=".AccountActivity.UserSignupActivity" />
         <activity android:name=".AccountActivity.UserResetPasswordActivity"></activity>
 
