@@ -10,12 +10,12 @@
         android:layout_height="50dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="13dp"
         android:text="Title"
         android:textAlignment="center"
         android:textColor="@color/black"
-        android:textStyle="bold"
-        android:textSize="30sp"/>
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/image1"

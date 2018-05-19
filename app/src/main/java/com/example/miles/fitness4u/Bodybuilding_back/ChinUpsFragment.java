@@ -32,7 +32,7 @@ public class ChinUpsFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         //Sets the listview of the xml to listview
-        ListView listView = (ListView)getView().findViewById(R.id.listView);
+        ListView listView = getView().findViewById(R.id.listView);
 
         //New array for BodyBuildingSelection
         ArrayList<BodyBuildingSelection> selected = new ArrayList<>();
@@ -50,8 +50,6 @@ public class ChinUpsFragment extends Fragment {
 
         //Add the selected data to the adapter;
         listView.setAdapter(adapter);
-
-
 
 
 

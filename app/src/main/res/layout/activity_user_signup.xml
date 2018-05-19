@@ -98,7 +98,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:focusableInTouchMode="true"
-            android:hint="Please enter your age"
+            android:hint="Please enter your goal"
             android:imeActionId="@+id/login"
             android:imeOptions="actionUnspecified"
             android:maxLines="2"
