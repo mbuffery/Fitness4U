@@ -36,7 +36,7 @@ public class StepDetector {
         this.listener = listener;
     }
 
-    public void updateAccel(long timeNs, float x, float y, float z) {
+    public void updateAccel(long lastTimeStepped, float x, float y, float z) {
         float[] currentAccel = new float[3];
         currentAccel[0] = x;
         currentAccel[1] = y;
@@ -52,7 +52,23 @@ public class StepDetector {
         //Globalz has X, Y and Z
         float[] globalZ = new float[3];
 
+        //Calculates each global axis
+        // Uses the norm function to create a vector space
+        globalZ[0] = SensorFilter.sumTotal(xAccelRing) / Math.min(accelRingCounter, accelRingSize);
+        globalZ[1] = SensorFilter.sumTotal(yAccelRing) / Math.min(accelRingCounter, accelRingSize);
+        globalZ[2] = SensorFilter.sumTotal(zAccelRing) / Math.min(accelRingCounter, accelRingSize);
+
+
+        //Uses the normFunction to lower the probability function
+        float normaliseFactor = SensorFilter.normFunction(globalZ);
+
+        //Each gloabal axis X, Y, Z probability has been lowered
+        globalZ[0] = globalZ[0] / normaliseFactor;
+        globalZ[1] = globalZ[1] / normaliseFactor;
+        globalZ[2] = globalZ[2] / normaliseFactor;
+
         
+
 
     }
 

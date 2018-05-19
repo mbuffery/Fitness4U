@@ -5,6 +5,7 @@ package com.example.miles.fitness4u;
  */
 
 public class SensorFilter {
+
     private SensorFilter() {
     }
 
@@ -38,7 +39,7 @@ public class SensorFilter {
         return valuesArray;
     }
 
-    //
+
     public static float normFunction(float[] array) {
         //Set values to 0
         float values = 0;
