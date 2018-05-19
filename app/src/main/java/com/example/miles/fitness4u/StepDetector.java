@@ -32,6 +32,29 @@ public class StepDetector {
     //Uses the StepListener interface to listen and calculate each step
     private StepListener listener;
 
+    public void registerListener(StepListener listener) {
+        this.listener = listener;
+    }
+
+    public void updateAccel(long timeNs, float x, float y, float z) {
+        float[] currentAccel = new float[3];
+        currentAccel[0] = x;
+        currentAccel[1] = y;
+        currentAccel[2] = z;
+
+        //Updates where the global Z vector is (at this point, it is just a guess of where it might be)
+        //Further calculations are needed to pinpoint a more reliable answer
+        accelRingCounter++;
+        xAccelRing[accelRingCounter % accelRingSize] = currentAccel[0];
+        yAccelRing[accelRingCounter % accelRingSize] = currentAccel[1];
+        zAccelRing[accelRingCounter % accelRingSize] = currentAccel[2];
+
+        //Globalz has X, Y and Z
+        float[] globalZ = new float[3];
+
+        
+
+    }
 
 
 
