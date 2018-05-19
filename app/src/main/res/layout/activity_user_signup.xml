@@ -81,6 +81,27 @@
             android:inputType="number"
             android:maxLines="1"
             android:textColor="@android:color/white" />
+        <EditText
+            android:id="@+id/preFitness"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusableInTouchMode="true"
+            android:hint="Please type in your preferred fitness (e.g Cardio fitness or Bodybuilding"
+            android:imeActionId="@+id/login"
+            android:imeOptions="actionUnspecified"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textColor="@android:color/white" />
+        <EditText
+            android:id="@+id/goal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusableInTouchMode="true"
+            android:hint="Please enter your age"
+            android:imeActionId="@+id/login"
+            android:imeOptions="actionUnspecified"
+            android:maxLines="1"
+            android:textColor="@android:color/white" />
 
 
         <Button
@@ -91,7 +112,7 @@
             android:layout_marginTop="16dp"
             android:background="@color/colorAccent"
             android:text="@string/action_sign_in_short"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:textStyle="bold" />
 
         <Button

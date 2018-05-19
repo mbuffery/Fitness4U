@@ -239,7 +239,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Bodybuilding"
+                    android:text="Preferred Fitness"
                     android:textColor="@color/headings"
                     android:textSize="13sp" />
 
@@ -269,7 +269,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Fitness"
+                    android:text="Goal"
                     android:textColor="@color/headings"
                     android:textSize="13sp" />
 

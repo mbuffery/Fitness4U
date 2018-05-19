@@ -23,7 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class UserSignupActivity extends AppCompatActivity {
 
-    private EditText inputEmail, inputPassword, inputName, inputWeight, inputHeight, inputAge;
+    private EditText inputEmail, inputPassword, inputName, inputWeight, inputHeight, inputAge, inputPref, inputGoal;
     private Button btnSignIn, btnSignUp, btnResetPassword;
     private ProgressBar progressBar;
     private FirebaseAuth auth;
@@ -49,6 +49,8 @@ public class UserSignupActivity extends AppCompatActivity {
         inputWeight = findViewById(R.id.weight);
         inputHeight = findViewById(R.id.height);
         inputAge = findViewById(R.id.age);
+        inputGoal = findViewById(R.id.goal);
+        inputPref = findViewById(R.id.preFitness);
 
         btnResetPassword.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,6 +76,7 @@ public class UserSignupActivity extends AppCompatActivity {
                 final String weight = inputWeight.getText().toString().trim();
                 final String height = inputHeight.getText().toString().trim();
                 final String age = inputAge.getText().toString().trim();
+                final String goal = inputGoal.getText().toString().trim();
 
                 if (TextUtils.isEmpty(email)) {
                     Toast.makeText(getApplicationContext(), "Enter email address!", Toast.LENGTH_SHORT).show();
