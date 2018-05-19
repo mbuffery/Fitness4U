@@ -60,5 +60,17 @@ public class SensorFilter {
         return values;
     }
 
+    //Normalize the vector
+    //Change the direction in order to make the vector point in the same direction
+    //Length will be set to 1
+    public static float[] normalize(float[] a) {
+        float[] values = new float[a.length];
+        float normFun = normFunction(a);
+        for (int i = 0; i < a.length; i++) {
+            values[i] = a[i] / normFun;
+        }
+        return values;
+    }
+
 
 }
