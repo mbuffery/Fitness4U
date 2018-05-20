@@ -38,13 +38,13 @@ public class BarbellCurlsFragment extends Fragment {
         ArrayList<BodyBuildingSelection> selected = new ArrayList<>();
 
         //Crunches will display 3 textview and one image
-        BodyBuildingSelection ChinUps = new BodyBuildingSelection("Situps", "Muscle: Bicep Brachii",
+        BodyBuildingSelection BarbellCurls = new BodyBuildingSelection("Barbell Curls", "Muscle: Bicep Brachii",
                 "Step 1: Standing up straight with both hands slightly wider than your hips," +
                 "hold the bar with your palms facing up.",
                 "Step 2: Lift the bar while keeping your elbows locked to focus biceps more. Bring the bar up to your upper body and pause. Slowly move back to starting position.", R.drawable.crunches);
 
         //adds crunches to the array
-        selected.add(ChinUps);
+        selected.add(BarbellCurls);
 
         //Creates new adapter and takes all the selected data.
         DataAdapter adapter = new DataAdapter(getContext(), R.layout.row_view, selected);

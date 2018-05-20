@@ -38,13 +38,13 @@ public class CableBicepFragment extends Fragment {
         ArrayList<BodyBuildingSelection> selected = new ArrayList<>();
 
         //Crunches will display 3 textview and one image
-        BodyBuildingSelection ChinUps = new BodyBuildingSelection("Situps", "Muscle: Bicep Brachii",
+        BodyBuildingSelection CableBicep = new BodyBuildingSelection("Cable Bicep", "Muscle: Bicep Brachii",
                 "Step 1: Grip a straight bar with both hand on the lower pulley cable machine. Have arms shoulder width apart and slightly lean in" +
                         "Have the grip shoulder width apart while tucking it into your sides.",
                 "Step 2: Begin to curl the bar towards your chest as much as you can without moving your upper body, pause then return to starting position", R.drawable.crunches);
 
         //adds crunches to the array
-        selected.add(ChinUps);
+        selected.add(CableBicep);
 
         //Creates new adapter and takes all the selected data.
         DataAdapter adapter = new DataAdapter(getContext(), R.layout.row_view, selected);

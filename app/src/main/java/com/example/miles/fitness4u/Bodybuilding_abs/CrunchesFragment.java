@@ -37,7 +37,7 @@ public class CrunchesFragment extends Fragment {
         ArrayList<BodyBuildingSelection> selected = new ArrayList<>();
 
         //Crunches will display 3 textview and one image
-        BodyBuildingSelection crunches = new BodyBuildingSelection("Dumbbell Side Bends", "Muscle: Oblique", "Step 1: Lie on your back, bend your knees and cross your arms in front" +
+        BodyBuildingSelection crunches = new BodyBuildingSelection("Crunches", "Muscle: Rectus Abdominis", "Step 1: Lie on your back, bend your knees and cross your arms in front" +
                 "in front of your chest.",
                 "Step 2: Keeping your hands crossed, lift your shoulders towards the celling and pause at the peak", R.drawable.crunches);
 

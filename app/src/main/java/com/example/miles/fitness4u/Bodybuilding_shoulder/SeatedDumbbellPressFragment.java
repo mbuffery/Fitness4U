@@ -38,13 +38,13 @@ public class SeatedDumbbellPressFragment extends Fragment {
         ArrayList<BodyBuildingSelection> selected = new ArrayList<>();
 
         //Crunches will display 3 textview and one image
-        BodyBuildingSelection ChinUps = new BodyBuildingSelection("Situps", "Muscle: Deltoids",
+        BodyBuildingSelection SeatedDumbbellPress = new BodyBuildingSelection("Seated Dumbbell Press", "Muscle: Deltoids",
                 "Step 1: Set the bench to have back support before sitting onto it. Make sure your back is upright and straight." +
                         "Having a dumbbell in each hand, bring them outside of the shoulder until they are facing outwards.",
                 "Step 2: Press the dumbbells above and over your head, return to start position.", R.drawable.crunches);
 
         //adds crunches to the array
-        selected.add(ChinUps);
+        selected.add(SeatedDumbbellPress);
 
         //Creates new adapter and takes all the selected data.
         DataAdapter adapter = new DataAdapter(getContext(), R.layout.row_view, selected);

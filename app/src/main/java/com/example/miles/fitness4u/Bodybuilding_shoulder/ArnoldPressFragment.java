@@ -38,7 +38,7 @@ public class ArnoldPressFragment extends Fragment {
         ArrayList<BodyBuildingSelection> selected = new ArrayList<>();
 
         //Crunches will display 3 textview and one image
-        BodyBuildingSelection ChinUps = new BodyBuildingSelection("Situps", "Muscle: Deltoids",
+        BodyBuildingSelection ArnoldPress = new BodyBuildingSelection("ArnoldP ress", "Muscle: Deltoids",
                 "Step 1: Sit on the edge of a flat bench with two dumbbells being held at shoulder level. Have your palms facing inward" +
                         "and your elbows pointing to the side" +
                         ".",
@@ -46,7 +46,7 @@ public class ArnoldPressFragment extends Fragment {
                         "While doing that, you should be fully extending your arms overhead. Pause then return to starting position.", R.drawable.crunches);
 
         //adds crunches to the array
-        selected.add(ChinUps);
+        selected.add(ArnoldPress);
 
         //Creates new adapter and takes all the selected data.
         DataAdapter adapter = new DataAdapter(getContext(), R.layout.row_view, selected);

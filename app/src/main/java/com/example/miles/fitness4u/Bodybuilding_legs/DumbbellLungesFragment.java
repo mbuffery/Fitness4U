@@ -38,7 +38,7 @@ public class DumbbellLungesFragment extends Fragment {
         ArrayList<BodyBuildingSelection> selected = new ArrayList<>();
 
         //Crunches will display 3 textview and one image
-        BodyBuildingSelection ChinUps = new BodyBuildingSelection("Situps", "Muscle: Quadriceps",
+        BodyBuildingSelection DumbbellLunges = new BodyBuildingSelection("Dumbbell Lunges", "Muscle: Quadriceps",
                 "Step 1: Stand up straight with two dumbbells on both sides. Begin to lunge forward on one leg." +
                         "Make sure your heel comes into first contact with the floor then the forefoot. As you are bending your knees," +
                         "try to keep your back straight.",
@@ -46,7 +46,7 @@ public class DumbbellLungesFragment extends Fragment {
                         "repeat with the other leg.", R.drawable.crunches);
 
         //adds crunches to the array
-        selected.add(ChinUps);
+        selected.add(DumbbellLunges);
 
         //Creates new adapter and takes all the selected data.
         DataAdapter adapter = new DataAdapter(getContext(), R.layout.row_view, selected);

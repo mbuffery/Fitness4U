@@ -38,14 +38,14 @@ public class SeatedCurlFragment extends Fragment {
         ArrayList<BodyBuildingSelection> selected = new ArrayList<>();
 
         //Crunches will display 3 textview and one image
-        BodyBuildingSelection ChinUps = new BodyBuildingSelection("Situps", "Muscle: Latissimus Dorsi",
+        BodyBuildingSelection SeatedCurl = new BodyBuildingSelection("Seated Curl", "Muscle: Latissimus Dorsi",
                 "Step 1: Sit on a bench upright while holding two dumbbells beside you fully stretching your bicep." +
                         "Start with the palms of your hand facing outward.",
                 "Step 2: Slowly curl your arms towards your shoulder, when you reach the top, pause and squeeze" +
                         "to tear your muscle fibers.", R.drawable.crunches);
 
         //adds crunches to the array
-        selected.add(ChinUps);
+        selected.add(SeatedCurl);
 
         //Creates new adapter and takes all the selected data.
         DataAdapter adapter = new DataAdapter(getContext(), R.layout.row_view, selected);

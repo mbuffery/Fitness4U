@@ -38,13 +38,13 @@ public class SkullCrusherFragment extends Fragment {
         ArrayList<BodyBuildingSelection> selected = new ArrayList<>();
 
         //Crunches will display 3 textview and one image
-        BodyBuildingSelection ChinUps = new BodyBuildingSelection("Situps", "Muscle: Triceps Brachii",
+        BodyBuildingSelection SkullCrusher = new BodyBuildingSelection("Skull Crusher", "Muscle: Triceps Brachii",
                 "Step 1: Lie on a flat bench with your arms extending the bar over your eyes. Make sure you keep your arms tensed to get full effect.",
                 "Step 2: As you bring the weight down, keep your upper arms fixed in the extended position while your elbows bend" +
                         "Stop just before you touch your forehead and return to starting position.", R.drawable.crunches);
 
         //adds crunches to the array
-        selected.add(ChinUps);
+        selected.add(SkullCrusher);
 
         //Creates new adapter and takes all the selected data.
         DataAdapter adapter = new DataAdapter(getContext(), R.layout.row_view, selected);

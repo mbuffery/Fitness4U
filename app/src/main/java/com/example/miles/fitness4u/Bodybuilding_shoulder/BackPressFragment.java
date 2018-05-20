@@ -38,14 +38,14 @@ public class BackPressFragment extends Fragment {
         ArrayList<BodyBuildingSelection> selected = new ArrayList<>();
 
         //Crunches will display 3 textview and one image
-        BodyBuildingSelection ChinUps = new BodyBuildingSelection("Situps", "Muscle: Deltoids",
+        BodyBuildingSelection BackPress = new BodyBuildingSelection("Back Press", "Muscle: Deltoids",
                 "Step 1: First set your bench to support your back before sitting on it. Use a overhand grip to grab the bar behind your head." +
                         "Hold the weight slightly above your shoulders with your elbows to facing outwards",
                 "Step 2: Start to push the barbell up over your head. Keep your head and back straight." +
                         "Pause, then start to lower the weight until you reach starting position.", R.drawable.crunches);
 
         //adds crunches to the array
-        selected.add(ChinUps);
+        selected.add(BackPress);
 
         //Creates new adapter and takes all the selected data.
         DataAdapter adapter = new DataAdapter(getContext(), R.layout.row_view, selected);

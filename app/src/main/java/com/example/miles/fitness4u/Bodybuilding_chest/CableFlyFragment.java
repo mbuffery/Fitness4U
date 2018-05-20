@@ -38,14 +38,14 @@ public class CableFlyFragment extends Fragment {
         ArrayList<BodyBuildingSelection> selected = new ArrayList<>();
 
         //Crunches will display 3 textview and one image
-        BodyBuildingSelection ChinUps = new BodyBuildingSelection("Situps", "Muscle: Latissimus Dorsi",
+        BodyBuildingSelection CableFly = new BodyBuildingSelection("CableFly", "Muscle: Latissimus Dorsi",
                 "Step 1: Place pulleys at a high position before starting (above your head). While holding both cables, step forward" +
                         " between both pulleys equally and bring the cables in front of you ",
                 "Step 2: Slightly bend your elbows to stop any major stress on the tendon. Extend both arms to the side creating a wide arc which will stretch your chest." +
                         "Make sure that you only use your shoulder joints and not the arms or torso. Return to starting position and start again.", R.drawable.crunches);
 
         //adds crunches to the array
-        selected.add(ChinUps);
+        selected.add(CableFly);
 
         //Creates new adapter and takes all the selected data.
         DataAdapter adapter = new DataAdapter(getContext(), R.layout.row_view, selected);

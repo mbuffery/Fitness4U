@@ -38,14 +38,14 @@ public class LowLateralRaisesFragment extends Fragment {
         ArrayList<BodyBuildingSelection> selected = new ArrayList<>();
 
         //Crunches will display 3 textview and one image
-        BodyBuildingSelection ChinUps = new BodyBuildingSelection("Situps", "Muscle: Deltoids",
+        BodyBuildingSelection LowLateralRaises = new BodyBuildingSelection("Low Lateral Raises", "Muscle: Deltoids",
                 "Step 1: Start with the side of your body facing the machine/weights. Start with any arm that has to come across your body in order to reach the grip." +
                         "If you want better support, use the other arm to hold onto the machine.",
                 "Step 2: Have your feet shoulder width apart from one another. Start to lift the weight by pulling it across your body until it is shoulder height." +
                         "Pause, then slowly go down to starting position.", R.drawable.crunches);
 
         //adds crunches to the array
-        selected.add(ChinUps);
+        selected.add(LowLateralRaises);
 
         //Creates new adapter and takes all the selected data.
         DataAdapter adapter = new DataAdapter(getContext(), R.layout.row_view, selected);

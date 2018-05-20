@@ -38,7 +38,7 @@ public class SeatedTricepsFragment extends Fragment {
         ArrayList<BodyBuildingSelection> selected = new ArrayList<>();
 
         //Crunches will display 3 textview and one image
-        BodyBuildingSelection ChinUps = new BodyBuildingSelection("Situps", "Muscle: Triceps Brachii",
+        BodyBuildingSelection SeatedTriceps = new BodyBuildingSelection("SeatedTriceps", "Muscle: Triceps Brachii",
                 "Step 1: Sit on a flat bench and grab one slightly heavier dumbbell. Hold it above your head with you elbows pointing upwards." +
                         "Make sure to keep your arms stable while doing this exercise",
                 "Step 2: Lower the dumbbells behind your head until its parallel to the floor." +
@@ -46,7 +46,7 @@ public class SeatedTricepsFragment extends Fragment {
 
 
         //adds crunches to the array
-        selected.add(ChinUps);
+        selected.add(SeatedTriceps);
 
         //Creates new adapter and takes all the selected data.
         DataAdapter adapter = new DataAdapter(getContext(), R.layout.row_view, selected);

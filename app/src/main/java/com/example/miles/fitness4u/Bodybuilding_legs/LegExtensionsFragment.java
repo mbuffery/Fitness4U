@@ -38,12 +38,12 @@ public class LegExtensionsFragment extends Fragment {
         ArrayList<BodyBuildingSelection> selected = new ArrayList<>();
 
         //Crunches will display 3 textview and one image
-        BodyBuildingSelection ChinUps = new BodyBuildingSelection("Situps", "Muscle: Quadriceps",
+        BodyBuildingSelection LegExtensions = new BodyBuildingSelection("Leg Extensions", "Muscle: Quadriceps",
                 "Step 1: After setting the machine to your height, start to extend your legs until your legs are at a straight position.",
                 "Step 2: Pause for a few seconds then slowly lower the weight until you reach the bottom." , R.drawable.crunches);
 
         //adds crunches to the array
-        selected.add(ChinUps);
+        selected.add(LegExtensions);
 
         //Creates new adapter and takes all the selected data.
         DataAdapter adapter = new DataAdapter(getContext(), R.layout.row_view, selected);

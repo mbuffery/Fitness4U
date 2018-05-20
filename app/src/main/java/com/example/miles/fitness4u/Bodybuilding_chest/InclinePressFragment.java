@@ -38,14 +38,14 @@ public class InclinePressFragment extends Fragment {
         ArrayList<BodyBuildingSelection> selected = new ArrayList<>();
 
         //Crunches will display 3 textview and one image
-        BodyBuildingSelection ChinUps = new BodyBuildingSelection("Situps", "Muscle: Pectoralis",
+        BodyBuildingSelection InclinePress = new BodyBuildingSelection("InclinePress", "Muscle: Pectoralis",
                 "Step 1: Lie on the bench while having your feet flat on the ground. Make sure your back is arched and that you are pushing through your hips" +
                         "Grab the bar at a medium width and then proceed to bring it off the rack. Have it above your chest with your arms fully extended. This is your starting position",
                 "Step 2: Start to lower the bar until it reaches just above you chest. Little tip: Don't bounce the weight off your chest otherwise you lose out." +
                         "After touching your upper chest, begin to push up slowly until you reach the starting position", R.drawable.crunches);
 
         //adds crunches to the array
-        selected.add(ChinUps);
+        selected.add(InclinePress);
 
         //Creates new adapter and takes all the selected data.
         DataAdapter adapter = new DataAdapter(getContext(), R.layout.row_view, selected);

@@ -38,7 +38,7 @@ public class ChinUpsFragment extends Fragment {
         ArrayList<BodyBuildingSelection> selected = new ArrayList<>();
 
         //Crunches will display 3 textview and one image
-        BodyBuildingSelection ChinUps = new BodyBuildingSelection("Situps", "Muscle: Latissimus Dorsi", "Step 1: Grab the pull up bar with your hands facing your body." +
+        BodyBuildingSelection ChinUps = new BodyBuildingSelection("Chin ups", "Muscle: Latissimus Dorsi", "Step 1: Grab the pull up bar with your hands facing your body." +
                 "Have the grip closer than your shoulder width",
                 "Step 2: Extend both arms with your torso straight. While breathing out, pull yourself until your head is level with the bar.", R.drawable.crunches);
 

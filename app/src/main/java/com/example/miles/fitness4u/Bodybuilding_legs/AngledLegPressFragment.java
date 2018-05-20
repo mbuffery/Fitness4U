@@ -38,7 +38,7 @@ public class AngledLegPressFragment extends Fragment {
         ArrayList<BodyBuildingSelection> selected = new ArrayList<>();
 
         //Crunches will display 3 textview and one image
-        BodyBuildingSelection ChinUps = new BodyBuildingSelection("Situps", "Muscle: Glutes",
+        BodyBuildingSelection AngledLeg = new BodyBuildingSelection("Angled Leg Press", "Muscle: Glutes",
                 "Step 1: This machine is pretty straight forward but a main tip is to never fully lock out your legs otherwise it could create serious problems." +
                         "Once sat into the machine, place your legs at shoulder width distance. Once lowering the safety bars, push the weight up until the legs are almost fully extended." +
                         "This is your stating position.",
@@ -47,7 +47,7 @@ public class AngledLegPressFragment extends Fragment {
                         "", R.drawable.crunches);
 
         //adds crunches to the array
-        selected.add(ChinUps);
+        selected.add(AngledLeg);
 
         //Creates new adapter and takes all the selected data.
         DataAdapter adapter = new DataAdapter(getContext(), R.layout.row_view, selected);

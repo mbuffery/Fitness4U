@@ -38,7 +38,7 @@ public class TricepDipsFragment extends Fragment {
         ArrayList<BodyBuildingSelection> selected = new ArrayList<>();
 
         //Crunches will display 3 textview and one image
-        BodyBuildingSelection ChinUps = new BodyBuildingSelection("Situps", "Muscle: Triceps Brachii",
+        BodyBuildingSelection TricepDips = new BodyBuildingSelection("Tricep Dips", "Muscle: Triceps Brachii",
                 "Step 1: Have the bench straight before you place your hands on the edge of it." +
                         "Have you legs rest on another bench to allow you to dip.",
                 "Step 2: Before you dip, make sure you arms are at 90 degree angle." +
@@ -46,7 +46,7 @@ public class TricepDipsFragment extends Fragment {
 
 
         //adds crunches to the array
-        selected.add(ChinUps);
+        selected.add(TricepDips);
 
         //Creates new adapter and takes all the selected data.
         DataAdapter adapter = new DataAdapter(getContext(), R.layout.row_view, selected);

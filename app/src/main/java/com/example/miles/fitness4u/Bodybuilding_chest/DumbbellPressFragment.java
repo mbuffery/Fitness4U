@@ -38,7 +38,7 @@ public class DumbbellPressFragment extends Fragment {
         ArrayList<BodyBuildingSelection> selected = new ArrayList<>();
 
         //Crunches will display 3 textview and one image
-        BodyBuildingSelection ChinUps = new BodyBuildingSelection("Situps", "Muscle: Pectoralis",
+        BodyBuildingSelection  DumbbellPress = new BodyBuildingSelection(" DumbbellPress", "Muscle: Pectoralis",
                 "Step 1: Lay flat down on the bench while holding a dumbbell in each hand resting onto your thighs." +
                         "Use your thighs to help push up the dumbbell, this is to help ease the bells in front of you at shoulder width distance",
                 "Step 2: After successfully lifting them up, have them to the side of your chest creating a 90 degree angle all the while keeping control. This is your start position" +
@@ -46,7 +46,7 @@ public class DumbbellPressFragment extends Fragment {
                         "When coming down, go slowly or you may injure yourself. you should end up in your starting position", R.drawable.crunches);
 
         //adds crunches to the array
-        selected.add(ChinUps);
+        selected.add( DumbbellPress);
 
         //Creates new adapter and takes all the selected data.
         DataAdapter adapter = new DataAdapter(getContext(), R.layout.row_view, selected);

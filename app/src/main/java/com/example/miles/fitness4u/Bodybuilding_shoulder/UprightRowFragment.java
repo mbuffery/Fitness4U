@@ -38,13 +38,13 @@ public class UprightRowFragment extends Fragment {
         ArrayList<BodyBuildingSelection> selected = new ArrayList<>();
 
         //Crunches will display 3 textview and one image
-        BodyBuildingSelection ChinUps = new BodyBuildingSelection("Situps", "Muscle: Deltoids",
+        BodyBuildingSelection UprightRow = new BodyBuildingSelection("Upright Row", "Muscle: Deltoids",
                 "Step 1: Keep you back straight and your head up. Begin to raise the bar towards your chin by using your elbows." +
                         "Once your arms are parallel to the floor, stop pulling and start lowering the bar.",
                 "Step 2: As you are going down, make sure you follow the path that you raised it; then you are at your starting position.", R.drawable.crunches);
 
         //adds crunches to the array
-        selected.add(ChinUps);
+        selected.add(UprightRow);
 
         //Creates new adapter and takes all the selected data.
         DataAdapter adapter = new DataAdapter(getContext(), R.layout.row_view, selected);

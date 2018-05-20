@@ -38,13 +38,14 @@ public class ReverseCurlFragment extends Fragment {
         ArrayList<BodyBuildingSelection> selected = new ArrayList<>();
 
         //Crunches will display 3 textview and one image
-        BodyBuildingSelection ChinUps = new BodyBuildingSelection("Situps", "Muscle: Latissimus Dorsi",
-                "Step 1: ." +
-                        "",
-                "Step 2:.", R.drawable.crunches);
+        BodyBuildingSelection ReverseCurl = new BodyBuildingSelection("ReverseCurl", "Muscle: Latissimus Dorsi",
+                "Step 1: Stand up straight with your shoulders back and your chest up. Feet must be shoulder width apart." +
+                        "Fully extend your arms with your palms facing toward your body.",
+                "Step 2: Begin to slowly raise the dumbbell up to shoulder height while having both elbows locked to the sides of your body." +
+                        "Pause for one second then slowly go back to your starting position.", R.drawable.crunches);
 
         //adds crunches to the array
-        selected.add(ChinUps);
+        selected.add(ReverseCurl);
 
         //Creates new adapter and takes all the selected data.
         DataAdapter adapter = new DataAdapter(getContext(), R.layout.row_view, selected);

@@ -38,14 +38,14 @@ public class SeatedFlyFragment extends Fragment {
         ArrayList<BodyBuildingSelection> selected = new ArrayList<>();
 
         //Crunches will display 3 textview and one image
-        BodyBuildingSelection ChinUps = new BodyBuildingSelection("Situps", "Muscle: Pectoralis",
+        BodyBuildingSelection SeatedFly = new BodyBuildingSelection("Situps", "Muscle: Pectoralis",
                 "Step 1: Sit at the end of a flat bench with your legs together while holding the dumbbells behind your calves." +
                         "Start to bend at your waist while keeping your back straight. Pick up the dumbbells with your palms of the hand facing you. This is your starting position",
                 "Step 2: Lift the dumbbells with a slight blend in your elbows until your arms are parallel to the floor. Make sure to keep your breathing in check." +
                         "After pausing for a second, slowing bring them back down into the starting position", R.drawable.crunches);
 
         //adds crunches to the array
-        selected.add(ChinUps);
+        selected.add(SeatedFly);
 
         //Creates new adapter and takes all the selected data.
         DataAdapter adapter = new DataAdapter(getContext(), R.layout.row_view, selected);

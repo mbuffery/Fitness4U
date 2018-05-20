@@ -38,14 +38,14 @@ public class DeclinePressFragment extends Fragment {
         ArrayList<BodyBuildingSelection> selected = new ArrayList<>();
 
         //Crunches will display 3 textview and one image
-        BodyBuildingSelection ChinUps = new BodyBuildingSelection("Situps", "Muscle: Latissimus Dorsi",
+        BodyBuildingSelection DeclinePress = new BodyBuildingSelection("Decline Press", "Muscle: Latissimus Dorsi",
                 "Step 1: Make sure your legs are secure before attempting to get onto the bench." +
                         "Have a medium grip when holding the bar, begin to lift the bar over your body while keeping your arms locked thus creating your start position",
                 "Step 2: As you bring the bar down, slowly breathe in until the bar touches your lower chest." +
                         "Pause. As you breathe out, begin to push the bar upwards back into the starting position", R.drawable.crunches);
 
         //adds crunches to the array
-        selected.add(ChinUps);
+        selected.add(DeclinePress);
 
         //Creates new adapter and takes all the selected data.
         DataAdapter adapter = new DataAdapter(getContext(), R.layout.row_view, selected);

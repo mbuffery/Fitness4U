@@ -38,14 +38,14 @@ public class BarbellLateralRaisesFragment extends Fragment {
         ArrayList<BodyBuildingSelection> selected = new ArrayList<>();
 
         //Crunches will display 3 textview and one image
-        BodyBuildingSelection ChinUps = new BodyBuildingSelection("Situps", "Muscle: Deltoids",
+        BodyBuildingSelection BarbellLateralRaises = new BodyBuildingSelection("Barbell Lateral Raises", "Muscle: Deltoids",
                 "Step 1: Stand up straight with a shoulder width apart grip. Have your arms hang down until it reaches your thigh." +
                         "Make sure you keep your whole body looking forward, heda up straight, shoulders back and chest up.",
                 "Step 2: Begin to raise your arms to out in front of you until it reaches just above your shoulder height." +
                         "Pause, then slowly go back to your starting position.", R.drawable.crunches);
 
         //adds crunches to the array
-        selected.add(ChinUps);
+        selected.add(BarbellLateralRaises);
 
         //Creates new adapter and takes all the selected data.
         DataAdapter adapter = new DataAdapter(getContext(), R.layout.row_view, selected);
