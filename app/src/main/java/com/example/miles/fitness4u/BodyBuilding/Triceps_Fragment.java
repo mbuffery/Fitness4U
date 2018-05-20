@@ -43,7 +43,7 @@ public class Triceps_Fragment extends Fragment {
             public void onClick(View view) {
 
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new DumbbellCurlsFragment()).commit();
+                        new OneArmDumbbellFragment()).commit();
             }
 
         });
@@ -52,7 +52,7 @@ public class Triceps_Fragment extends Fragment {
             public void onClick(View view) {
 
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new BarbellCurlsFragment()).commit();
+                        new SkullCrusherFragment()).commit();
             }
 
         });
@@ -61,7 +61,7 @@ public class Triceps_Fragment extends Fragment {
             public void onClick(View view) {
 
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new HammerCurlsFragment()).commit();
+                        new SeatedTricepsFragment()).commit();
 
             }
 
@@ -71,7 +71,7 @@ public class Triceps_Fragment extends Fragment {
             public void onClick(View view) {
 
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new CableBicepFragment()).commit();
+                        new CableTricepFragment()).commit();
 
             }
 
@@ -81,7 +81,7 @@ public class Triceps_Fragment extends Fragment {
             public void onClick(View view) {
 
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new SeatedCurlFragment()).commit();
+                        new TricepDipsFragment()).commit();
 
             }
 
@@ -91,7 +91,7 @@ public class Triceps_Fragment extends Fragment {
             public void onClick(View view) {
 
                 getFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new ReverseCurlFragment()).commit();
+                        new DumbbellExtensionFragment()).commit();
 
             }
 
