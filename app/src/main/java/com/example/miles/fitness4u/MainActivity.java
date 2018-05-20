@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,7 +34,7 @@ import java.util.Map;
 public class MainActivity extends Fragment {
 
     private Button signOut, RegButton, changePass;
-    private EditText NameReg, AgeReg, SexReg, WeightReg, HeightReg, repeatPass, newPass;
+    private EditText AgeReg ,GoalReg, WeightReg, HeightReg, repeatPass, newPass;
     private TextView email;
     private FirebaseAuth auth;
     private DatabaseReference database;
@@ -84,11 +85,11 @@ public class MainActivity extends Fragment {
         }
 
         //Get reference for each view from the activity layout
-        NameReg = getView().findViewById(R.id.nameReg);
+
         AgeReg = getView().findViewById(R.id.ageReg);
-        SexReg = getView().findViewById(R.id.sexReg);
         WeightReg = getView().findViewById(R.id.weightReg);
         HeightReg = getView().findViewById(R.id.heightReg);
+        GoalReg = getView().findViewById(R.id.goalReg);
         changePass = getView().findViewById(R.id.changePassword);
         RegButton = getView().findViewById(R.id.regButton);
         signOut = getView().findViewById(R.id.sign_out);
@@ -98,8 +99,8 @@ public class MainActivity extends Fragment {
 
 
         //Gets the instance of the firebase database and gets the users data
-        final FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference userRef = database.getReference("Users");
+        //final FirebaseDatabase database = FirebaseDatabase.getInstance();
+        //DatabaseReference userRef = database.getReference("Users");
 
         changePass.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -157,29 +158,37 @@ public class MainActivity extends Fragment {
             public void onClick(View v) {
                 if (v.equals(RegButton)) {
 
-                    String user_id = auth.getCurrentUser().getUid();
-                    DatabaseReference curren_userdb = FirebaseDatabase.getInstance().getReference().child("Users").child(user_id);
+                    final String weight = WeightReg.getText().toString().trim();
+                    final String height = HeightReg.getText().toString().trim();
+                    final String age = AgeReg.getText().toString().trim();
+                    final String goal = GoalReg.getText().toString().trim();
 
-                    //Sets each variable to a specific string
-                    String name = NameReg.getText().toString();
-                    String age = AgeReg.getText().toString();
-                    String sex = SexReg.getText().toString();
-                    String weight = WeightReg.getText().toString();
-                    String height = HeightReg.getText().toString();
+                    if (TextUtils.isEmpty(weight)) {
+                        Toast.makeText(getActivity().getApplicationContext(), "Enter Weight Please!", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    if (TextUtils.isEmpty(height)) {
+                        Toast.makeText(getActivity().getApplicationContext(), "Enter Height Please!", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    if (TextUtils.isEmpty(age)) {
+                        Toast.makeText(getActivity().getApplicationContext(), "Enter Age Please!", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    if (TextUtils.isEmpty(goal)) {
+                        Toast.makeText(getActivity().getApplicationContext(), "Enter Goal please", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
 
-                    //Creates new map to store each data post.
-                    Map<String, String> newPost = new HashMap<>();
-                    newPost.put("Name", name);
-                    newPost.put("Age", age);
-                    newPost.put("Sex", sex);
-                    newPost.put("Weight", weight);
-                    newPost.put("Height", height);
+
+                    database.child("Users").child(user.getUid()).child("weight").setValue(weight);
+                    database.child("Users").child(user.getUid()).child("height").setValue(height);
+                    database.child("Users").child(user.getUid()).child("age").setValue(age);
+                    database.child("Users").child(user.getUid()).child("goal").setValue(goal);
 
 
-                    //sets the value of the current user to newpost
-                    curren_userdb.setValue(newPost);
 
-                    Toast.makeText(getActivity(), "Registration Completed", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(), "Update Completed", Toast.LENGTH_SHORT).show();
                 }
             }
 

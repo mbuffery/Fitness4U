@@ -41,7 +41,7 @@ public class DumbbellCurlsFragment extends Fragment {
         BodyBuildingSelection DumbbellCurls = new BodyBuildingSelection("Dumbbell Curls", "Muscle: Bicep Brachii",
                 "Step 1: Stand up straight with your feet hip width apart and hold the dumbbells on both sides." +
                         "Remember to squeeze your bicep throughout the whole process",
-                "Step 2: Keep your elbows still as you bring the weights as close to your chest, pause for 2 seconds then go back to start position", R.drawable.crunches);
+                "Step 2: Keep your elbows still as you bring the weights as close to your chest, pause for 2 seconds then go back to start position", R.drawable.ic_fitness);
 
         //adds crunches to the array
         selected.add(DumbbellCurls);

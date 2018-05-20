@@ -13,8 +13,6 @@ public class SensorFilter {
 
     //There will be multiple values, filters out any values that are unwanted from the accelerometer data
 
-
-   //
     public static float sumTotal(float[] array) {
         float values = 0;
 

@@ -15,7 +15,7 @@
         <item
             android:id="@+id/nav_fitness"
             android:icon="@drawable/ic_fitness"
-            android:title="Fitness" />
+            android:title="Fitness - Step Counter" />
         <item
             android:id="@+id/nav_settings"
             android:icon="@drawable/ic_settings"

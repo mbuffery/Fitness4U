@@ -40,7 +40,7 @@ public class DeadliftsFragment extends Fragment {
         //Crunches will display 3 textview and one image
         BodyBuildingSelection Deadlifts = new BodyBuildingSelection("Deadlifts", "Muscle: Latissimus Dorsi", "Step 1: Have feet shoulder length apart while grip is just outside your legs." +
                 "Have a overhand grip with your shoulders being down and back. Try keep contact with the bar using your legs. ",
-                "Step 2: As you are moving, make sure your knees and hips move as one to get a successful lift", R.drawable.crunches);
+                "Step 2: As you are moving, make sure your knees and hips move as one to get a successful lift.", R.drawable.crunches);
 
         //adds crunches to the array
         selected.add(Deadlifts);

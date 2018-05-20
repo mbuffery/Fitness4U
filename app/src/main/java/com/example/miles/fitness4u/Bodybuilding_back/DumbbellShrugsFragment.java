@@ -40,7 +40,7 @@ public class DumbbellShrugsFragment extends Fragment {
         //Crunches will display 3 textview and one image
         BodyBuildingSelection DumbbellShrugs = new BodyBuildingSelection("Dumbbell Shrugs", "Muscle: Trapezius", "Step 1: Stand upright and hold two heavy dumbbells in both hands by your side." +
                 "Keep your shoulders as relaxed as possible.",
-                "Step 2: To shrug, try to get your shoulders to touch your ears. When reaching the highest position with your shoulders, pause for 2 seconds then return to starting position", R.drawable.crunches);
+                "Step 2: To shrug, try to get your shoulders to touch your ears. When reaching the highest position with your shoulders, pause for 2 seconds then return to starting position.", R.drawable.crunches);
 
         //adds crunches to the array
         selected.add(DumbbellShrugs);

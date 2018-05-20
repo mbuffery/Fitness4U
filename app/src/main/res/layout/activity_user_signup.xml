@@ -101,7 +101,7 @@
             android:hint="Please enter your goal"
             android:imeActionId="@+id/login"
             android:imeOptions="actionUnspecified"
-            android:maxLines="2"
+            android:maxLines="1"
             android:textColor="@android:color/white" />
 
 

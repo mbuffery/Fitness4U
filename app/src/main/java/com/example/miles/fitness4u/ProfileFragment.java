@@ -38,7 +38,7 @@ public class ProfileFragment extends Fragment {
     private FirebaseAuth auth;
     private FirebaseUser user;
     private TextView heightView, ageView, weightView, nameView, prefView, goalView, email;
-    private static final String heightM = "M";
+    private static final String heightM = "CM";
     private static final String weight = "KG";
 
     //final FirebaseDatabase database = FirebaseDatabase.getInstance();

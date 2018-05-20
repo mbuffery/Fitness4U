@@ -76,7 +76,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:fontFamily="sans-serif-light"
-                    android:text="453k"
+                    android:text="180cm"
                     android:textColor="@color/white"
                     android:textSize="25dp"
                     android:id="@+id/profHeight"/>
@@ -114,7 +114,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:fontFamily="sans-serif-light"
-                    android:text="0"
+                    android:text="21"
                     android:textColor="@color/white"
                     android:textSize="25dp"
                     android:id="@+id/profAge"/>
@@ -152,7 +152,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
                     android:fontFamily="sans-serif-light"
-                    android:text="0"
+                    android:text="75KG"
                     android:textColor="@color/white"
                     android:textSize="25dp"
                     android:id="@+id/profWeight"/>
@@ -236,7 +236,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="Advanced"
+                    android:text="Bodybulding"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -267,7 +267,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
-                    android:text="Beginner"
+                    android:text="Achieve a 120kg Deadlift"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 

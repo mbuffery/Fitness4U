@@ -41,7 +41,7 @@ public class CableBicepFragment extends Fragment {
         BodyBuildingSelection CableBicep = new BodyBuildingSelection("Cable Bicep", "Muscle: Bicep Brachii",
                 "Step 1: Grip a straight bar with both hand on the lower pulley cable machine. Have arms shoulder width apart and slightly lean in" +
                         "Have the grip shoulder width apart while tucking it into your sides.",
-                "Step 2: Begin to curl the bar towards your chest as much as you can without moving your upper body, pause then return to starting position", R.drawable.crunches);
+                "Step 2: Begin to curl the bar towards your chest as much as you can without moving your upper body, pause then return to starting position", R.drawable.ic_fitness);
 
         //adds crunches to the array
         selected.add(CableBicep);
