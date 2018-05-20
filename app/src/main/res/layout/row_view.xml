@@ -4,92 +4,98 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/Title"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="13dp"
-        android:text="Title"
-        android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+    <RelativeLayout
+        android:id="@+id/layout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true">
+
+        <TextView
+            android:id="@+id/Title"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:text="Title"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/layout2"
+        android:layout_below="@id/layout1"
+        android:layout_centerHorizontal="true">
 
     <ImageView
         android:id="@+id/image1"
         android:layout_width="200dp"
         android:layout_height="150dp"
-        android:layout_below="@+id/Title"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="7dp" />
 
+    </RelativeLayout>
     <RelativeLayout
-        android:layout_width="350dp"
-        android:layout_height="250dp"
-        android:layout_alignLeft="@+id/image1"
-        android:layout_alignStart="@+id/image1"
-        android:layout_below="@+id/image1"
-        android:layout_marginTop="22dp">
-
-        <TextView
-            android:id="@+id/subHeader"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-
-            android:text="Sub Header Text"
-            android:textAlignment="textStart"
-            android:textColor="@color/black" />
-
-        <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/subHeader">
-
-            <TextView
-                android:id="@+id/information2"
-                android:layout_height="100dp"
-                android:layout_width="fill_parent"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="12dp"
-                android:text="Information Text"
-                android:lines="4"
-                android:textColor="@color/black" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginBottom="17dp"
-            android:layout_marginEnd="52dp"
-            android:layout_marginRight="52dp">
-
-            <TextView
-                android:id="@+id/information3"
-                android:layout_width="fill_parent"
-                android:layout_height="100dp"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:lines="4"
-                android:text="Information Text"
-                android:textColor="@color/black" />
-
-
-        </RelativeLayout>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/layout3"
+        android:layout_below="@id/layout2"
+        android:layout_centerHorizontal="true">
+    <TextView
+        android:id="@+id/subHeader"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="Sub Header Text"
+        android:textAlignment="textStart"
+        android:textColor="@color/black" />
 
     </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/layout4"
+        android:layout_below="@id/layout3"
+        >
+
+        <TextView
+            android:id="@+id/information3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:lines="6"
+            android:text="Information Text"
+            android:textColor="@color/black" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/layout5"
+        android:layout_below="@id/layout4">
+
+        <TextView
+            android:id="@+id/information2"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="12dp"
+            android:lines="6"
+            android:text="Information Text"
+            android:textColor="@color/black" />
+    </RelativeLayout>
+
+
 
 
 

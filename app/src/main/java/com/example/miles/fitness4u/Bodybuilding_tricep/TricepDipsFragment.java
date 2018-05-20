@@ -35,6 +35,7 @@ public class TricepDipsFragment extends Fragment {
         ListView listView = getView().findViewById(R.id.listView);
 
         //New array for BodyBuildingSelection
+
         ArrayList<BodyBuildingSelection> selected = new ArrayList<>();
 
         //Crunches will display 3 textview and one image
@@ -42,7 +43,7 @@ public class TricepDipsFragment extends Fragment {
                 "Step 1: Have the bench straight before you place your hands on the edge of it." +
                         "Have you legs rest on another bench to allow you to dip.",
                 "Step 2: Before you dip, make sure you arms are at 90 degree angle." +
-                        "Lower your body and bend your arms, afterwards return to the starting position.", R.drawable.crunches);
+                        "Lower your body and bend your arms, afterwards return to the starting position.", R.drawable.ic_fitness);
 
 
         //adds crunches to the array

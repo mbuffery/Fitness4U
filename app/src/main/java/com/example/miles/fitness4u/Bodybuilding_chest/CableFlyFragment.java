@@ -42,7 +42,7 @@ public class CableFlyFragment extends Fragment {
                 "Step 1: Place pulleys at a high position before starting (above your head). While holding both cables, step forward" +
                         " between both pulleys equally and bring the cables in front of you ",
                 "Step 2: Slightly bend your elbows to stop any major stress on the tendon. Extend both arms to the side creating a wide arc which will stretch your chest." +
-                        "Make sure that you only use your shoulder joints and not the arms or torso. Return to starting position and start again.", R.drawable.crunches);
+                        "Make sure that you only use your shoulder joints and not the arms or torso. Return to starting position and start again.", R.drawable.ic_fitness);
 
         //adds crunches to the array
         selected.add(CableFly);

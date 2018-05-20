@@ -42,7 +42,7 @@ public class OneArmDumbbellFragment extends Fragment {
                 "Step 1: Make sure you are you have your back straight and you legs shoulder width apart." +
                         "Have you arm fully extended with your elbow bent behind your back. Use the other arm as support.",
                 "Step 2: Start lowering the weight until your forearm is parallel to the floor." +
-                        "Bring it back to the starting position", R.drawable.crunches);
+                        "Bring it back to the starting position", R.drawable.ic_fitness);
 
 
         //adds crunches to the array

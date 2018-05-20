@@ -41,7 +41,7 @@ public class SeatedDumbbellPressFragment extends Fragment {
         BodyBuildingSelection SeatedDumbbellPress = new BodyBuildingSelection("Seated Dumbbell Press", "Muscle: Deltoids",
                 "Step 1: Set the bench to have back support before sitting onto it. Make sure your back is upright and straight." +
                         "Having a dumbbell in each hand, bring them outside of the shoulder until they are facing outwards.",
-                "Step 2: Press the dumbbells above and over your head, return to start position.", R.drawable.crunches);
+                "Step 2: Press the dumbbells above and over your head, return to start position.", R.drawable.ic_fitness);
 
         //adds crunches to the array
         selected.add(SeatedDumbbellPress);

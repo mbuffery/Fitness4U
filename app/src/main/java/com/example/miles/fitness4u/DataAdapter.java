@@ -53,9 +53,9 @@ public class DataAdapter extends ArrayAdapter<BodyBuildingSelection> {
 
         //Sets text and image to the selected screen
         TitleTV.setText(selected.title);
-        mainTextTV.setText(selected.mainText);
+        mainTextTV.setText(selected.mainText2);
         imageView.setImageResource(selected.imageId);
-        mainTextTV2.setText(selected.mainText2);
+        mainTextTV2.setText(selected.mainText);
         subHeadTV.setText(selected.subHeader);
 
         //Return

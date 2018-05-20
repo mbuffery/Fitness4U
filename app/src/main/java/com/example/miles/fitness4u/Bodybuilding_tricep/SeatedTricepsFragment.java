@@ -42,7 +42,7 @@ public class SeatedTricepsFragment extends Fragment {
                 "Step 1: Sit on a flat bench and grab one slightly heavier dumbbell. Hold it above your head with you elbows pointing upwards." +
                         "Make sure to keep your arms stable while doing this exercise",
                 "Step 2: Lower the dumbbells behind your head until its parallel to the floor." +
-                        "Pause, then begin to go back to starting position.", R.drawable.crunches);
+                        "Pause, then begin to go back to starting position.", R.drawable.ic_fitness);
 
 
         //adds crunches to the array

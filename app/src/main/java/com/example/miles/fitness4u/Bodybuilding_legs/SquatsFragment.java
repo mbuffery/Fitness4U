@@ -41,7 +41,7 @@ public class SquatsFragment extends Fragment {
         BodyBuildingSelection Squats = new BodyBuildingSelection("Squats", "Muscle: Glutes",
                 "Step 1: Have a barbell behind your head resting on your shoulders. Make sure your feet are hip width apart before squatting." +
                         "As you start to squat, make sure you keep your back arched and head looking straight up.",
-                "Step 2: As your hips are parallel to the floor, begin to push up until you reach your starting position.", R.drawable.crunches);
+                "Step 2: As your hips are parallel to the floor, begin to push up until you reach your starting position.", R.drawable.ic_fitness);
 
         //adds crunches to the array
         selected.add(Squats);

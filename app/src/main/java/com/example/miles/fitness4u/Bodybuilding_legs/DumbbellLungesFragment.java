@@ -43,7 +43,7 @@ public class DumbbellLungesFragment extends Fragment {
                         "Make sure your heel comes into first contact with the floor then the forefoot. As you are bending your knees," +
                         "try to keep your back straight.",
                 "Step 2: Keep lowering your body until your knee comes near to the floor. Start to return to your normal position and" +
-                        "repeat with the other leg.", R.drawable.crunches);
+                        "repeat with the other leg.", R.drawable.ic_fitness);
 
         //adds crunches to the array
         selected.add(DumbbellLunges);

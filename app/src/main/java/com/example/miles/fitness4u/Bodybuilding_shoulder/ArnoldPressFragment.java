@@ -43,7 +43,7 @@ public class ArnoldPressFragment extends Fragment {
                         "and your elbows pointing to the side" +
                         ".",
                 "Step 2: Start to turn your wrists outward until your arms face away from you." +
-                        "While doing that, you should be fully extending your arms overhead. Pause then return to starting position.", R.drawable.crunches);
+                        "While doing that, you should be fully extending your arms overhead. Pause then return to starting position.", R.drawable.ic_fitness);
 
         //adds crunches to the array
         selected.add(ArnoldPress);

@@ -41,7 +41,7 @@ public class UprightRowFragment extends Fragment {
         BodyBuildingSelection UprightRow = new BodyBuildingSelection("Upright Row", "Muscle: Deltoids",
                 "Step 1: Keep you back straight and your head up. Begin to raise the bar towards your chin by using your elbows." +
                         "Once your arms are parallel to the floor, stop pulling and start lowering the bar.",
-                "Step 2: As you are going down, make sure you follow the path that you raised it; then you are at your starting position.", R.drawable.crunches);
+                "Step 2: As you are going down, make sure you follow the path that you raised it; then you are at your starting position.", R.drawable.ic_fitness);
 
         //adds crunches to the array
         selected.add(UprightRow);

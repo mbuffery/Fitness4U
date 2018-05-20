@@ -43,7 +43,7 @@ public class BarbellSquatOverheadFragment extends Fragment {
                         "Rotate the elbows underneath the bar to allow your palms to be upwards. This will allow the bar to rest on your shoulders. ",
                 "Step 2: After unracking from the bar, place your feet just wider than shoulder width. When squatting down, keep your core tight and your chest high." +
                         "Make sure you have a good balance before attempting to lift the weight. Once you hit the bottom, pause for a second and the quickly push back up to the starting position" +
-                        "As you fully stand back up, try to explode and push the bar over your head. Use the momentum to get your arms to fully extend. Pause then slowly bring the weight back to the starting position.", R.drawable.crunches);
+                        "As you fully stand back up, try to explode and push the bar over your head. Use the momentum to get your arms to fully extend. Pause then slowly bring the weight back to the starting position.", R.drawable.ic_fitness);
 
         //adds crunches to the array
         selected.add(BarbellSquatOverhead);

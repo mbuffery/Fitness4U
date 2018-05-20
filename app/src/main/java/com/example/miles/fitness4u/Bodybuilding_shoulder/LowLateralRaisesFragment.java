@@ -42,7 +42,7 @@ public class LowLateralRaisesFragment extends Fragment {
                 "Step 1: Start with the side of your body facing the machine/weights. Start with any arm that has to come across your body in order to reach the grip." +
                         "If you want better support, use the other arm to hold onto the machine.",
                 "Step 2: Have your feet shoulder width apart from one another. Start to lift the weight by pulling it across your body until it is shoulder height." +
-                        "Pause, then slowly go down to starting position.", R.drawable.crunches);
+                        "Pause, then slowly go down to starting position.", R.drawable.ic_fitness);
 
         //adds crunches to the array
         selected.add(LowLateralRaises);

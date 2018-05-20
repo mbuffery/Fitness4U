@@ -42,7 +42,7 @@ public class BackPressFragment extends Fragment {
                 "Step 1: First set your bench to support your back before sitting on it. Use a overhand grip to grab the bar behind your head." +
                         "Hold the weight slightly above your shoulders with your elbows to facing outwards",
                 "Step 2: Start to push the barbell up over your head. Keep your head and back straight." +
-                        "Pause, then start to lower the weight until you reach starting position.", R.drawable.crunches);
+                        "Pause, then start to lower the weight until you reach starting position.", R.drawable.ic_fitness);
 
         //adds crunches to the array
         selected.add(BackPress);

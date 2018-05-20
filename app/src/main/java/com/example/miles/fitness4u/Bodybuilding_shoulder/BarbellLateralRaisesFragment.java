@@ -42,7 +42,7 @@ public class BarbellLateralRaisesFragment extends Fragment {
                 "Step 1: Stand up straight with a shoulder width apart grip. Have your arms hang down until it reaches your thigh." +
                         "Make sure you keep your whole body looking forward, heda up straight, shoulders back and chest up.",
                 "Step 2: Begin to raise your arms to out in front of you until it reaches just above your shoulder height." +
-                        "Pause, then slowly go back to your starting position.", R.drawable.crunches);
+                        "Pause, then slowly go back to your starting position.", R.drawable.ic_fitness);
 
         //adds crunches to the array
         selected.add(BarbellLateralRaises);

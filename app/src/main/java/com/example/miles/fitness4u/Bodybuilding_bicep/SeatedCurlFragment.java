@@ -42,7 +42,7 @@ public class SeatedCurlFragment extends Fragment {
                 "Step 1: Sit on a bench upright while holding two dumbbells beside you fully stretching your bicep." +
                         "Start with the palms of your hand facing outward.",
                 "Step 2: Slowly curl your arms towards your shoulder, when you reach the top, pause and squeeze" +
-                        "to tear your muscle fibers.", R.drawable.crunches);
+                        "to tear your muscle fibers.", R.drawable.ic_fitness);
 
         //adds crunches to the array
         selected.add(SeatedCurl);

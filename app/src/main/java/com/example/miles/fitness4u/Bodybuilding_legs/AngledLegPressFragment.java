@@ -44,7 +44,7 @@ public class AngledLegPressFragment extends Fragment {
                         "This is your stating position.",
                 "Step 2: As you inhale, start to lower your legs until they make a 90 degree angle." +
                         "When pushing, make sure you use your heels. While pushing, slowly exhale" +
-                        "", R.drawable.crunches);
+                        "", R.drawable.ic_fitness);
 
         //adds crunches to the array
         selected.add(AngledLeg);

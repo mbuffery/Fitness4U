@@ -42,7 +42,7 @@ public class ReverseCurlFragment extends Fragment {
                 "Step 1: Stand up straight with your shoulders back and your chest up. Feet must be shoulder width apart." +
                         "Fully extend your arms with your palms facing toward your body.",
                 "Step 2: Begin to slowly raise the dumbbell up to shoulder height while having both elbows locked to the sides of your body." +
-                        "Pause for one second then slowly go back to your starting position.", R.drawable.crunches);
+                        "Pause for one second then slowly go back to your starting position.", R.drawable.ic_fitness);
 
         //adds crunches to the array
         selected.add(ReverseCurl);

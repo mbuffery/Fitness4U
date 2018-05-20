@@ -43,7 +43,7 @@ public class DumbbellPressFragment extends Fragment {
                         "Use your thighs to help push up the dumbbell, this is to help ease the bells in front of you at shoulder width distance",
                 "Step 2: After successfully lifting them up, have them to the side of your chest creating a 90 degree angle all the while keeping control. This is your start position" +
                         "As you breathe out, focus on using your chest to push them up. Make sure to lock your arms when you reach the top." +
-                        "When coming down, go slowly or you may injure yourself. you should end up in your starting position", R.drawable.crunches);
+                        "When coming down, go slowly or you may injure yourself. you should end up in your starting position", R.drawable.ic_fitness);
 
         //adds crunches to the array
         selected.add( DumbbellPress);

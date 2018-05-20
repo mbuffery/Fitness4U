@@ -42,7 +42,7 @@ public class BenchPressFragment extends Fragment {
                 "Step 1: As you begin to lay onto the bench, try to arch your back as much as possible to focus your chest more." +
                         "When lifting the bar, bring it above your chest. When doing this exercise, you would want someone to spot you in case of accident",
                 "Step 2: Make sure you keep your body and head on the bench as it will potentially injure your body. When going up and down, keep your elbows out." +
-                        " Come down to the lower part of your chest. As you come up, try to have it end with it being on the upper level of your chest.", R.drawable.crunches);
+                        " Come down to the lower part of your chest. As you come up, try to have it end with it being on the upper level of your chest.", R.drawable.ic_fitness);
 
         //adds crunches to the array
         selected.add(BenchPress);

@@ -42,7 +42,7 @@ public class DumbbellExtensionFragment extends Fragment {
                 "Step 1: Lie on a flat bench holding a dumbbell in one arm and the other one supporting." +
                         "Make sure you keep your arms still and only use your tricep",
                 "Step 2: Begin to bend your arm until it reaches a 90 degree angle." +
-                        "Start to bring it back up to your starting position.", R.drawable.crunches);
+                        "Start to bring it back up to your starting position.", R.drawable.ic_fitness);
 
 
         //adds crunches to the array

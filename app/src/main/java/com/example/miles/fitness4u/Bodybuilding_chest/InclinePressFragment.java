@@ -42,7 +42,7 @@ public class InclinePressFragment extends Fragment {
                 "Step 1: Lie on the bench while having your feet flat on the ground. Make sure your back is arched and that you are pushing through your hips" +
                         "Grab the bar at a medium width and then proceed to bring it off the rack. Have it above your chest with your arms fully extended. This is your starting position",
                 "Step 2: Start to lower the bar until it reaches just above you chest. Little tip: Don't bounce the weight off your chest otherwise you lose out." +
-                        "After touching your upper chest, begin to push up slowly until you reach the starting position", R.drawable.crunches);
+                        "After touching your upper chest, begin to push up slowly until you reach the starting position", R.drawable.ic_fitness);
 
         //adds crunches to the array
         selected.add(InclinePress);

@@ -42,7 +42,7 @@ public class DeclinePressFragment extends Fragment {
                 "Step 1: Make sure your legs are secure before attempting to get onto the bench." +
                         "Have a medium grip when holding the bar, begin to lift the bar over your body while keeping your arms locked thus creating your start position",
                 "Step 2: As you bring the bar down, slowly breathe in until the bar touches your lower chest." +
-                        "Pause. As you breathe out, begin to push the bar upwards back into the starting position", R.drawable.crunches);
+                        "Pause. As you breathe out, begin to push the bar upwards back into the starting position", R.drawable.ic_fitness);
 
         //adds crunches to the array
         selected.add(DeclinePress);
