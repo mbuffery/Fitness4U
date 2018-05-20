@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/grad">
+    android:background="@color/white">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -20,37 +20,67 @@
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:text="Back Press"
-                    android:id="@+id/BackPress" />
+                    android:id="@+id/BackPress"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/SeatedDumbbellPress"
                     android:text="Seated Dumbbell Press"
-                    android:layout_below="@+id/BackPress"/>
+                    android:layout_below="@+id/BackPress"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/LowLateralRaises"
-                    android:text="=Low Lateral Raises"
-                    android:layout_below="@+id/SeatedDumbbellPress"/>
+                    android:text="Low Lateral Raises"
+                    android:layout_below="@+id/SeatedDumbbellPress"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/UprightRow"
                     android:text="Upright Rows"
-                    android:layout_below="@+id/LowLateralRaises"/>
+                    android:layout_below="@+id/LowLateralRaises"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/BarbellLateralRaises"
                     android:text="Barbell Lateral Raises"
-                    android:layout_below="@+id/UprightRow"/>
+                    android:layout_below="@+id/UprightRow"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/ArnoldPress"
                     android:text="Arnold Press"
-                    android:layout_below="@+id/BarbellLateralRaises"/>
+                    android:layout_below="@+id/BarbellLateralRaises"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
 
 
             </RelativeLayout>

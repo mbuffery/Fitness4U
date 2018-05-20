@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/grad">
+    android:background="@color/white">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -20,37 +20,67 @@
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:text="Bench Press"
-                    android:id="@+id/BenchPress" />
+                    android:id="@+id/BenchPress"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/InclinePress"
                     android:text="Incline Press"
-                    android:layout_below="@+id/BenchPress"/>
+                    android:layout_below="@+id/BenchPress"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/DumbbellPress"
                     android:text="Dumbbell Press"
-                    android:layout_below="@+id/InclinePress"/>
+                    android:layout_below="@+id/InclinePress"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/DeclinePress"
                     android:text="Decline Press"
-                    android:layout_below="@+id/DumbbellPress"/>
+                    android:layout_below="@+id/DumbbellPress"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/SeatedFly"
                     android:text="Seated Pec Fly"
-                    android:layout_below="@+id/DeclinePress"/>
+                    android:layout_below="@+id/DeclinePress"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/CableFly"
                     android:text="Cable Crossover Fly"
-                    android:layout_below="@+id/SeatedFly"/>
+                    android:layout_below="@+id/SeatedFly"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
 
 
             </RelativeLayout>

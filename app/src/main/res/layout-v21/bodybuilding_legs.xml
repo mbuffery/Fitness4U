@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/grad">
+    android:background="@color/white">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -20,37 +20,67 @@
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:text="Squats"
-                    android:id="@+id/Squats" />
+                    android:id="@+id/Squats"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/DumbbellLunges"
                     android:text="Dumbbell Lunges"
-                    android:layout_below="@+id/Squats"/>
+                    android:layout_below="@+id/Squats"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/AngledLegPress"
                     android:text="Leg Angled Leg Press"
-                    android:layout_below="@+id/DumbbellLunges"/>
+                    android:layout_below="@+id/DumbbellLunges"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/LegExtensions"
                     android:text="Leg Extensions"
-                    android:layout_below="@+id/AngledLegPress"/>
+                    android:layout_below="@+id/AngledLegPress"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/BarbellSquatOverhead"
                     android:text="BarbellSquatOverhead"
-                    android:layout_below="@+id/LegExtensions"/>
+                    android:layout_below="@+id/LegExtensions"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/DumbbellSquats"
                     android:text="Dumbbell Squats"
-                    android:layout_below="@+id/BarbellSquatOverhead"/>
+                    android:layout_below="@+id/BarbellSquatOverhead"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
 
 
             </RelativeLayout>

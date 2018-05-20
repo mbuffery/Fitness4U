@@ -8,6 +8,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.miles.fitness4u.Bodybuilding_shoulder.ArnoldPressFragment;
+import com.example.miles.fitness4u.Bodybuilding_shoulder.BackPressFragment;
+import com.example.miles.fitness4u.Bodybuilding_shoulder.BarbellLateralRaisesFragment;
+import com.example.miles.fitness4u.Bodybuilding_shoulder.LowLateralRaisesFragment;
+import com.example.miles.fitness4u.Bodybuilding_shoulder.SeatedDumbbellPressFragment;
+import com.example.miles.fitness4u.Bodybuilding_shoulder.UprightRowFragment;
 import com.example.miles.fitness4u.R;
 
 /**
@@ -16,7 +22,7 @@ import com.example.miles.fitness4u.R;
 
 public class Shoulders_Fragment extends Fragment {
 
-    /*private Button num1,num2,num3,num4,num5,num6;
+    private Button num1,num2,num3,num4,num5,num6;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -99,5 +105,5 @@ public class Shoulders_Fragment extends Fragment {
 
 
 
-    }*/
+    }
 }

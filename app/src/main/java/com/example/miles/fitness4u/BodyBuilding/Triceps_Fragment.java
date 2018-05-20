@@ -8,6 +8,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.miles.fitness4u.Bodybuilding_tricep.CableTricepFragment;
+import com.example.miles.fitness4u.Bodybuilding_tricep.DumbbellExtensionFragment;
+import com.example.miles.fitness4u.Bodybuilding_tricep.OneArmDumbbellFragment;
+import com.example.miles.fitness4u.Bodybuilding_tricep.SeatedTricepsFragment;
+import com.example.miles.fitness4u.Bodybuilding_tricep.SkullCrusherFragment;
+import com.example.miles.fitness4u.Bodybuilding_tricep.TricepDipsFragment;
 import com.example.miles.fitness4u.R;
 
 /**
@@ -15,7 +21,7 @@ import com.example.miles.fitness4u.R;
  */
 
 public class Triceps_Fragment extends Fragment {
-/*
+
     private Button num1,num2,num3,num4,num5,num6;
     @Nullable
     @Override
@@ -99,5 +105,5 @@ public class Triceps_Fragment extends Fragment {
 
 
 
-    }*/
+    }
 }

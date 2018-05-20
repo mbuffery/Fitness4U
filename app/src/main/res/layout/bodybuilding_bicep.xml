@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/grad">
+    android:background="@color/white">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -20,37 +20,67 @@
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:text="Dumbbell Curls"
-                    android:id="@+id/DumbbellCurls" />
+                    android:id="@+id/DumbbellCurls"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/BarbellCurls"
                     android:text="Barbell Curls"
-                    android:layout_below="@+id/DumbbellCurls"/>
+                    android:layout_below="@+id/DumbbellCurls"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/HammerCurls"
                     android:text="Hammer Curls"
-                    android:layout_below="@+id/BarbellCurls"/>
+                    android:layout_below="@+id/BarbellCurls"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/CableBicep"
                     android:text="Cable Bicep Curl"
-                    android:layout_below="@+id/HammerCurls"/>
+                    android:layout_below="@+id/HammerCurls"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/SeatedCurl"
                     android:text="Seated Dumbbell Curl"
-                    android:layout_below="@+id/CableBicep"/>
+                    android:layout_below="@+id/CableBicep"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/ReverseCurl"
                     android:text="Reverse Curl"
-                    android:layout_below="@+id/SeatedCurl"/>
+                    android:layout_below="@+id/SeatedCurl"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
 
             </RelativeLayout>
 

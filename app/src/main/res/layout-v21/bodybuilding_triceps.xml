@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/grad">
+    android:background="@color/white">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -19,38 +19,68 @@
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:text="Tricep KickBacks"
-                    android:id="@+id/TricepKickBack" />
+                    android:text="Cable Tricep"
+                    android:id="@+id/cableTricep"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:id="@+id/TricepPushDown"
-                    android:text="Tricep PushDown"
-                    android:layout_below="@+id/TricepKickBack"/>
+                    android:id="@+id/dumbbellExtension"
+                    android:text="Dumbbell Extension"
+                    android:layout_below="@+id/cableTricep"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:id="@+id/TricepExtension"
-                    android:text="Tricep Extension"
-                    android:layout_below="@+id/TricepPushDown"/>
+                    android:id="@+id/oneArmDumbbell"
+                    android:text="One Arm Dumbbell"
+                    android:layout_below="@+id/dumbbellExtension"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/OneArmExtension"
-                    android:text="One-Arm Dumbbell Tricep Cxtension"
-                    android:layout_below="@+id/TricepExtension"/>
+                    android:text="Seated Tricep"
+                    android:layout_below="@+id/oneArmDumbbell"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
-                    android:id="@+id/SeatedTricepExtension"
-                    android:text="Seated Tricep Extension"
-                    android:layout_below="@+id/OneArmExtension"/>
+                    android:id="@+id/skullCrushers"
+                    android:text="Skull Crushers"
+                    android:layout_below="@+id/OneArmExtension"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/TricepDips"
                     android:text="Tricep Dips"
-                    android:layout_below="@+id/SeatedTricepExtension"/>
+                    android:layout_below="@+id/skullCrushers"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
 
 
             </RelativeLayout>

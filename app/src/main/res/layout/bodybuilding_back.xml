@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/grad">
+    android:background="@color/white">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -21,37 +21,67 @@
                     android:layout_height="100dp"
                     android:text="Chin-Ups"
                     android:id="@+id/ChinUps"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"
                     />
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/Deadlifts"
                     android:text="Deadlifts"
-                    android:layout_below="@+id/ChinUps"/>
+                    android:layout_below="@+id/ChinUps"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/LatPullDown"
                     android:text="Lat Pull-Downs"
-                    android:layout_below="@+id/Deadlifts"/>
+                    android:layout_below="@+id/Deadlifts"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/DumbbellShrugs"
                     android:text="Dumbbell Shrugs"
-                    android:layout_below="@+id/LatPullDown"/>
+                    android:layout_below="@+id/LatPullDown"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/TBar"
                     android:text="T-Bar Bent Over Row"
-                    android:layout_below="@+id/DumbbellShrugs"/>
+                    android:layout_below="@+id/DumbbellShrugs"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:id="@+id/OneArmRow"
                     android:text="One-Arm Dumbbell Rows"
-                    android:layout_below="@+id/TBar"/>
+                    android:layout_below="@+id/TBar"
+                    android:background="@drawable/grad"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginLeft="3dp"/>
 
 
             </RelativeLayout>

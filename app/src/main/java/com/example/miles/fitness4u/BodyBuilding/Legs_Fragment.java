@@ -8,6 +8,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.example.miles.fitness4u.Bodybuilding_legs.AngledLegPressFragment;
+import com.example.miles.fitness4u.Bodybuilding_legs.BarbellSquatOverheadFragment;
+import com.example.miles.fitness4u.Bodybuilding_legs.DumbbellLungesFragment;
+import com.example.miles.fitness4u.Bodybuilding_legs.DumbbellSquatsFragment;
+import com.example.miles.fitness4u.Bodybuilding_legs.LegExtensionsFragment;
+import com.example.miles.fitness4u.Bodybuilding_legs.SquatsFragment;
 import com.example.miles.fitness4u.R;
 
 /**
@@ -16,7 +22,7 @@ import com.example.miles.fitness4u.R;
 
 public class Legs_Fragment extends Fragment {
 
-    /*private Button num1,num2,num3,num4,num5,num6;
+    private Button num1,num2,num3,num4,num5,num6;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -99,5 +105,5 @@ public class Legs_Fragment extends Fragment {
 
 
 
-    }*/
+    }
 }
