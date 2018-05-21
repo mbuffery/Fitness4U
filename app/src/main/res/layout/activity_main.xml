@@ -27,7 +27,6 @@ tools:context="com.example.miles.fitness4u.MainActivity">
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="4dp"
                 android:gravity="center"
-                android:hint="Registration"
                 android:textSize="20sp"
                 android:textStyle="bold|italic" />
 
